@@ -40,7 +40,7 @@ object Fixtures {
         categories: List<String> = listOf("main"),
         tags: List<String> = emptyList(),
         vegetarian: Boolean = false,
-        budget: BudgetLevel = BudgetLevel.MID,
+        budget: BudgetLevel = BudgetLevel.MEDIUM,
         order: Int = 1
     ) = Recipe(
         id = id,

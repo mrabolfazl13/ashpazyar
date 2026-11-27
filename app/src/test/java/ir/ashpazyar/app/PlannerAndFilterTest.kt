@@ -18,7 +18,7 @@ class PlannerAndFilterTest {
             title = "دستور " + index,
             categories = if (index % 2 == 0) listOf("breakfast") else listOf("main"),
             vegetarian = index % 3 == 0,
-            budget = if (index % 4 == 0) BudgetLevel.BUDGET else BudgetLevel.MID,
+            budget = if (index % 4 == 0) BudgetLevel.BUDGET else BudgetLevel.MEDIUM,
             order = index
         )
     }
