@@ -110,13 +110,19 @@ object UnitConverter {
     }
 
     fun shoppingUnit(quantity: BaseQuantity, profile: IngredientProfile?): IngredientUnit {
+        val countUnit = when (profile?.defaultUnit) {
+            IngredientUnit.PIECE, IngredientUnit.CLOVE, IngredientUnit.BUNCH, IngredientUnit.SLICE, IngredientUnit.CAN -> profile.defaultUnit
+            else -> null
+        }
+        if (countUnit != null && profile?.pieceWeightGrams != null &&
+            (quantity.dimension == Dimension.MASS || quantity.dimension == Dimension.COUNT)
+        ) {
+            return countUnit
+        }
         return when (quantity.dimension) {
             Dimension.MASS -> if (quantity.amount >= 1000.0) IngredientUnit.KILOGRAM else IngredientUnit.GRAM
             Dimension.VOLUME -> if (quantity.amount >= 1000.0) IngredientUnit.LITER else IngredientUnit.MILLILITER
-            Dimension.COUNT -> when (profile?.defaultUnit) {
-                IngredientUnit.PIECE, IngredientUnit.CLOVE, IngredientUnit.BUNCH, IngredientUnit.SLICE, IngredientUnit.CAN -> profile.defaultUnit
-                else -> IngredientUnit.PIECE
-            }
+            Dimension.COUNT -> countUnit ?: IngredientUnit.PIECE
         }
     }
 

@@ -68,8 +68,12 @@ class IngredientMatcher @Inject constructor() {
             if (coverage < 0.995) {
                 val applicable = substitutes.filter { rule ->
                     rule.ingredientId == line.ingredientId &&
-                        (rule.recipeId == recipe.id || (rule.contextTag.isNotBlank() &&
-                            (recipe.tags + recipe.categoryIds).any { it.contains(rule.contextTag, ignoreCase = true) }))
+                        (
+                            (rule.recipeId == null && rule.contextTag.isBlank()) ||
+                                rule.recipeId == recipe.id ||
+                                (rule.contextTag.isNotBlank() &&
+                                    (recipe.tags + recipe.categoryIds).any { it.contains(rule.contextTag, ignoreCase = true) })
+                            )
                 }
                 for (rule in applicable) {
                     val substituteProfile = ingredientsById[rule.substituteIngredientId]?.profile

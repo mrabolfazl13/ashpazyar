@@ -29,7 +29,7 @@ class IngredientMatcherTest {
             val coverage = (grams / 100.0).coerceIn(0.0, 1.0)
             val expected = Math.round(coverage * 100.0).toInt()
             assertEquals("پوشش مرحله " + step, expected, result.matchPercent)
-            assertEquals(100, result.totalRequired)
+            assertEquals(1, result.totalRequired)
             assertEquals(grams >= 100.0, result.fullyAvailable)
             assertEquals(if (grams >= 100.0) 1 else 0, result.availableCount)
             checked++
