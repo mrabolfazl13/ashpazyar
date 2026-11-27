@@ -29,7 +29,7 @@
 - تکراری دقیق: **۸۱۸** ردیف (۷۸۶ غذایی، ۳۲ غیرغذایی)؛ ۱۰۰ جفت مشابه اسمی و ۵۷۲ گروه نام یکسان (۱٬۶۸۰ رکورد) برای بازبینی نگه داشته شد.
 - دلیل اصلی عدم تأیید: **ستون مراحل پخت در منبع وجود ندارد** و مجوز/حق بازنشر منبع نامشخص است.
 - ۵۰٬۰۰۰ دستور تأییدشده هنوز وجود ندارد؛ فاصله هدف **۵۰٬۰۰۰** است.
-- خروجی: `ashpazyar_dataset/`، `dist/ashpazyar_dataset.zip` و گزارش تست ۸۳/۸۳.
+- خروجی: `ashpazyar_dataset/`، `dist/ashpazyar_dataset.zip` و گزارش تست ۸۶/۸۶.
 - جزئیات: `DATA_SOURCES.md`، `DATA_LICENSES.md`، `DATA_SCHEMA.md`، `DATA_QUALITY_REPORT.md`، `DATA_PROGRESS.md`، `TASK_TRACKER.md`.
 
 ## آنچه پیاده شده

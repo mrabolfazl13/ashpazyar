@@ -6,6 +6,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import re
 import sqlite3
 import zipfile
 from collections import Counter
@@ -94,6 +95,8 @@ def main() -> None:
     ingredient_ids = {i.get("id") for i in ingredients}
     unit_ids = {u.get("id") for u in units}
     check("مواد یکتا", len(ingredient_ids) == len(ingredients), str(len(ingredient_ids)))
+    check("نام نرمال مواد یکتا", len({i.get("normalized_name") for i in ingredients}) == len(ingredients), "")
+    check("نام مواد غیرخالی", all(x.get("name_original", "").strip() and x.get("name_fa", "").strip() for r in recipes for x in r.get("ingredients", [])), "")
     check("واحد یکتا", len(unit_ids) == len(units), str(len(unit_ids)))
     check("واحد QUALITATIVE موجود", "QUALITATIVE" in unit_ids, "")
     check("واحد UNSPECIFIED موجود", "UNSPECIFIED" in unit_ids, "")
@@ -195,6 +198,15 @@ def main() -> None:
             if item.get("subcategory_original") != source.get("subcat"):
                 bad_original.append((item.get("id"), "subcat"))
     check("حفظ نام/دسته/زیردسته اصلی", not bad_original, str(bad_original[:3]))
+    bad_line_counts = []
+    for r in recipes:
+        source = raw_by_row.get(str(r.get("source_row")))
+        if not source:
+            continue
+        expected = len(re.findall(r"<th\b", source.get("table", ""), flags=re.IGNORECASE))
+        if expected != len(r.get("ingredients", [])):
+            bad_line_counts.append((r.get("id"), expected, len(r.get("ingredients", []))))
+    check("تعداد مواد هر دستور با منبع", not bad_line_counts, str(bad_line_counts[:3]))
 
     dup_path = OUT / "reports" / "duplicate_report.csv"
     with dup_path.open(encoding="utf-8-sig", newline="") as fh:
