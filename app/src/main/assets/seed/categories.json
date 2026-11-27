@@ -3,7 +3,7 @@
     "id": "iranian",
     "title": "غذاهای ایرانی",
     "subtitle": "خورش، پلو و طعم خانه",
-    "accent": "FOREST",
+    "accent": "SAGE",
     "icon": "pot"
   },
   {
@@ -38,14 +38,14 @@
     "id": "stew",
     "title": "خورش",
     "subtitle": "آرام‌پز و خوش‌عطر",
-    "accent": "FOREST",
+    "accent": "SAGE",
     "icon": "pot"
   },
   {
     "id": "rice",
     "title": "پلو و چلو",
     "subtitle": "برنج دانه‌دانه",
-    "accent": "FOREST",
+    "accent": "SAGE",
     "icon": "rice"
   },
   {
@@ -101,7 +101,7 @@
     "id": "family",
     "title": "خانوادگی",
     "subtitle": "برای سفره‌های پر",
-    "accent": "FOREST",
+    "accent": "SAGE",
     "icon": "home"
   }
 ]

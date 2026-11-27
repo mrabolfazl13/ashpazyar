@@ -20,7 +20,7 @@ data class SeedRecipe(
     val calories: Int? = null,
     val season: String = "ALL",
     val budgetLevel: String = "MEDIUM",
-    val heroStyle: String = "FOREST",
+    val heroStyle: String = "CREAM",
     val isVegetarian: Boolean = false,
     val isVegan: Boolean = false,
     val isGlutenFree: Boolean = false,
@@ -67,7 +67,7 @@ data class SeedCategory(
     val id: String,
     val title: String,
     val subtitle: String = "",
-    val accent: String = "FOREST",
+    val accent: String = "CREAM",
     val icon: String = "pot"
 )
 

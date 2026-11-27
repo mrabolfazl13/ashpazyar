@@ -186,6 +186,6 @@ class SeedLoader @Inject constructor(
     }
 
     companion object {
-        const val SEED_VERSION = "1"
+        const val SEED_VERSION = "2"
     }
 }
