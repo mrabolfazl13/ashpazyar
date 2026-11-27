@@ -2,7 +2,7 @@
 
 ## دامنه و روش
 - منبع بررسی: `app/src/main/assets/seed/recipes.json`
-- زمان بررسی: ۶ آذر ۱۴۰۵
+- زمان بررسی: ۷ آذر ۱۴۰۵
 - ابزار: `node tools/validate-recipes.js` و `node tools/audit-recipes.js`
 - وضعیت پیش‌فرض رکورد بدون فیلد `validationStatus` برابر `REVIEW_REQUIRED` است.
 
