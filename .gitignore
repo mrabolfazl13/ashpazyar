@@ -13,3 +13,6 @@ keystore.properties
 *.jks
 *.keystore
 app/release/
+ci-failed.log
+compile-errors.txt
+dist/

@@ -99,10 +99,10 @@ fun PlanGeneratorScreen(
                         Text("اگر خالی بگذارید، سطح اقتصادی دستورها ملاک است.", style = MaterialTheme.typography.labelSmall, color = palette.muted)
                     }
                     Spacer(Modifier.height(8.dp))
-                    AshpaSwitchRow("تنوع حداکثری", "تا حد امکان دستور تکراری در هفته نباشد", state.variety, viewModel::toggleVariety)
-                    AshpaSwitchRow("بدون گوشت", "دستورهای گیاهی یا بدون گوشت", state.noMeat, viewModel::toggleNoMeat)
-                    AshpaSwitchRow("گیاهی", "فقط دستورهای کاملاً گیاهی", state.vegetarian, viewModel::toggleVegetarian)
-                    AshpaSwitchRow("اقتصادی", "در اولویت قرار دادن گزینه‌های کم‌هزینه", state.lowCost, viewModel::toggleLowCost)
+                    AshpaSwitchRow("تنوع حداکثری", "تا حد امکان دستور تکراری در هفته نباشد", state.variety) { viewModel.toggleVariety() }
+                    AshpaSwitchRow("بدون گوشت", "دستورهای گیاهی یا بدون گوشت", state.noMeat) { viewModel.toggleNoMeat() }
+                    AshpaSwitchRow("گیاهی", "فقط دستورهای کاملاً گیاهی", state.vegetarian) { viewModel.toggleVegetarian() }
+                    AshpaSwitchRow("اقتصادی", "در اولویت قرار دادن گزینه‌های کم‌هزینه", state.lowCost) { viewModel.toggleLowCost() }
                     Spacer(Modifier.height(10.dp))
                     PrimaryButton(
                         text = if (state.proposal == null) "چیدن برنامه" else "چیدن دوباره",

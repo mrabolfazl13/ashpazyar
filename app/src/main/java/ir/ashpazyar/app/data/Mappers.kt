@@ -1,5 +1,6 @@
 package ir.ashpazyar.app.data
 
+import ir.ashpazyar.app.core.util.Dimension
 import ir.ashpazyar.app.data.local.entity.*
 import ir.ashpazyar.app.domain.model.*
 
