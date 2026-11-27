@@ -16,4 +16,5 @@ app/release/
 ci-failed.log
 compile-errors.txt
 dist/
+dist-final/
 reports/
