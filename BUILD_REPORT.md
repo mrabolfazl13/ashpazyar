@@ -5,10 +5,10 @@
 | مورد | مقدار |
 |---|---|
 | Workflow | `.github/workflows/android-ci.yml` |
-| اجرا | `45985508130` |
-| Commit | `b3e3670` |
+| اجرا | `45991411248` |
+| Commit | `6435e26` |
 | نتیجه | ✅ موفق |
-| لینک | https://github.com/mrabolfazl13/ashpazyar/actions/runs/45985508130 |
+| لینک | https://github.com/mrabolfazl13/ashpazyar/actions/runs/45991411248 |
 
 همه مراحل اجرا موفق بودند: Validate، اعتبارسنجی دیتاست، Unit Tests، کامپایل تست‌های Compose، Lint، آماده‌سازی امضا، Debug APK، Release APK، Release AAB، بسته‌بندی و آپلود.
 
@@ -16,19 +16,19 @@
 
 | فایل | حجم (بایت) | SHA-256 |
 |---|---:|---|
-| `ashpazyar-debug.apk` | 20,767,197 | `5F2C496D9B90D846D40E4A96B7EC56ADC7E3924355336D46B53324535E3E67F7` |
-| `ashpazyar-release.apk` | 2,945,297 | `A27DCF0A075FF5FC5199F0A165F20BBEC752324F7A8EFBB8AFF49EAAABD7B82A` |
-| `ashpazyar-release.aab` | 6,015,178 | `AC858A5E45730652B9E8B6D9D7150857ADD615971E65F0AB0BF7EEF24377BB53` |
+| `ashpazyar-debug.apk` | 20,799,969 | `7E76655801C727C6B49374F0009B193CAB8AD4A2986B5D8BD40A24D177FA1610` |
+| `ashpazyar-release.apk` | 2,945,297 | `F4C9DF5E7BF0979120988CD1F96B29C640CCE3F2299244E39543068C22CB4CF4` |
+| `ashpazyar-release.aab` | 6,041,167 | `B9D42D793E180E88038C633EE8B49BFB6B514F751F26C81592467B53F32E1088` |
 
-مسیر محلی نسخه دانلودشده: `dist-new/` (در Git نادیده گرفته می‌شود).
+مسیر محلی نسخه دانلودشده: `dist/ci-45991411248/` (در Git نادیده گرفته می‌شود).
 
 دریافت مجدد از GitHub:
 
 ```bash
-gh run download 45985508130 -n ashpazyar-build-13 -D dist
+gh run download 45991411248 -n ashpazyar-build-17 -D dist
 ```
 
-این هش‌ها مربوط به خروجی‌های Commit `b3e3670` هستند. Commitهای بعدی فقط مستندات را تغییر داده‌اند؛ Workflow آن‌ها نیز سبز است، اما چون ZIP در هر بیلد دوباره ساخته می‌شود، هش فایل‌ها می‌تواند متفاوت باشد. کد اپلیکیشن تغییر نکرده است.
+این هش‌ها مربوط به خروجی‌های Commit `6435e26` هستند. Commitهای مستندات بعدی کد اپلیکیشن را تغییر نمی‌دهند و Workflow آن‌ها نیز سبز است، اما چون ZIP در هر بیلد دوباره ساخته می‌شود، هش فایل‌ها می‌تواند متفاوت باشد.
 
 ## امضای Release
 
@@ -56,7 +56,7 @@ gh run download 45985508130 -n ashpazyar-build-13 -D dist
 ## پیکربندی بیلد
 
 - `applicationId`: `ir.ashpazyar.app`
-- نسخه: `1.1.0` (versionCode 2)
+- نسخه: `1.2.0` (versionCode 3)
 - `minSdk`: 26
 - `compileSdk` / `targetSdk`: 35
 - Java 17، Kotlin 2.0.21، AGP 8.7.3، Gradle 8.9
@@ -65,7 +65,7 @@ gh run download 45985508130 -n ashpazyar-build-13 -D dist
 
 ## داده همراه اپ
 
-- `app/src/main/assets/seed/recipes.json` در نسخه ۱٫۱٫۰ شامل ۲۰۰۰ دستور است (حدود ۸٫۲۶ مگابایت JSON).
+- `app/src/main/assets/seed/recipes.json` در نسخه ۱٫۲٫۰ شامل ۲۰۰۰ دستور است (حدود ۸٫۲۶ مگابایت JSON).
 - `seed_version = 2` است؛ نصب‌های نسخه ۱٫۰٫۰ در نخستین اجرا دوباره Seed می‌شوند.
 - وجود ۲۰۰۰ دستور در `assets/seed/recipes.json` هر دو خروجی APK و AAB بررسی شد.
 - افزایش حجم خروجی نسبت به نسخه ۱٫۰٫۰ عمدتاً در Debug APK دیده می‌شود؛ Release به دلیل فشرده‌سازی داده به ۲٫۹ مگابایت رسیده است.
