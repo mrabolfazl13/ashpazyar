@@ -18,3 +18,9 @@ compile-errors.txt
 dist/
 dist-final/
 reports/
+
+# Generated knowledge-base artifacts and the private source file
+train.csv
+ashpazyar_dataset/
+tools/__pycache__/
+*.pyc
