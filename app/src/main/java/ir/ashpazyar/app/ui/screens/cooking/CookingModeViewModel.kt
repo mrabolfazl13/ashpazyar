@@ -16,7 +16,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -36,13 +35,17 @@ data class CookingUiState(
 
 @HiltViewModel
 class CookingModeViewModel @Inject constructor(
-    savedStateHandle: SavedStateHandle,
+    private val savedStateHandle: SavedStateHandle,
     recipeRepository: RecipeRepository,
     private val timerRepository: TimerRepository
 ) : ViewModel() {
     private val recipeId: String = savedStateHandle.get<String>("recipeId").orEmpty()
-    private val stepIndex = MutableStateFlow(0)
-    private val completedSteps = MutableStateFlow<Set<Int>>(emptySet())
+    private val stepIndex = MutableStateFlow(
+        savedStateHandle.get<Int>(KEY_STEP_INDEX)?.coerceAtLeast(0) ?: 0
+    )
+    private val completedSteps = MutableStateFlow(
+        savedStateHandle.get<IntArray>(KEY_COMPLETED_STEPS)?.toSet().orEmpty()
+    )
     private val _messages = MutableSharedFlow<String>()
     val messages = _messages.asSharedFlow()
 
@@ -72,7 +75,7 @@ class CookingModeViewModel @Inject constructor(
     fun completeCurrentStep() {
         val state = uiState.value
         if (state.step == null) return
-        completedSteps.update { it + state.stepIndex }
+        setCompletedSteps(completedSteps.value + state.stepIndex)
     }
 
     fun toggleCurrentStep() {
@@ -82,16 +85,15 @@ class CookingModeViewModel @Inject constructor(
     fun toggleStep(index: Int) {
         val state = uiState.value
         if (state.step == null || index !in 0 until state.totalSteps) return
-        completedSteps.update { completed ->
-            if (index in completed) completed - index else completed + index
-        }
+        val completed = completedSteps.value
+        setCompletedSteps(if (index in completed) completed - index else completed + index)
     }
 
     fun next() {
         val state = uiState.value
         val target = CookingStepFlow.nextIndex(state.totalSteps, state.stepIndex, state.completedSteps)
         if (target != null) {
-            stepIndex.value = target
+            setStepIndex(target)
         } else if (!state.stepCompleted && state.stepIndex < state.totalSteps - 1) {
             viewModelScope.launch {
                 _messages.emit("برای رفتن به مرحله بعد، ابتدا این مرحله را کامل کنید")
@@ -101,7 +103,17 @@ class CookingModeViewModel @Inject constructor(
 
     fun previous() {
         val state = uiState.value
-        if (state.stepIndex > 0) stepIndex.value = state.stepIndex - 1
+        if (state.stepIndex > 0) setStepIndex(state.stepIndex - 1)
+    }
+
+    private fun setStepIndex(index: Int) {
+        stepIndex.value = index
+        savedStateHandle[KEY_STEP_INDEX] = index
+    }
+
+    private fun setCompletedSteps(completed: Set<Int>) {
+        completedSteps.value = completed
+        savedStateHandle[KEY_COMPLETED_STEPS] = completed.sorted().toIntArray()
     }
 
     fun startStepTimer() {
@@ -116,5 +128,10 @@ class CookingModeViewModel @Inject constructor(
             )
             _messages.emit("تایمر شروع شد؛ پایان آن را به شما خبر می‌دهیم")
         }
+    }
+
+    private companion object {
+        const val KEY_STEP_INDEX = "cooking_step_index"
+        const val KEY_COMPLETED_STEPS = "cooking_completed_steps"
     }
 }

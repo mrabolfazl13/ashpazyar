@@ -29,6 +29,19 @@ class CookingStepFlowTest {
     }
 
     @Test
+    fun `invalid current indexes can never advance`() {
+        assertFalse(CookingStepFlow.canAdvance(totalSteps = 3, stepIndex = -1, completed = setOf(-1, 0, 1)))
+        assertFalse(CookingStepFlow.canAdvance(totalSteps = 3, stepIndex = 3, completed = setOf(0, 1, 2, 3)))
+        assertNull(CookingStepFlow.nextIndex(totalSteps = 3, stepIndex = -1, completed = setOf(-1, 0, 1)))
+    }
+
+    @Test
+    fun `normalized completion drops indexes outside the recipe`() {
+        assertEquals(setOf(0, 2), CookingStepFlow.normalizedCompleted(totalSteps = 3, completed = setOf(-1, 0, 2, 3, 99)))
+        assertTrue(CookingStepFlow.normalizedCompleted(totalSteps = 0, completed = setOf(0, 1)).isEmpty())
+    }
+
+    @Test
     fun `progress counts only valid completed step indexes`() {
         assertEquals(0.5f, CookingStepFlow.progress(totalSteps = 4, completed = setOf(0, 2, 9, -1)), 0.0001f)
         assertEquals(0f, CookingStepFlow.progress(totalSteps = 0, completed = setOf(0)), 0.0001f)
