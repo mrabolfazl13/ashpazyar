@@ -1,7 +1,7 @@
 package ir.ashpazyar.app.core.util
 
 import ir.ashpazyar.app.domain.model.IngredientProfile
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import kotlin.math.abs
 
 enum class Dimension { MASS, VOLUME, COUNT }
@@ -14,22 +14,22 @@ data class BaseQuantity(val amount: Double, val dimension: Dimension) {
 }
 
 object UnitConverter {
-    fun toBase(amount: Double, unit: Unit, profile: IngredientProfile?): BaseQuantity? {
+    fun toBase(amount: Double, unit: IngredientUnit, profile: IngredientProfile?): BaseQuantity? {
         if (amount < 0.0) return null
         return when (unit) {
-            Unit.GRAM -> BaseQuantity(amount, Dimension.MASS)
-            Unit.KILOGRAM -> BaseQuantity(amount * 1000.0, Dimension.MASS)
-            Unit.MILLILITER -> BaseQuantity(amount, Dimension.VOLUME)
-            Unit.LITER -> BaseQuantity(amount * 1000.0, Dimension.VOLUME)
-            Unit.TEASPOON -> BaseQuantity(amount * 5.0, Dimension.VOLUME)
-            Unit.TABLESPOON -> BaseQuantity(amount * 15.0, Dimension.VOLUME)
-            Unit.PINCH -> BaseQuantity(amount * 0.3, Dimension.VOLUME)
-            Unit.CUP -> {
+            IngredientUnit.GRAM -> BaseQuantity(amount, Dimension.MASS)
+            IngredientUnit.KILOGRAM -> BaseQuantity(amount * 1000.0, Dimension.MASS)
+            IngredientUnit.MILLILITER -> BaseQuantity(amount, Dimension.VOLUME)
+            IngredientUnit.LITER -> BaseQuantity(amount * 1000.0, Dimension.VOLUME)
+            IngredientUnit.TEASPOON -> BaseQuantity(amount * 5.0, Dimension.VOLUME)
+            IngredientUnit.TABLESPOON -> BaseQuantity(amount * 15.0, Dimension.VOLUME)
+            IngredientUnit.PINCH -> BaseQuantity(amount * 0.3, Dimension.VOLUME)
+            IngredientUnit.CUP -> {
                 val cupWeight = profile?.cupWeightGrams
                 if (cupWeight != null) BaseQuantity(amount * cupWeight, Dimension.MASS)
                 else BaseQuantity(amount * 240.0, Dimension.VOLUME)
             }
-            Unit.PIECE, Unit.CLOVE, Unit.BUNCH, Unit.SLICE, Unit.CAN -> {
+            IngredientUnit.PIECE, IngredientUnit.CLOVE, IngredientUnit.BUNCH, IngredientUnit.SLICE, IngredientUnit.CAN -> {
                 val pieceWeight = profile?.pieceWeightGrams
                 if (pieceWeight != null) BaseQuantity(amount * pieceWeight, Dimension.MASS)
                 else BaseQuantity(amount, Dimension.COUNT)
@@ -37,22 +37,22 @@ object UnitConverter {
         }
     }
 
-    fun fromBase(quantity: BaseQuantity, unit: Unit, profile: IngredientProfile?): Double? {
+    fun fromBase(quantity: BaseQuantity, unit: IngredientUnit, profile: IngredientProfile?): Double? {
         return when (unit) {
-            Unit.GRAM -> if (quantity.dimension == Dimension.MASS) quantity.amount else null
-            Unit.KILOGRAM -> if (quantity.dimension == Dimension.MASS) quantity.amount / 1000.0 else null
-            Unit.MILLILITER -> if (quantity.dimension == Dimension.VOLUME) quantity.amount else null
-            Unit.LITER -> if (quantity.dimension == Dimension.VOLUME) quantity.amount / 1000.0 else null
-            Unit.TEASPOON -> if (quantity.dimension == Dimension.VOLUME) quantity.amount / 5.0 else null
-            Unit.TABLESPOON -> if (quantity.dimension == Dimension.VOLUME) quantity.amount / 15.0 else null
-            Unit.PINCH -> if (quantity.dimension == Dimension.VOLUME) quantity.amount / 0.3 else null
-            Unit.CUP -> {
+            IngredientUnit.GRAM -> if (quantity.dimension == Dimension.MASS) quantity.amount else null
+            IngredientUnit.KILOGRAM -> if (quantity.dimension == Dimension.MASS) quantity.amount / 1000.0 else null
+            IngredientUnit.MILLILITER -> if (quantity.dimension == Dimension.VOLUME) quantity.amount else null
+            IngredientUnit.LITER -> if (quantity.dimension == Dimension.VOLUME) quantity.amount / 1000.0 else null
+            IngredientUnit.TEASPOON -> if (quantity.dimension == Dimension.VOLUME) quantity.amount / 5.0 else null
+            IngredientUnit.TABLESPOON -> if (quantity.dimension == Dimension.VOLUME) quantity.amount / 15.0 else null
+            IngredientUnit.PINCH -> if (quantity.dimension == Dimension.VOLUME) quantity.amount / 0.3 else null
+            IngredientUnit.CUP -> {
                 val cupWeight = profile?.cupWeightGrams
                 if (cupWeight != null && quantity.dimension == Dimension.MASS) quantity.amount / cupWeight
                 else if (quantity.dimension == Dimension.VOLUME) quantity.amount / 240.0
                 else null
             }
-            Unit.PIECE, Unit.CLOVE, Unit.BUNCH, Unit.SLICE, Unit.CAN -> {
+            IngredientUnit.PIECE, IngredientUnit.CLOVE, IngredientUnit.BUNCH, IngredientUnit.SLICE, IngredientUnit.CAN -> {
                 val pieceWeight = profile?.pieceWeightGrams
                 if (pieceWeight != null && quantity.dimension == Dimension.MASS) quantity.amount / pieceWeight
                 else if (quantity.dimension == Dimension.COUNT) quantity.amount
@@ -61,18 +61,18 @@ object UnitConverter {
         }
     }
 
-    fun convert(amount: Double, from: Unit, to: Unit, profile: IngredientProfile?): Double? {
+    fun convert(amount: Double, from: IngredientUnit, to: IngredientUnit, profile: IngredientProfile?): Double? {
         val base = toBase(amount, from, profile) ?: return null
         return fromBase(base, to, profile)
     }
 
-    fun sameDimension(a: Unit, b: Unit, profile: IngredientProfile?): Boolean {
+    fun sameDimension(a: IngredientUnit, b: IngredientUnit, profile: IngredientProfile?): Boolean {
         val ba = toBase(1.0, a, profile) ?: return false
         val bb = toBase(1.0, b, profile) ?: return false
         return ba.dimension == bb.dimension
     }
 
-    fun pretty(amount: Double, unit: Unit, profile: IngredientProfile? = null): String {
+    fun pretty(amount: Double, unit: IngredientUnit, profile: IngredientProfile? = null): String {
         val safe = if (abs(amount) < 0.001) 0.01 else amount
         val rounded = when {
             safe >= 100 -> Math.round(safe).toDouble()
@@ -80,19 +80,19 @@ object UnitConverter {
             else -> Math.round(safe * 10.0) / 10.0
         }
         val unitLabel = when (unit) {
-            Unit.GRAM -> "گرم"
-            Unit.KILOGRAM -> "کیلوگرم"
-            Unit.MILLILITER -> "میلی‌لیتر"
-            Unit.LITER -> "لیتر"
-            Unit.TEASPOON -> "قاشق چای‌خوری"
-            Unit.TABLESPOON -> "قاشق غذاخوری"
-            Unit.CUP -> "پیمانه"
-            Unit.PIECE -> "عدد"
-            Unit.CLOVE -> "حبه"
-            Unit.BUNCH -> "دسته"
-            Unit.SLICE -> "برش"
-            Unit.PINCH -> "نوک‌قاشق"
-            Unit.CAN -> "قوطی"
+            IngredientUnit.GRAM -> "گرم"
+            IngredientUnit.KILOGRAM -> "کیلوگرم"
+            IngredientUnit.MILLILITER -> "میلی‌لیتر"
+            IngredientUnit.LITER -> "لیتر"
+            IngredientUnit.TEASPOON -> "قاشق چای‌خوری"
+            IngredientUnit.TABLESPOON -> "قاشق غذاخوری"
+            IngredientUnit.CUP -> "پیمانه"
+            IngredientUnit.PIECE -> "عدد"
+            IngredientUnit.CLOVE -> "حبه"
+            IngredientUnit.BUNCH -> "دسته"
+            IngredientUnit.SLICE -> "برش"
+            IngredientUnit.PINCH -> "نوک‌قاشق"
+            IngredientUnit.CAN -> "قوطی"
         }
         return PersianText.number(rounded) + " " + unitLabel
     }
@@ -109,18 +109,18 @@ object UnitConverter {
         }
     }
 
-    fun shoppingUnit(quantity: BaseQuantity, profile: IngredientProfile?): Unit {
+    fun shoppingUnit(quantity: BaseQuantity, profile: IngredientProfile?): IngredientUnit {
         return when (quantity.dimension) {
-            Dimension.MASS -> if (quantity.amount >= 1000.0) Unit.KILOGRAM else Unit.GRAM
-            Dimension.VOLUME -> if (quantity.amount >= 1000.0) Unit.LITER else Unit.MILLILITER
+            Dimension.MASS -> if (quantity.amount >= 1000.0) IngredientUnit.KILOGRAM else IngredientUnit.GRAM
+            Dimension.VOLUME -> if (quantity.amount >= 1000.0) IngredientUnit.LITER else IngredientUnit.MILLILITER
             Dimension.COUNT -> when (profile?.defaultUnit) {
-                Unit.PIECE, Unit.CLOVE, Unit.BUNCH, Unit.SLICE, Unit.CAN -> profile.defaultUnit
-                else -> Unit.PIECE
+                IngredientUnit.PIECE, IngredientUnit.CLOVE, IngredientUnit.BUNCH, IngredientUnit.SLICE, IngredientUnit.CAN -> profile.defaultUnit
+                else -> IngredientUnit.PIECE
             }
         }
     }
 
-    fun displayForUnit(quantity: BaseQuantity, unit: Unit, profile: IngredientProfile?): String {
+    fun displayForUnit(quantity: BaseQuantity, unit: IngredientUnit, profile: IngredientProfile?): String {
         val value = fromBase(quantity, unit, profile)
         return if (value == null) bestDisplay(quantity, profile) else pretty(value, unit, profile)
     }

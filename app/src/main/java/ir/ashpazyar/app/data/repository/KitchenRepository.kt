@@ -42,7 +42,7 @@ class KitchenRepository @Inject constructor(
     suspend fun addInventory(
         ingredientId: String,
         amount: Double,
-        unit: Unit,
+        unit: IngredientUnit,
         location: StorageLocation,
         purchaseDate: Long?,
         expiryDate: Long?,
@@ -113,13 +113,13 @@ class KitchenRepository @Inject constructor(
                     .sortedBy { it.item.expiryDate ?: Long.MAX_VALUE }
                 for (candidate in candidates) {
                     if (remaining <= 0.000001) break
-                    val available = UnitConverter.toBase(candidate.item.amount, Unit.from(candidate.item.unit), profile)
+                    val available = UnitConverter.toBase(candidate.item.amount, IngredientUnit.from(candidate.item.unit), profile)
                         ?: continue
                     if (available.dimension != wanted.dimension) continue
                     val taken = min(remaining, available.amount)
                     if (taken <= 0.0) continue
                     val newBase = available.amount - taken
-                    val newAmount = UnitConverter.fromBase(BaseQuantity(newBase, available.dimension), Unit.from(candidate.item.unit), profile)
+                    val newAmount = UnitConverter.fromBase(BaseQuantity(newBase, available.dimension), IngredientUnit.from(candidate.item.unit), profile)
                         ?: continue
                     kitchenDao.updateAmount(candidate.item.id, newAmount.coerceAtLeast(0.0), candidate.item.unit)
                     transactions += InventoryTransactionEntity(
@@ -169,10 +169,10 @@ class KitchenRepository @Inject constructor(
             for (transaction in items) {
                 val row = inventory[transaction.inventoryId] ?: continue
                 val profile = ingredientDao.getById(row.item.ingredientId)?.toDomain()?.profile
-                val current = UnitConverter.toBase(row.item.amount, Unit.from(row.item.unit), profile) ?: continue
+                val current = UnitConverter.toBase(row.item.amount, IngredientUnit.from(row.item.unit), profile) ?: continue
                 if (current.dimension.name != transaction.dimension) continue
                 val restoredBase = BaseQuantity(current.amount - transaction.deltaBaseAmount, current.dimension)
-                val restoredAmount = UnitConverter.fromBase(restoredBase, Unit.from(row.item.unit), profile) ?: continue
+                val restoredAmount = UnitConverter.fromBase(restoredBase, IngredientUnit.from(row.item.unit), profile) ?: continue
                 kitchenDao.updateAmount(row.item.id, restoredAmount, row.item.unit)
                 restored = true
             }

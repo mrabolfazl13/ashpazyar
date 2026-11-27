@@ -5,7 +5,7 @@ import ir.ashpazyar.app.core.util.Dimension
 import ir.ashpazyar.app.core.util.JalaliCalendar
 import ir.ashpazyar.app.core.util.PersianText
 import ir.ashpazyar.app.core.util.UnitConverter
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test
@@ -13,55 +13,55 @@ import java.time.LocalDate
 
 class UnitConverterTest {
     private val rice = Fixtures.ingredient("rice", cupWeight = 180.0, pieceWeight = null)
-    private val egg = Fixtures.ingredient("eggs", unit = Unit.PIECE, pieceWeight = 50.0)
+    private val egg = Fixtures.ingredient("eggs", unit = IngredientUnit.PIECE, pieceWeight = 50.0)
 
     @Test fun massToBase() {
-        assertEquals(1500.0, UnitConverter.toBase(1.5, Unit.KILOGRAM, null)!!.amount, 0.0001)
+        assertEquals(1500.0, UnitConverter.toBase(1.5, IngredientUnit.KILOGRAM, null)!!.amount, 0.0001)
     }
 
     @Test fun volumeToBase() {
-        val base = UnitConverter.toBase(2.0, Unit.CUP, null)!!
+        val base = UnitConverter.toBase(2.0, IngredientUnit.CUP, null)!!
         assertEquals(Dimension.VOLUME, base.dimension)
         assertEquals(480.0, base.amount, 0.0001)
     }
 
     @Test fun cupUsesIngredientWeight() {
-        val base = UnitConverter.toBase(1.0, Unit.CUP, rice.profile)!!
+        val base = UnitConverter.toBase(1.0, IngredientUnit.CUP, rice.profile)!!
         assertEquals(Dimension.MASS, base.dimension)
         assertEquals(180.0, base.amount, 0.0001)
     }
 
     @Test fun pieceUsesIngredientWeight() {
-        val base = UnitConverter.toBase(2.0, Unit.PIECE, egg.profile)!!
+        val base = UnitConverter.toBase(2.0, IngredientUnit.PIECE, egg.profile)!!
         assertEquals(Dimension.MASS, base.dimension)
         assertEquals(100.0, base.amount, 0.0001)
     }
 
     @Test fun convertMass() {
-        assertEquals(0.75, UnitConverter.convert(750.0, Unit.GRAM, Unit.KILOGRAM, null)!!, 0.0001)
+        assertEquals(0.75, UnitConverter.convert(750.0, IngredientUnit.GRAM, IngredientUnit.KILOGRAM, null)!!, 0.0001)
     }
 
     @Test fun convertVolume() {
-        assertEquals(3.0, UnitConverter.convert(1.0, Unit.TABLESPOON, Unit.TEASPOON, null)!!, 0.0001)
+        assertEquals(3.0, UnitConverter.convert(1.0, IngredientUnit.TABLESPOON, IngredientUnit.TEASPOON, null)!!, 0.0001)
     }
 
     @Test fun incompatibleDimensionsReturnNull() {
-        assertNull(UnitConverter.convert(1.0, Unit.GRAM, Unit.MILLILITER, null))
+        assertNull(UnitConverter.convert(1.0, IngredientUnit.GRAM, IngredientUnit.MILLILITER, null))
     }
 
     @Test fun shoppingUnitChoosesKilogramAndLiter() {
-        assertEquals(Unit.KILOGRAM, UnitConverter.shoppingUnit(ir.ashpazyar.app.core.util.BaseQuantity(1500.0, Dimension.MASS), null))
-        assertEquals(Unit.LITER, UnitConverter.shoppingUnit(ir.ashpazyar.app.core.util.BaseQuantity(1200.0, Dimension.VOLUME), null))
+        assertEquals(IngredientUnit.KILOGRAM, UnitConverter.shoppingUnit(ir.ashpazyar.app.core.util.BaseQuantity(1500.0, Dimension.MASS), null))
+        assertEquals(IngredientUnit.LITER, UnitConverter.shoppingUnit(ir.ashpazyar.app.core.util.BaseQuantity(1200.0, Dimension.VOLUME), null))
     }
 
     @Test fun countUnitWithoutMetadata() {
-        val base = UnitConverter.toBase(3.0, Unit.PIECE, null)!!
+        val base = UnitConverter.toBase(3.0, IngredientUnit.PIECE, null)!!
         assertEquals(Dimension.COUNT, base.dimension)
-        assertEquals(Unit.PIECE, UnitConverter.shoppingUnit(base, null))
+        assertEquals(IngredientUnit.PIECE, UnitConverter.shoppingUnit(base, null))
     }
 
     @Test fun prettyUsesPersianDigits() {
-        val text = UnitConverter.pretty(250.0, Unit.GRAM, null)
+        val text = UnitConverter.pretty(250.0, IngredientUnit.GRAM, null)
         assertEquals("۲۵۰ گرم", text)
     }
 

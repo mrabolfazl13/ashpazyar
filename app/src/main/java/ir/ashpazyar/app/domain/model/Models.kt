@@ -1,5 +1,6 @@
 package ir.ashpazyar.app.domain.model
 
+import ir.ashpazyar.app.core.util.Dimension
 import kotlinx.serialization.Serializable
 
 enum class Difficulty(val label: String) {
@@ -34,7 +35,7 @@ enum class InventoryStatus(val label: String) {
     FRESH("تازه"), NEAR_EXPIRY("نزدیک انقضا"), EXPIRED("منقضی‌شده"), NO_DATE("بدون تاریخ")
 }
 
-enum class Unit(val label: String, val symbol: String) {
+enum class IngredientUnit(val label: String, val symbol: String) {
     GRAM("گرم", "گ"), KILOGRAM("کیلوگرم", "ک‌گ"), MILLILITER("میلی‌لیتر", "می‌ل"),
     LITER("لیتر", "ل"), TEASPOON("قاشق چای‌خوری", "ق‌چ"), TABLESPOON("قاشق غذاخوری", "ق‌غ"),
     CUP("پیمانه", "پیمانه"), PIECE("عدد", "عدد"), CLOVE("حبه", "حبه"),
@@ -51,7 +52,7 @@ data class Ingredient(
     val nameEn: String,
     val category: String,
     val categoryTitle: String,
-    val defaultUnit: Unit,
+    val defaultUnit: IngredientUnit,
     val cupWeightGrams: Double? = null,
     val pieceWeightGrams: Double? = null,
     val referencePricePerKg: Double? = null
@@ -62,7 +63,7 @@ data class Ingredient(
 data class IngredientProfile(
     val id: String,
     val name: String,
-    val defaultUnit: Unit,
+    val defaultUnit: IngredientUnit,
     val cupWeightGrams: Double? = null,
     val pieceWeightGrams: Double? = null
 )
@@ -71,7 +72,7 @@ data class RecipeIngredient(
     val ingredientId: String,
     val ingredientName: String,
     val amount: Double,
-    val unit: Unit,
+    val unit: IngredientUnit,
     val note: String = "",
     val optional: Boolean = false
 )
@@ -139,7 +140,7 @@ data class DraftIngredient(
     val ingredientId: String,
     val ingredientName: String,
     val amount: Double,
-    val unit: Unit,
+    val unit: IngredientUnit,
     val note: String = "",
     val optional: Boolean = false
 )
@@ -155,7 +156,7 @@ data class InventoryItem(
     val ingredient: Ingredient?,
     val ingredientId: String,
     val amount: Double,
-    val unit: Unit,
+    val unit: IngredientUnit,
     val location: StorageLocation,
     val purchaseDate: Long?,
     val expiryDate: Long?,
@@ -217,7 +218,7 @@ data class ShoppingItem(
     val name: String,
     val category: String,
     val amount: Double,
-    val unit: Unit,
+    val unit: IngredientUnit,
     val estimatedPrice: Double?,
     val actualPrice: Double?,
     val isChecked: Boolean,
@@ -332,7 +333,7 @@ data class MissingIngredient(
     val name: String,
     val requiredAmount: Double,
     val availableAmount: Double,
-    val unit: Unit,
+    val unit: IngredientUnit,
     val optional: Boolean,
     val suggestedAmountLabel: String
 )
@@ -385,7 +386,7 @@ data class ShoppingAggregate(
     val name: String,
     val category: String,
     val amount: Double,
-    val unit: Unit,
+    val unit: IngredientUnit,
     val sourceRecipeIds: Set<String>
 )
 

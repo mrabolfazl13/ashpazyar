@@ -93,7 +93,7 @@ class SmartKitchenViewModel @Inject constructor(
                 .thenBy { it.recipe.editorialOrder }
         )
         val expiring = data.inventory.count {
-            val status = it.status(data.warningDays)
+            val status = it.status(warningDays = data.warningDays)
             status == InventoryStatus.NEAR_EXPIRY || status == InventoryStatus.EXPIRED
         }
         SmartKitchenUiState(

@@ -9,7 +9,7 @@ import ir.ashpazyar.app.data.local.AshpazyarDatabase
 import ir.ashpazyar.app.data.local.entity.ShoppingListEntity
 import ir.ashpazyar.app.data.local.entity.ShoppingListItemEntity
 import ir.ashpazyar.app.data.toDomain
-import ir.ashpazyar.app.domain.engine.ShoppingBuildResult
+import ir.ashpazyar.app.domain.model.ShoppingBuildResult
 import ir.ashpazyar.app.domain.engine.ShoppingEngine
 import ir.ashpazyar.app.domain.model.*
 import kotlinx.coroutines.flow.Flow
@@ -52,7 +52,7 @@ class ShoppingRepository @Inject constructor(
     suspend fun addManualItem(
         name: String,
         amount: Double,
-        unit: Unit,
+        unit: IngredientUnit,
         category: String = "سایر",
         ingredientId: String? = null,
         note: String = ""
@@ -109,7 +109,7 @@ class ShoppingRepository @Inject constructor(
                 val match = existing.firstOrNull { row ->
                     row.isChecked.not() && row.ingredientId == item.ingredientId &&
                         (row.unit == item.unit.name || runCatching {
-                            val oldBase = UnitConverter.toBase(row.amount, Unit.from(row.unit), profile)
+                            val oldBase = UnitConverter.toBase(row.amount, IngredientUnit.from(row.unit), profile)
                             oldBase != null && newBase != null && oldBase.dimension == newBase.dimension
                         }.getOrDefault(false))
                 }
@@ -138,10 +138,10 @@ class ShoppingRepository @Inject constructor(
                     val merged = if (match.unit == item.unit.name) {
                         match.amount + item.amount
                     } else {
-                        val oldBase = UnitConverter.toBase(match.amount, Unit.from(match.unit), profile)
+                        val oldBase = UnitConverter.toBase(match.amount, IngredientUnit.from(match.unit), profile)
                         if (oldBase != null && newBase != null && oldBase.dimension == newBase.dimension) {
                             val sum = BaseQuantity(oldBase.amount + newBase.amount, newBase.dimension)
-                            UnitConverter.fromBase(sum, Unit.from(match.unit), profile) ?: match.amount
+                            UnitConverter.fromBase(sum, IngredientUnit.from(match.unit), profile) ?: match.amount
                         } else match.amount
                     }
                     dao.updateItem(match.copy(amount = merged, estimatedPrice = (match.estimatedPrice ?: 0.0) + (estimate ?: 0.0)))

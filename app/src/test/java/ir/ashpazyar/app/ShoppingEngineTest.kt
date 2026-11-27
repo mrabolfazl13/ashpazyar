@@ -1,7 +1,7 @@
 package ir.ashpazyar.app
 
 import ir.ashpazyar.app.domain.engine.ShoppingEngine
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -9,8 +9,8 @@ import org.junit.Test
 class ShoppingEngineTest {
     private val engine = ShoppingEngine()
     private val rice = Fixtures.ingredient("rice", "برنج")
-    private val milk = Fixtures.ingredient("milk", "شیر", unit = Unit.MILLILITER)
-    private val eggs = Fixtures.ingredient("eggs", "تخم‌مرغ", unit = Unit.PIECE, pieceWeight = 50.0)
+    private val milk = Fixtures.ingredient("milk", "شیر", unit = IngredientUnit.MILLILITER)
+    private val eggs = Fixtures.ingredient("eggs", "تخم‌مرغ", unit = IngredientUnit.PIECE, pieceWeight = 50.0)
 
     @Test fun twentyIngredientsProduceTwentyDeficits() {
         val ingredients = (1..20).map { Fixtures.ingredient("item-" + it, "ماده " + it) }
@@ -61,10 +61,10 @@ class ShoppingEngineTest {
         val recipe = Fixtures.recipe(
             ingredients = listOf(
                 Fixtures.line("rice", 100.0, name = "برنج"),
-                Fixtures.line("milk", 200.0, Unit.MILLILITER, name = "شیر")
+                Fixtures.line("milk", 200.0, IngredientUnit.MILLILITER, name = "شیر")
             )
         )
-        val inventory = listOf(Fixtures.inventory(rice, 60.0), Fixtures.inventory(milk, 50.0, Unit.MILLILITER))
+        val inventory = listOf(Fixtures.inventory(rice, 60.0), Fixtures.inventory(milk, 50.0, IngredientUnit.MILLILITER))
         val result = engine.buildFromRecipe(
             recipe,
             4,
@@ -80,7 +80,7 @@ class ShoppingEngineTest {
         val recipe = Fixtures.recipe(
             ingredients = listOf(
                 Fixtures.line("rice", 100.0, name = "برنج"),
-                Fixtures.line("eggs", 2.0, Unit.PIECE, name = "تخم‌مرغ", optional = true)
+                Fixtures.line("eggs", 2.0, IngredientUnit.PIECE, name = "تخم‌مرغ", optional = true)
             )
         )
         val result = engine.buildFromRecipe(
@@ -93,11 +93,11 @@ class ShoppingEngineTest {
     }
 
     @Test fun noInventoryStillBuildsFullList() {
-        val recipe = Fixtures.recipe(ingredients = listOf(Fixtures.line("eggs", 3.0, Unit.PIECE, name = "تخم‌مرغ")))
+        val recipe = Fixtures.recipe(ingredients = listOf(Fixtures.line("eggs", 3.0, IngredientUnit.PIECE, name = "تخم‌مرغ")))
         val result = engine.buildFromRecipe(recipe, 4, emptyList(), mapOf("eggs" to eggs))
         assertEquals(1, result.items.size)
         assertEquals(3.0, result.items.first().amount, 0.0001)
-        assertEquals(Unit.PIECE, result.items.first().unit)
+        assertEquals(IngredientUnit.PIECE, result.items.first().unit)
     }
 
     @Test fun sourceRecipesArePreserved() {

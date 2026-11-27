@@ -8,7 +8,7 @@ import ir.ashpazyar.app.core.util.PersianText
 import ir.ashpazyar.app.data.repository.ShoppingRepository
 import ir.ashpazyar.app.domain.model.ShoppingItem
 import ir.ashpazyar.app.domain.model.ShoppingList
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -77,7 +77,7 @@ class ShoppingViewModel @Inject constructor(
         viewModelScope.launch { repository.deleteItem(item.id) }
     }
 
-    fun addManual(name: String, amountText: String, unit: Unit, category: String) {
+    fun addManual(name: String, amountText: String, unit: IngredientUnit, category: String) {
         val amount = PersianText.toLatinDigits(amountText).replace("٫", ".").replace(",", "").trim().toDoubleOrNull()
         if (name.trim().length < 2 || amount == null || amount <= 0) {
             viewModelScope.launch { _events.emit("نام و مقدار معتبر وارد کنید") }

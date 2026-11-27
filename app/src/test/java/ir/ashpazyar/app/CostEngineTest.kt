@@ -1,7 +1,7 @@
 package ir.ashpazyar.app
 
 import ir.ashpazyar.app.domain.engine.CostEngine
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -29,8 +29,8 @@ class CostEngineTest {
     }
 
     @Test fun pieceCostUsesPieceWeight() {
-        val egg = Fixtures.ingredient("eggs", "تخم‌مرغ", unit = Unit.PIECE, pieceWeight = 50.0, price = 200000.0)
-        val recipe = Fixtures.recipe(ingredients = listOf(Fixtures.line("eggs", 2.0, Unit.PIECE)))
+        val egg = Fixtures.ingredient("eggs", "تخم‌مرغ", unit = IngredientUnit.PIECE, pieceWeight = 50.0, price = 200000.0)
+        val recipe = Fixtures.recipe(ingredients = listOf(Fixtures.line("eggs", 2.0, IngredientUnit.PIECE)))
         val result = engine.calculate(recipe, 4, mapOf("eggs" to egg), emptyMap())
         assertEquals(20000.0, result.total, 0.001)
     }

@@ -5,7 +5,7 @@ import ir.ashpazyar.app.core.util.Dimension
 import ir.ashpazyar.app.domain.engine.IngredientMatcher
 import ir.ashpazyar.app.domain.engine.RecipeScaler
 import ir.ashpazyar.app.domain.engine.SubstituteRule
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -111,7 +111,7 @@ class IngredientMatcherTest {
     @Test fun recipeScalingRoundsPieces() {
         val recipe = Fixtures.recipe(
             servings = 2,
-            ingredients = listOf(Fixtures.line("eggs", 1.0, Unit.PIECE, name = "تخم‌مرغ"))
+            ingredients = listOf(Fixtures.line("eggs", 1.0, IngredientUnit.PIECE, name = "تخم‌مرغ"))
         )
         val scaled = RecipeScaler.scale(recipe, 3)
         assertEquals(1.5, scaled.first().amount, 0.0001)

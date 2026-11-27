@@ -24,7 +24,7 @@ import ir.ashpazyar.app.core.util.PersianText
 import ir.ashpazyar.app.core.util.UnitConverter
 import ir.ashpazyar.app.domain.model.Ingredient
 import ir.ashpazyar.app.domain.model.StorageLocation
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import ir.ashpazyar.app.ui.components.*
 import ir.ashpazyar.app.ui.theme.AshpaTheme
 
@@ -166,13 +166,13 @@ fun AddPantryScreen(
     }
 }
 
-private fun unitOptions(ingredient: Ingredient): List<Unit> {
+private fun unitOptions(ingredient: Ingredient): List<IngredientUnit> {
     val defaults = mutableListOf(ingredient.defaultUnit)
     val candidates = when (ingredient.defaultUnit) {
-        Unit.KILOGRAM, Unit.GRAM -> listOf(Unit.GRAM, Unit.KILOGRAM, Unit.PIECE)
-        Unit.LITER, Unit.MILLILITER -> listOf(Unit.MILLILITER, Unit.LITER, Unit.CUP)
-        Unit.PIECE, Unit.CLOVE, Unit.BUNCH, Unit.SLICE -> listOf(Unit.PIECE, Unit.GRAM, Unit.BUNCH)
-        else -> listOf(Unit.GRAM, Unit.PIECE, Unit.CUP, Unit.TABLESPOON)
+        IngredientUnit.KILOGRAM, IngredientUnit.GRAM -> listOf(IngredientUnit.GRAM, IngredientUnit.KILOGRAM, IngredientUnit.PIECE)
+        IngredientUnit.LITER, IngredientUnit.MILLILITER -> listOf(IngredientUnit.MILLILITER, IngredientUnit.LITER, IngredientUnit.CUP)
+        IngredientUnit.PIECE, IngredientUnit.CLOVE, IngredientUnit.BUNCH, IngredientUnit.SLICE -> listOf(IngredientUnit.PIECE, IngredientUnit.GRAM, IngredientUnit.BUNCH)
+        else -> listOf(IngredientUnit.GRAM, IngredientUnit.PIECE, IngredientUnit.CUP, IngredientUnit.TABLESPOON)
     }
     candidates.forEach { if (it !in defaults) defaults += it }
     return defaults.distinct().filter { UnitConverter.toBase(1.0, it, ingredient.profile) != null }

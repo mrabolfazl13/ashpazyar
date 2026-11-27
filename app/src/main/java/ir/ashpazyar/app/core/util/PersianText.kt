@@ -57,6 +57,8 @@ object PersianText {
         return builder.toString()
     }
 
+    fun toLatinDigits(value: String): String = latinDigits(value)
+
     fun number(value: Double, maxFraction: Int = 1): String {
         val pattern = if (maxFraction <= 0) "0" else "0." + "0".repeat(maxFraction.coerceIn(1, 3))
         val symbols = DecimalFormatSymbols(Locale.US).apply { decimalSeparator = '٫' }

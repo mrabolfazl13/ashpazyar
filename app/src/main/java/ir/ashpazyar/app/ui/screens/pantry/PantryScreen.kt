@@ -216,7 +216,7 @@ private fun PantryRow(item: InventoryItem, warningDays: Int, onClick: () -> Unit
 private fun EditInventorySheet(
     item: InventoryItem,
     onDismiss: () -> Unit,
-    onSave: (String, Unit) -> Unit,
+    onSave: (String, IngredientUnit) -> Unit,
     onDelete: () -> Unit
 ) {
     val palette = AshpaTheme.palette
@@ -235,7 +235,7 @@ private fun EditInventorySheet(
             )
             Spacer(Modifier.height(9.dp))
             LazyRow(horizontalArrangement = Arrangement.spacedBy(7.dp)) {
-                items(listOf(Unit.GRAM, Unit.KILOGRAM, Unit.PIECE, Unit.MILLILITER, Unit.LITER, Unit.CUP, Unit.TABLESPOON, Unit.CLOVE, Unit.BUNCH)) { u ->
+                items(listOf(IngredientUnit.GRAM, IngredientUnit.KILOGRAM, IngredientUnit.PIECE, IngredientUnit.MILLILITER, IngredientUnit.LITER, IngredientUnit.CUP, IngredientUnit.TABLESPOON, IngredientUnit.CLOVE, IngredientUnit.BUNCH)) { u ->
                     Pill(u.label, unit == u, onClick = { unit = u })
                 }
             }

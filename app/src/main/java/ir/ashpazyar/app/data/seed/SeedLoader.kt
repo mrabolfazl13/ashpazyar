@@ -68,7 +68,7 @@ class SeedLoader @Inject constructor(
             }
             database.ingredientDao().insertAliases(aliases)
 
-            val substitutes = substituteFile.substitutes.filter {
+            val substitutes = substituteFile?.substitutes.orEmpty().filter {
                 ingredientMap.containsKey(it.ingredientId) && ingredientMap.containsKey(it.substituteIngredientId)
             }
             database.ingredientDao().clearGlobalSubstitutes()

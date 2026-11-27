@@ -91,7 +91,7 @@ fun TimersScreen(
                             PrimaryButton(
                                 "شروع",
                                 onClick = {
-                                    val minutes = PersianText.toLatinDigits(customMinutes).toIntOrNull() ?: 0
+                                    val minutes = PersianText.latinDigits(customMinutes).toIntOrNull() ?: 0
                                     if (minutes > 0) {
                                         viewModel.start(minutes)
                                         customMinutes = ""

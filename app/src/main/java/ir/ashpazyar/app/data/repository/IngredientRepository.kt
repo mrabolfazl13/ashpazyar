@@ -6,7 +6,7 @@ import ir.ashpazyar.app.data.local.entity.IngredientAliasEntity
 import ir.ashpazyar.app.data.local.entity.IngredientEntity
 import ir.ashpazyar.app.data.toDomain
 import ir.ashpazyar.app.domain.model.Ingredient
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import java.util.UUID
@@ -50,7 +50,7 @@ class IngredientRepository @Inject constructor(
             .toList()
     }
 
-    suspend fun createCustom(name: String, categoryTitle: String, defaultUnit: Unit): Ingredient {
+    suspend fun createCustom(name: String, categoryTitle: String, defaultUnit: IngredientUnit): Ingredient {
         require(name.trim().length >= 2) { "نام ماده اولیه کوتاه است" }
         val normalized = PersianText.normalize(name)
         dao.findByAlias(normalized)?.let { return it.toDomain() }

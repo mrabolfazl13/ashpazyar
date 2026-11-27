@@ -9,7 +9,7 @@ import ir.ashpazyar.app.data.repository.IngredientRepository
 import ir.ashpazyar.app.data.repository.KitchenRepository
 import ir.ashpazyar.app.domain.model.Ingredient
 import ir.ashpazyar.app.domain.model.StorageLocation
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -25,7 +25,7 @@ data class AddPantryUiState(
     val suggestions: List<Ingredient> = emptyList(),
     val selected: Ingredient? = null,
     val amount: String = "",
-    val unit: Unit = Unit.GRAM,
+    val unit: IngredientUnit = IngredientUnit.GRAM,
     val location: StorageLocation = StorageLocation.PANTRY,
     val expiryDays: Int? = 14,
     val note: String = "",
@@ -42,7 +42,7 @@ class AddPantryViewModel @Inject constructor(
     private val query = MutableStateFlow("")
     private val selected = MutableStateFlow<Ingredient?>(null)
     private val amount = MutableStateFlow("")
-    private val unit = MutableStateFlow(Unit.GRAM)
+    private val unit = MutableStateFlow(IngredientUnit.GRAM)
     private val location = MutableStateFlow(StorageLocation.PANTRY)
     private val expiryDays = MutableStateFlow<Int?>(14)
     private val note = MutableStateFlow("")
@@ -75,14 +75,28 @@ class AddPantryViewModel @Inject constructor(
         .combine(price) { data, p -> data.copy(price = p) }
         .combine(error) { data, e -> data.copy(error = e) }
         .combine(saving) { data, s -> data.copy(saving = s) }
-        .combine(query) { data, q -> data.copy(query = q) }
+        .combine(query) { data, q ->
+            AddPantryUiState(
+                query = q,
+                suggestions = data.suggestions,
+                selected = data.selected,
+                amount = data.amount,
+                unit = data.unit,
+                location = data.location,
+                expiryDays = data.expiryDays,
+                note = data.note,
+                price = data.price,
+                error = data.error,
+                saving = data.saving
+            )
+        }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), AddPantryUiState())
 
     private data class Quad(
         val suggestions: List<Ingredient>,
         val selected: Ingredient?,
         val amount: String,
-        val unit: Unit,
+        val unit: IngredientUnit,
         val location: StorageLocation = StorageLocation.PANTRY,
         val expiryDays: Int? = 14,
         val note: String = "",
@@ -107,12 +121,12 @@ class AddPantryViewModel @Inject constructor(
         selected.value = null
         query.value = ""
         amount.value = ""
-        unit.value = Unit.GRAM
+        unit.value = IngredientUnit.GRAM
         error.value = null
     }
 
     fun setAmount(value: String) { amount.value = value; error.value = null }
-    fun setUnit(value: Unit) { unit.value = value }
+    fun setUnit(value: IngredientUnit) { unit.value = value }
     fun setLocation(value: StorageLocation) { location.value = value }
     fun setExpiryDays(value: Int?) { expiryDays.value = value }
     fun setNote(value: String) { note.value = value }

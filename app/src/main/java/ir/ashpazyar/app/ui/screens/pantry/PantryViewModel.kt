@@ -10,7 +10,7 @@ import ir.ashpazyar.app.data.repository.SettingsRepository
 import ir.ashpazyar.app.domain.model.InventoryItem
 import ir.ashpazyar.app.domain.model.InventoryStatus
 import ir.ashpazyar.app.domain.model.StorageLocation
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -77,7 +77,7 @@ class PantryViewModel @Inject constructor(
     fun setQuery(value: String) { query.value = value }
     fun setLocation(value: StorageLocation?) { location.value = value }
 
-    fun updateAmount(item: InventoryItem, amountText: String, unit: Unit) {
+    fun updateAmount(item: InventoryItem, amountText: String, unit: IngredientUnit) {
         val amount = amountText.toPersianDoubleOrNull()
         if (amount == null || amount < 0) {
             emit("مقدار معتبر وارد کنید")

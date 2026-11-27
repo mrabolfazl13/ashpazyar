@@ -3,12 +3,12 @@ package ir.ashpazyar.app.domain.engine
 import ir.ashpazyar.app.core.util.UnitConverter
 import ir.ashpazyar.app.domain.model.Recipe
 import ir.ashpazyar.app.domain.model.RecipeIngredient
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 
 data class ScaledIngredient(
     val source: RecipeIngredient,
     val amount: Double,
-    val unit: Unit,
+    val unit: IngredientUnit,
     val amountLabel: String
 )
 
@@ -18,7 +18,7 @@ object RecipeScaler {
         val target = targetServings.coerceAtLeast(1)
         val factor = target.toDouble() / base.toDouble()
         val profile = ir.ashpazyar.app.domain.model.IngredientProfile(
-            id = "", name = "", defaultUnit = Unit.GRAM
+            id = "", name = "", defaultUnit = IngredientUnit.GRAM
         )
         return recipe.ingredients.map { ingredient ->
             val scaled = ingredient.amount * factor
@@ -37,17 +37,17 @@ object RecipeScaler {
         return line.amount * (targetServings.coerceAtLeast(1).toDouble() / base.toDouble())
     }
 
-    private fun roundSmart(value: Double, unit: Unit): Double {
+    private fun roundSmart(value: Double, unit: IngredientUnit): Double {
         return when (unit) {
-            Unit.PIECE, Unit.CLOVE, Unit.SLICE, Unit.CAN, Unit.BUNCH -> {
+            IngredientUnit.PIECE, IngredientUnit.CLOVE, IngredientUnit.SLICE, IngredientUnit.CAN, IngredientUnit.BUNCH -> {
                 if (value >= 4) Math.round(value).toDouble()
                 else Math.round(value * 2.0) / 2.0
             }
-            Unit.TEASPOON, Unit.TABLESPOON, Unit.PINCH -> Math.round(value * 4.0) / 4.0
-            Unit.GRAM, Unit.MILLILITER -> if (value >= 100) Math.round(value / 5.0) * 5.0
+            IngredientUnit.TEASPOON, IngredientUnit.TABLESPOON, IngredientUnit.PINCH -> Math.round(value * 4.0) / 4.0
+            IngredientUnit.GRAM, IngredientUnit.MILLILITER -> if (value >= 100) Math.round(value / 5.0) * 5.0
             else Math.round(value * 10.0) / 10.0
-            Unit.KILOGRAM, Unit.LITER -> Math.round(value * 100.0) / 100.0
-            Unit.CUP -> Math.round(value * 4.0) / 4.0
+            IngredientUnit.KILOGRAM, IngredientUnit.LITER -> Math.round(value * 100.0) / 100.0
+            IngredientUnit.CUP -> Math.round(value * 4.0) / 4.0
         }
     }
 }

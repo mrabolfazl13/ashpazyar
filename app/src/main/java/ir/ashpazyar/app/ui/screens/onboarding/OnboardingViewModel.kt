@@ -12,6 +12,6 @@ class OnboardingViewModel @Inject constructor(
     private val settingsRepository: SettingsRepository
 ) : ViewModel() {
     fun complete() {
-        viewModelScope.launch { settingsRepository.completeOnboarding() }
+        viewModelScope.launch { settingsRepository.setOnboardingCompleted(true) }
     }
 }

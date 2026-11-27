@@ -6,7 +6,7 @@ object Fixtures {
     fun ingredient(
         id: String,
         name: String = id,
-        unit: Unit = Unit.GRAM,
+        unit: IngredientUnit = IngredientUnit.GRAM,
         cupWeight: Double? = null,
         pieceWeight: Double? = null,
         price: Double? = 100000.0
@@ -25,7 +25,7 @@ object Fixtures {
     fun line(
         id: String,
         amount: Double,
-        unit: Unit = Unit.GRAM,
+        unit: IngredientUnit = IngredientUnit.GRAM,
         name: String = id,
         optional: Boolean = false
     ) = RecipeIngredient(id, name, amount, unit, optional = optional)
@@ -89,7 +89,7 @@ object Fixtures {
     fun inventory(
         ingredient: Ingredient,
         amount: Double,
-        unit: Unit = ingredient.defaultUnit
+        unit: IngredientUnit = ingredient.defaultUnit
     ) = InventoryItem(
         id = 1,
         ingredient = ingredient,

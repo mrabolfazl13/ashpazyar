@@ -29,7 +29,7 @@ import ir.ashpazyar.app.ui.navigation.Routes
 import ir.ashpazyar.app.ui.screens.about.AboutScreen
 import ir.ashpazyar.app.ui.screens.backup.BackupScreen
 import ir.ashpazyar.app.ui.screens.categories.CategoriesScreen
-import ir.ashpazyar.app.ui.screens.categories.FavoritesScreen
+import ir.ashpazyar.app.ui.screens.favorites.FavoritesScreen
 import ir.ashpazyar.app.ui.screens.converter.ConverterScreen
 import ir.ashpazyar.app.ui.screens.cooking.CookingModeScreen
 import ir.ashpazyar.app.ui.screens.cost.CostScreen

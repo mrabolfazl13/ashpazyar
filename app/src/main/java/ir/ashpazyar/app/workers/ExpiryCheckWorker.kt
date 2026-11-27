@@ -19,8 +19,8 @@ class ExpiryCheckWorker(context: Context, params: WorkerParameters) : CoroutineW
             ?: ir.ashpazyar.app.domain.model.UserSettings()
         if (!settings.expiryNotifications) return Result.success()
         val inventory = entry.kitchenDao().getInventory().map { it.toDomain() }
-        val expired = inventory.filter { it.status(settings.expirationWarningDays) == InventoryStatus.EXPIRED }
-        val soon = inventory.filter { it.status(settings.expirationWarningDays) == InventoryStatus.NEAR_EXPIRY }
+        val expired = inventory.filter { it.status(warningDays = settings.expirationWarningDays) == InventoryStatus.EXPIRED }
+        val soon = inventory.filter { it.status(warningDays = settings.expirationWarningDays) == InventoryStatus.NEAR_EXPIRY }
         if (expired.isNotEmpty() || soon.isNotEmpty()) {
             val names = (expired + soon).take(3).joinToString("، ") { it.displayName }
             NotificationHelper.showExpiry(appContext, expired.size, soon.size, names)

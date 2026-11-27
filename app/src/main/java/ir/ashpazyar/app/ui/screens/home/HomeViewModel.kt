@@ -98,7 +98,7 @@ class HomeViewModel @Inject constructor(
             else -> "زمستان"
         }
         val expiring = base.inventory.count {
-            val status = it.status(settings.expirationWarningDays)
+            val status = it.status(warningDays = settings.expirationWarningDays)
             status == InventoryStatus.NEAR_EXPIRY || status == InventoryStatus.EXPIRED
         }
         HomeUiState(

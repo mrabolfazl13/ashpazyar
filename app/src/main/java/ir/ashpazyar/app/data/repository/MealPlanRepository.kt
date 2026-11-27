@@ -5,8 +5,8 @@ import ir.ashpazyar.app.data.local.AshpazyarDatabase
 import ir.ashpazyar.app.data.local.entity.MealPlanItemEntity
 import ir.ashpazyar.app.data.toDomain
 import ir.ashpazyar.app.domain.engine.MealPlanGenerator
-import ir.ashpazyar.app.domain.engine.PlanGenerationInput
-import ir.ashpazyar.app.domain.engine.PlanProposal
+import ir.ashpazyar.app.domain.model.PlanGenerationInput
+import ir.ashpazyar.app.domain.model.PlanProposal
 import ir.ashpazyar.app.domain.engine.SubstituteRule
 import ir.ashpazyar.app.domain.model.MealPlanEntry
 import ir.ashpazyar.app.domain.model.MealType

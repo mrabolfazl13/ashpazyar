@@ -8,7 +8,7 @@ import ir.ashpazyar.app.core.util.PersianText
 import ir.ashpazyar.app.core.util.UnitConverter
 import ir.ashpazyar.app.data.repository.IngredientRepository
 import ir.ashpazyar.app.domain.model.Ingredient
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
@@ -18,10 +18,10 @@ data class ConverterUiState(
     val selected: Ingredient? = null,
     val query: String = "",
     val amount: String = "1",
-    val fromUnit: Unit = Unit.CUP,
-    val toUnit: Unit = Unit.MILLILITER,
-    val fromUnits: List<Unit> = Unit.entries,
-    val toUnits: List<Unit> = Unit.entries,
+    val fromUnit: IngredientUnit = IngredientUnit.CUP,
+    val toUnit: IngredientUnit = IngredientUnit.MILLILITER,
+    val fromUnits: List<IngredientUnit> = IngredientUnit.entries,
+    val toUnits: List<IngredientUnit> = IngredientUnit.entries,
     val result: String = "",
     val error: String? = null
 )
@@ -32,8 +32,8 @@ class ConverterViewModel @Inject constructor(
 ) : ViewModel() {
     private val selectedId = MutableStateFlow<String?>(null)
     private val amount = MutableStateFlow("1")
-    private val fromUnit = MutableStateFlow(Unit.CUP)
-    private val toUnit = MutableStateFlow(Unit.MILLILITER)
+    private val fromUnit = MutableStateFlow(IngredientUnit.CUP)
+    private val toUnit = MutableStateFlow(IngredientUnit.MILLILITER)
     private val query = MutableStateFlow("")
 
     val uiState: StateFlow<ConverterUiState> = combine(
@@ -44,7 +44,7 @@ class ConverterViewModel @Inject constructor(
     ) { ingredients, selection ->
         val selected = ingredients.firstOrNull { it.id == selection.selectedId }
         val profile = selected?.profile
-        val allUnits = Unit.entries
+        val allUnits = IngredientUnit.entries
         val fromUnits = allUnits.filter { UnitConverter.toBase(1.0, it, profile) != null }
         val fromBase = UnitConverter.toBase(1.0, selection.from, profile)
         val toUnits = if (fromBase == null) allUnits
@@ -76,32 +76,32 @@ class ConverterViewModel @Inject constructor(
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), ConverterUiState())
 
-    private data class Selection(val selectedId: String?, val amount: String, val from: Unit, val to: Unit, val query: String)
+    private data class Selection(val selectedId: String?, val amount: String, val from: IngredientUnit, val to: IngredientUnit, val query: String)
 
     fun setAmount(value: String) {
         amount.value = value.filter { it.isDigit() || it == '.' || it == '/' || it == '٫' || it == ',' || it in '۰'..'۹' }
     }
 
-    fun setFrom(unit: Unit) {
+    fun setFrom(unit: IngredientUnit) {
         fromUnit.value = unit
         val profile = uiState.value.selected?.profile
         val base = UnitConverter.toBase(1.0, unit, profile) ?: return
         if (UnitConverter.fromBase(base, toUnit.value, profile) == null) {
-            val candidate = Unit.entries.firstOrNull { UnitConverter.fromBase(base, it, profile) != null }
+            val candidate = IngredientUnit.entries.firstOrNull { UnitConverter.fromBase(base, it, profile) != null }
             if (candidate != null) toUnit.value = candidate
         }
     }
 
-    fun setTo(unit: Unit) { toUnit.value = unit }
+    fun setTo(unit: IngredientUnit) { toUnit.value = unit }
     fun setQuery(value: String) { query.value = value }
 
     fun selectIngredient(ingredient: Ingredient?) {
         selectedId.value = ingredient?.id
         val profile = ingredient?.profile
-        val defaultFrom = if (profile?.cupWeightGrams != null) Unit.CUP else Unit.GRAM
+        val defaultFrom = if (profile?.cupWeightGrams != null) IngredientUnit.CUP else IngredientUnit.GRAM
         fromUnit.value = defaultFrom
         val base = UnitConverter.toBase(1.0, defaultFrom, profile)
-        toUnit.value = Unit.entries.firstOrNull { it != defaultFrom && base != null && UnitConverter.fromBase(base, it, profile) != null }
-            ?: Unit.KILOGRAM
+        toUnit.value = IngredientUnit.entries.firstOrNull { it != defaultFrom && base != null && UnitConverter.fromBase(base, it, profile) != null }
+            ?: IngredientUnit.KILOGRAM
     }
 }

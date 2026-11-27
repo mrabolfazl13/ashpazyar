@@ -182,7 +182,7 @@ class BackupRepository @Inject constructor(
                         ingredientId = it.ingredientId,
                         ingredientName = ingredients[it.ingredientId]?.name.orEmpty(),
                         amount = it.amount,
-                        unit = Unit.from(it.unit),
+                        unit = IngredientUnit.from(it.unit),
                         note = it.note,
                         optional = it.optional
                     )
@@ -208,7 +208,7 @@ class BackupRepository @Inject constructor(
                     InventoryEntity(
                         ingredientId = item.ingredientId,
                         amount = item.amount,
-                        unit = Unit.from(item.unit).name,
+                        unit = IngredientUnit.from(item.unit).name,
                         location = StorageLocation.from(item.location).name,
                         expiryDate = item.expiryDate,
                         note = item.note,
@@ -244,7 +244,7 @@ class BackupRepository @Inject constructor(
                         name = item.name,
                         category = item.category.ifBlank { "سایر" },
                         amount = item.amount.coerceAtLeast(0.0),
-                        unit = Unit.from(item.unit).name,
+                        unit = IngredientUnit.from(item.unit).name,
                         estimatedPrice = item.estimatedPrice,
                         actualPrice = item.actualPrice,
                         isChecked = item.isChecked

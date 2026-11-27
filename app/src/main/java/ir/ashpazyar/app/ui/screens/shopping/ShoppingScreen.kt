@@ -26,7 +26,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import ir.ashpazyar.app.core.util.PersianText
 import ir.ashpazyar.app.domain.model.ShoppingItem
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import ir.ashpazyar.app.ui.components.*
 import ir.ashpazyar.app.ui.theme.AshpaTheme
 
@@ -281,11 +281,11 @@ private fun ShoppingRow(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun AddShoppingItemSheet(onDismiss: () -> Unit, onAdd: (String, String, Unit, String) -> Unit) {
+private fun AddShoppingItemSheet(onDismiss: () -> Unit, onAdd: (String, String, IngredientUnit, String) -> Unit) {
     val palette = AshpaTheme.palette
     var name by remember { mutableStateOf("") }
     var amount by remember { mutableStateOf("") }
-    var unit by remember { mutableStateOf(Unit.PIECE) }
+    var unit by remember { mutableStateOf(IngredientUnit.PIECE) }
     var category by remember { mutableStateOf("سایر") }
     ModalBottomSheet(onDismissRequest = onDismiss, containerColor = palette.surface, contentColor = palette.ink) {
         Column(Modifier.padding(horizontal = 20.dp).navigationBarsPadding()) {
@@ -296,7 +296,7 @@ private fun AddShoppingItemSheet(onDismiss: () -> Unit, onAdd: (String, String, 
             AshpaTextField(amount, { amount = it }, "مقدار", placeholder = "مثلاً ۱۰", keyboardType = KeyboardType.Decimal)
             Spacer(Modifier.height(9.dp))
             LazyRow(horizontalArrangement = Arrangement.spacedBy(7.dp)) {
-                items(listOf(Unit.PIECE, Unit.GRAM, Unit.KILOGRAM, Unit.LITER, Unit.MILLILITER, Unit.BUNCH, Unit.CAN)) { u ->
+                items(listOf(IngredientUnit.PIECE, IngredientUnit.GRAM, IngredientUnit.KILOGRAM, IngredientUnit.LITER, IngredientUnit.MILLILITER, IngredientUnit.BUNCH, IngredientUnit.CAN)) { u ->
                     Pill(u.label, unit == u, onClick = { unit = u })
                 }
             }

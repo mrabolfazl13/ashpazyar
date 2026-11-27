@@ -20,7 +20,7 @@ data class EditorLine(
     val ingredientId: String,
     val name: String,
     val amount: String,
-    val unit: Unit,
+    val unit: IngredientUnit,
     val note: String = "",
     val optional: Boolean = false
 )

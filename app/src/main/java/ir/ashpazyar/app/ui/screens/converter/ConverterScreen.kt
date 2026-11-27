@@ -23,7 +23,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import ir.ashpazyar.app.core.util.PersianText
 import ir.ashpazyar.app.domain.model.Ingredient
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import ir.ashpazyar.app.ui.components.*
 import ir.ashpazyar.app.ui.theme.AshpaTheme
 
@@ -196,7 +196,7 @@ fun ConverterScreen(
 private enum class UnitPicker { FROM, TO }
 
 @Composable
-private fun UnitBox(title: String, unit: Unit, modifier: Modifier = Modifier, onClick: () -> Unit) {
+private fun UnitBox(title: String, unit: IngredientUnit, modifier: Modifier = Modifier, onClick: () -> Unit) {
     val palette = AshpaTheme.palette
     Column(modifier = modifier) {
         Text(title, style = MaterialTheme.typography.labelSmall, color = palette.muted)
@@ -272,10 +272,10 @@ private fun IngredientPickerSheet(
 @Composable
 private fun UnitPickerSheet(
     title: String,
-    units: List<Unit>,
-    selected: Unit,
+    units: List<IngredientUnit>,
+    selected: IngredientUnit,
     onDismiss: () -> Unit,
-    onPick: (Unit) -> Unit
+    onPick: (IngredientUnit) -> Unit
 ) {
     val palette = AshpaTheme.palette
     ModalBottomSheet(onDismissRequest = onDismiss, containerColor = palette.surface, contentColor = palette.ink) {

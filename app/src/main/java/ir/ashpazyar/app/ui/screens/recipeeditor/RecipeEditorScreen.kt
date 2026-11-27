@@ -25,7 +25,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import ir.ashpazyar.app.core.util.PersianText
 import ir.ashpazyar.app.domain.model.Difficulty
 import ir.ashpazyar.app.domain.model.Ingredient
-import ir.ashpazyar.app.domain.model.Unit
+import ir.ashpazyar.app.domain.model.IngredientUnit
 import ir.ashpazyar.app.ui.components.*
 import ir.ashpazyar.app.ui.theme.AshpaTheme
 
@@ -409,14 +409,14 @@ private fun IngredientEditorPicker(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun UnitEditorPicker(selected: Unit, onDismiss: () -> Unit, onPick: (Unit) -> Unit) {
+private fun UnitEditorPicker(selected: IngredientUnit, onDismiss: () -> Unit, onPick: (IngredientUnit) -> Unit) {
     val palette = AshpaTheme.palette
     ModalBottomSheet(onDismissRequest = onDismiss, containerColor = palette.surface, contentColor = palette.ink) {
         Column(Modifier.padding(horizontal = 20.dp).navigationBarsPadding()) {
             Text("واحد اندازه‌گیری", style = MaterialTheme.typography.headlineSmall, color = palette.ink)
             Spacer(Modifier.height(8.dp))
             LazyColumn(Modifier.heightIn(max = 430.dp)) {
-                items(Unit.entries, key = { it.name }) { unit ->
+                items(IngredientUnit.entries, key = { it.name }) { unit ->
                     Row(
                         modifier = Modifier.fillMaxWidth().clickable { onPick(unit) }.padding(vertical = 13.dp),
                         verticalAlignment = Alignment.CenterVertically

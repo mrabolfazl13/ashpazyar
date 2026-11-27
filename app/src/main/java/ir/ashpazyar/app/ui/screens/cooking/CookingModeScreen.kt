@@ -168,7 +168,7 @@ fun CookingModeScreen(
                         colors = ButtonDefaults.outlinedButtonColors(contentColor = ink),
                         modifier = Modifier.height(54.dp)
                     ) {
-                        Icon(Icons.Rounded.Grocery, null, modifier = Modifier.size(19.dp))
+                        Icon(Icons.Rounded.ShoppingBasket, null, modifier = Modifier.size(19.dp))
                         Spacer(Modifier.width(6.dp))
                         Text("مواد")
                     }
