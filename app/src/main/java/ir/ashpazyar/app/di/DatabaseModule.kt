@@ -12,6 +12,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import ir.ashpazyar.app.data.local.AshpazyarDatabase
+import ir.ashpazyar.app.data.local.dao.KitchenDao
+import ir.ashpazyar.app.data.local.dao.MealPlanDao
+import ir.ashpazyar.app.data.local.dao.TimerDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -28,6 +31,15 @@ object DatabaseModule {
             .setJournalMode(androidx.room.RoomDatabase.JournalMode.WRITE_AHEAD_LOGGING)
             .build()
     }
+
+    @Provides
+    fun provideKitchenDao(database: AshpazyarDatabase): KitchenDao = database.kitchenDao()
+
+    @Provides
+    fun provideMealPlanDao(database: AshpazyarDatabase): MealPlanDao = database.mealPlanDao()
+
+    @Provides
+    fun provideTimerDao(database: AshpazyarDatabase): TimerDao = database.timerDao()
 
     @Provides
     @Singleton
