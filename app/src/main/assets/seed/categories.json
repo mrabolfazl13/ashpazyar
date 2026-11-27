@@ -1,0 +1,107 @@
+[
+  {
+    "id": "iranian",
+    "title": "غذاهای ایرانی",
+    "subtitle": "خورش، پلو و طعم خانه",
+    "accent": "FOREST",
+    "icon": "pot"
+  },
+  {
+    "id": "quick",
+    "title": "سریع و آسان",
+    "subtitle": "زیر ۳۰ دقیقه",
+    "accent": "TERRACOTTA",
+    "icon": "timer"
+  },
+  {
+    "id": "economical",
+    "title": "اقتصادی",
+    "subtitle": "سیر با کمترین هزینه",
+    "accent": "SAGE",
+    "icon": "wallet"
+  },
+  {
+    "id": "vegetarian",
+    "title": "گیاهی",
+    "subtitle": "سبک، رنگارنگ و تازه",
+    "accent": "SAGE",
+    "icon": "leaf"
+  },
+  {
+    "id": "international",
+    "title": "بین‌المللی",
+    "subtitle": "طعم سفر در آشپزخانه",
+    "accent": "TERRACOTTA",
+    "icon": "globe"
+  },
+  {
+    "id": "stew",
+    "title": "خورش",
+    "subtitle": "آرام‌پز و خوش‌عطر",
+    "accent": "FOREST",
+    "icon": "pot"
+  },
+  {
+    "id": "rice",
+    "title": "پلو و چلو",
+    "subtitle": "برنج دانه‌دانه",
+    "accent": "FOREST",
+    "icon": "rice"
+  },
+  {
+    "id": "kabab",
+    "title": "کباب",
+    "subtitle": "دود و شعله",
+    "accent": "TERRACOTTA",
+    "icon": "fire"
+  },
+  {
+    "id": "breakfast",
+    "title": "صبحانه",
+    "subtitle": "شروعی گرم",
+    "accent": "PEACH",
+    "icon": "sun"
+  },
+  {
+    "id": "appetizer",
+    "title": "پیش‌غذا",
+    "subtitle": "اولین برداشت سفره",
+    "accent": "SAGE",
+    "icon": "bowl"
+  },
+  {
+    "id": "salad",
+    "title": "سالاد",
+    "subtitle": "تازه و ترد",
+    "accent": "SAGE",
+    "icon": "leaf"
+  },
+  {
+    "id": "soup",
+    "title": "سوپ",
+    "subtitle": "گرم و آرام‌بخش",
+    "accent": "TERRACOTTA",
+    "icon": "bowl"
+  },
+  {
+    "id": "dessert",
+    "title": "دسر و شیرینی",
+    "subtitle": "پایان شیرین",
+    "accent": "PEACH",
+    "icon": "cake"
+  },
+  {
+    "id": "drink",
+    "title": "نوشیدنی",
+    "subtitle": "خنک یا گرم",
+    "accent": "TERRACOTTA",
+    "icon": "cup"
+  },
+  {
+    "id": "family",
+    "title": "خانوادگی",
+    "subtitle": "برای سفره‌های پر",
+    "accent": "FOREST",
+    "icon": "home"
+  }
+]

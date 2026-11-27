@@ -1,0 +1,4 @@
+-keepattributes *Annotation*
+-keep class ir.ashpazyar.app.data.local.entity.** { *; }
+-keepclassmembers class * extends androidx.room.RoomDatabase { <init>(); }
+-keep class * extends androidx.work.ListenableWorker { *; }

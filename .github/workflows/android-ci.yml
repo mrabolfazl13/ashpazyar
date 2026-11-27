@@ -1,0 +1,129 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: android-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  ORG_GRADLE_PROJECT_org.gradle.jvmargs: "-Xmx4096m -Dfile.encoding=UTF-8"
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+jobs:
+  build:
+    name: Validate, Test, Lint & Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: false
+          validate-wrappers: true
+
+      - name: Prepare Gradle wrapper
+        run: chmod +x gradlew
+
+      - name: Validate Project
+        run: ./gradlew projects --stacktrace
+
+      - name: Run Unit Tests
+        run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Run Lint
+        run: ./gradlew lintDebug --stacktrace
+
+      - name: Prepare release signing
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          echo "### Release signing status" >> "$GITHUB_STEP_SUMMARY"
+          if [ -n "$ANDROID_KEYSTORE_BASE64" ] && [ -n "$ANDROID_KEYSTORE_PASSWORD" ] && [ -n "$ANDROID_KEY_ALIAS" ] && [ -n "$ANDROID_KEY_PASSWORD" ]; then
+            echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/release.keystore"
+            {
+              echo "RELEASE_KEYSTORE_PATH=$RUNNER_TEMP/release.keystore"
+              echo "RELEASE_STORE_PASSWORD=$ANDROID_KEYSTORE_PASSWORD"
+              echo "RELEASE_KEY_ALIAS=$ANDROID_KEY_ALIAS"
+              echo "RELEASE_KEY_PASSWORD=$ANDROID_KEY_PASSWORD"
+            } >> "$GITHUB_ENV"
+            echo "✅ Release signing configured from GitHub Secrets." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "⚠️ Release signing secrets are not configured. Release APK/AAB will be UNNAMED (unsigned). Debug APK remains installable." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Build Release APK
+        run: ./gradlew assembleRelease --stacktrace
+
+      - name: Build Release AAB
+        run: ./gradlew bundleRelease --stacktrace
+
+      - name: Verify and package outputs
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          test -f app/build/outputs/apk/debug/app-debug.apk
+          cp app/build/outputs/apk/debug/app-debug.apk dist/ashpazyar-debug.apk
+          RELEASE_APK=$(find app/build/outputs/apk/release -name "*.apk" | head -n 1)
+          test -n "$RELEASE_APK"
+          cp "$RELEASE_APK" dist/ashpazyar-release.apk
+          test -f app/build/outputs/bundle/release/app-release.aab
+          cp app/build/outputs/bundle/release/app-release.aab dist/ashpazyar-release.aab
+          ls -lh dist
+          echo "### Build artifacts" >> "$GITHUB_STEP_SUMMARY"
+          ls -lh dist | tail -n +2 | awk '{print "- `"$9"` — "$5}' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload APK and AAB artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ashpazyar-build-${{ github.run_number }}
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload unit test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-reports-${{ github.run_number }}
+          path: |
+            app/build/reports/tests/
+            app/build/test-results/
+          if-no-files-found: ignore
+
+      - name: Upload lint report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-report-${{ github.run_number }}
+          path: app/build/reports/lint-results-*.html
+          if-no-files-found: ignore

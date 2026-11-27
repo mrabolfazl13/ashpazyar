@@ -1,0 +1,3204 @@
+[
+  {
+    "id": "potato",
+    "name": "سیب‌زمینی",
+    "nameEn": "Potato",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "سیب زمینی",
+      "سیب‌ زمینی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 170,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "tomato",
+    "name": "گوجه‌فرنگی",
+    "nameEn": "Tomato",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گوجه",
+      "گوجه فرنگی",
+      "گوجه‌ فرنگی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 120,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "onion",
+    "name": "پیاز",
+    "nameEn": "Onion",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پیاز زرد",
+      "پیاز سفید"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 150,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "red-onion",
+    "name": "پیاز قرمز",
+    "nameEn": "Red onion",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پیاز بنفش"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 140,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "garlic",
+    "name": "سیر",
+    "nameEn": "Garlic",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "سیر تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 5,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "carrot",
+    "name": "هویج",
+    "nameEn": "Carrot",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "هویج رنده‌شده"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 75,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cucumber",
+    "name": "خیار",
+    "nameEn": "Cucumber",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "خیار سالادی",
+      "خیار تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 110,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "eggplant",
+    "name": "بادمجان",
+    "nameEn": "Eggplant",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "بادنجان"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 220,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "zucchini",
+    "name": "کدو سبز",
+    "nameEn": "Zucchini",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کدو",
+      "کدوسبز"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 180,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pumpkin",
+    "name": "کدو حلوایی",
+    "nameEn": "Pumpkin",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کدو تنبل",
+      "حلوایی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 1200,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cabbage",
+    "name": "کلم سبز",
+    "nameEn": "Green cabbage",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کلم"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 900,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "red-cabbage",
+    "name": "کلم قرمز",
+    "nameEn": "Red cabbage",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کلم بنفش"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 850,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cauliflower",
+    "name": "گل‌کلم",
+    "nameEn": "Cauliflower",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گل کلم"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 800,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "broccoli",
+    "name": "بروکلی",
+    "nameEn": "Broccoli",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کلم بروکلی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 400,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "spinach",
+    "name": "اسفناج",
+    "nameEn": "Spinach",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "اسفناج تازه"
+    ],
+    "cupWeightGrams": 30,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "lettuce",
+    "name": "کاهو",
+    "nameEn": "Lettuce",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کاهو سالادی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 400,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "mushroom",
+    "name": "قارچ",
+    "nameEn": "Mushroom",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "قارچ دکمه‌ای",
+      "قارچ تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 18,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "bell-pepper",
+    "name": "فلفل دلمه‌ای",
+    "nameEn": "Bell pepper",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "فلفل دلمه",
+      "فلفل دلمه‌ای رنگی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 150,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "green-pepper",
+    "name": "فلفل سبز",
+    "nameEn": "Green pepper",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "فلفل تازه سبز"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 30,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "chili-pepper",
+    "name": "فلفل تند",
+    "nameEn": "Chili pepper",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "فلفل قرمز تند",
+      "فلفل تند سبز"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 15,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "celery",
+    "name": "کرفس",
+    "nameEn": "Celery",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کرفس تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 40,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "leek",
+    "name": "تره",
+    "nameEn": "Leek",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "تره تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "spring-onion",
+    "name": "پیازچه",
+    "nameEn": "Spring onion",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "BUNCH",
+    "aliases": [
+      "پیازچه تازه",
+      "تره فرنگی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "parsley",
+    "name": "جعفری",
+    "nameEn": "Parsley",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "جعفری تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "coriander",
+    "name": "گشنیز",
+    "nameEn": "Coriander",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گشنیز تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "dill",
+    "name": "شوید",
+    "nameEn": "Dill",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "شوید تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "mint",
+    "name": "نعنا",
+    "nameEn": "Mint",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "نعناع",
+      "نعنا تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "basil",
+    "name": "ریحان",
+    "nameEn": "Basil",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ریحان تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "tarragon",
+    "name": "ترخون",
+    "nameEn": "Tarragon",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ترخون تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "fenugreek",
+    "name": "شنبلیله",
+    "nameEn": "Fenugreek leaves",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "شنبلیله تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "radish",
+    "name": "تربچه",
+    "nameEn": "Radish",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "تربچه قرمز"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 15,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "beetroot",
+    "name": "لبو",
+    "nameEn": "Beetroot",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "چغندر",
+      "لبوی قرمز"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 200,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "turnip",
+    "name": "شلغم",
+    "nameEn": "Turnip",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "شلغم تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 180,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "okra",
+    "name": "بامیه",
+    "nameEn": "Okra",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "بامیه تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 10,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "green-beans",
+    "name": "لوبیا سبز",
+    "nameEn": "Green beans",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "لوبیا سبز تازه"
+    ],
+    "cupWeightGrams": 100,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "green-peas",
+    "name": "نخود فرنگی",
+    "nameEn": "Green peas",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "نخود سبز"
+    ],
+    "cupWeightGrams": 145,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "corn",
+    "name": "ذرت",
+    "nameEn": "Corn",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ذرت شیرین",
+      "بلال ذرت"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 90,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "artichoke",
+    "name": "کنگر",
+    "nameEn": "Artichoke",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کنگر فرنگی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 150,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "asparagus",
+    "name": "مارچوبه",
+    "nameEn": "Asparagus",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "مارچوبه تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "ginger",
+    "name": "زنجبیل",
+    "nameEn": "Ginger",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "زنجبیل تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 20,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "sweet-potato",
+    "name": "سیب‌زمینی شیرین",
+    "nameEn": "Sweet potato",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "سیب زمینی شیرین"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 180,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "olive",
+    "name": "زیتون",
+    "nameEn": "Olive",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "زیتون سبز",
+      "زیتون سیاه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 5,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pickled-cucumber",
+    "name": "خیارشور",
+    "nameEn": "Pickled cucumber",
+    "category": "VEGETABLE",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "خیار شور"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 30,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "tomato-paste",
+    "name": "رب گوجه‌فرنگی",
+    "nameEn": "Tomato paste",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "رب گوجه",
+      "رب"
+    ],
+    "cupWeightGrams": 260,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "purslane",
+    "name": "خرفه",
+    "nameEn": "Purslane",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "خرفه تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "dried-mushroom",
+    "name": "قارچ خشک",
+    "nameEn": "Dried mushroom",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "قارچ خشک شده"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "lemon",
+    "name": "لیمو",
+    "nameEn": "Lemon",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "لیموی تازه",
+      "لیمو ترش"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 80,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "lime",
+    "name": "لیموترش",
+    "nameEn": "Lime",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "لیمو ترش",
+      "لیمو سبز"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 65,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "orange",
+    "name": "پرتقال",
+    "nameEn": "Orange",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "پرتقال تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 180,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "tangerine",
+    "name": "نارنگی",
+    "nameEn": "Tangerine",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "نارنگی تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 90,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "apple",
+    "name": "سیب",
+    "nameEn": "Apple",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "سیب تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 170,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "banana",
+    "name": "موز",
+    "nameEn": "Banana",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "موز تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 115,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "grape",
+    "name": "انگور",
+    "nameEn": "Grape",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "انگور تازه"
+    ],
+    "cupWeightGrams": 150,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pomegranate",
+    "name": "انار",
+    "nameEn": "Pomegranate",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "انار تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 250,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "sour-cherry",
+    "name": "آلبالو",
+    "nameEn": "Sour cherry",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "آلبالوی تازه"
+    ],
+    "cupWeightGrams": 150,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cherry",
+    "name": "گیلاس",
+    "nameEn": "Cherry",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گیلاس تازه"
+    ],
+    "cupWeightGrams": 150,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "peach",
+    "name": "هلو",
+    "nameEn": "Peach",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "هلوی تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 150,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "apricot",
+    "name": "زردآلو",
+    "nameEn": "Apricot",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "زردآلوی تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 40,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "plum",
+    "name": "آلو",
+    "nameEn": "Plum",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "آلوی تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 50,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "fig",
+    "name": "انجیر",
+    "nameEn": "Fig",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "انجیر تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 50,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "date",
+    "name": "خرما",
+    "nameEn": "Date",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "خرما تازه",
+      "خرمای مضافتی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 10,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "barberry",
+    "name": "زرشک",
+    "nameEn": "Barberry",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "زرشک پلویی"
+    ],
+    "cupWeightGrams": 120,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "dried-apricot",
+    "name": "برگه زردآلو",
+    "nameEn": "Dried apricot",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "برگه هلو",
+      "قیسی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 8,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "raisin",
+    "name": "کشمش",
+    "nameEn": "Raisin",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "مویز",
+      "کشمش پلویی"
+    ],
+    "cupWeightGrams": 140,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "prune",
+    "name": "آلو بخارا",
+    "nameEn": "Prune",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "آلوخشک",
+      "آلو بخارایی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 10,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "melon",
+    "name": "طالبی",
+    "nameEn": "Melon",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "طالبی تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 900,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "watermelon",
+    "name": "هندوانه",
+    "nameEn": "Watermelon",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "هندوانه تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 2500,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "strawberry",
+    "name": "توت‌فرنگی",
+    "nameEn": "Strawberry",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "توت فرنگی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 12,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "kiwi",
+    "name": "کیوی",
+    "nameEn": "Kiwi",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "کیوی تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 75,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pear",
+    "name": "گلابی",
+    "nameEn": "Pear",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "گلابی تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 170,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "persimmon",
+    "name": "خرمالو",
+    "nameEn": "Persimmon",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "خرمالوی تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 160,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "quince",
+    "name": "به",
+    "nameEn": "Quince",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "به تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 250,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "green-plum",
+    "name": "آلوچه",
+    "nameEn": "Green plum",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "آلوچه سبز",
+      "گوژه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 15,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "tamarind",
+    "name": "تمر هندی",
+    "nameEn": "Tamarind",
+    "category": "FRUIT",
+    "categoryTitle": "میوه‌ها",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "تمر هندی خشک"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "lamb",
+    "name": "گوشت گوسفندی",
+    "nameEn": "Lamb",
+    "category": "MEAT",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گوشت گوسفند",
+      "گوشت بره"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "lamb-shank",
+    "name": "ماهیچه گوسفندی",
+    "nameEn": "Lamb shank",
+    "category": "MEAT",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ماهیچه",
+      "ماهیچه گوسفند"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 450,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "beef",
+    "name": "گوشت گاو",
+    "nameEn": "Beef",
+    "category": "MEAT",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گوشت گاوی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "veal",
+    "name": "گوشت گوساله",
+    "nameEn": "Veal",
+    "category": "MEAT",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گوشت گوسالهای"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "ground-beef",
+    "name": "گوشت چرخ‌کرده",
+    "nameEn": "Ground beef",
+    "category": "MEAT",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گوشت چرخ کرده",
+      "گوشت چرخ‌شده"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "ground-lamb",
+    "name": "گوشت چرخ‌کرده گوسفندی",
+    "nameEn": "Ground lamb",
+    "category": "MEAT",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گوشت چرخ کرده گوسفندی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "chicken",
+    "name": "مرغ",
+    "nameEn": "Chicken",
+    "category": "POULTRY",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "مرغ کامل",
+      "مرغ تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 1300,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "chicken-breast",
+    "name": "سینه مرغ",
+    "nameEn": "Chicken breast",
+    "category": "POULTRY",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "فیله مرغ",
+      "سینه مرغ بی‌استخوان"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 250,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "chicken-thigh",
+    "name": "ران مرغ",
+    "nameEn": "Chicken thigh",
+    "category": "POULTRY",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ران مرغ بی‌استخوان"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 200,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "turkey",
+    "name": "بوقلمون",
+    "nameEn": "Turkey",
+    "category": "POULTRY",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گوشت بوقلمون"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "liver",
+    "name": "جگر",
+    "nameEn": "Liver",
+    "category": "MEAT",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "جگر گوسفندی",
+      "جگر مرغ"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "sausage",
+    "name": "سوسیس",
+    "nameEn": "Sausage",
+    "category": "MEAT",
+    "categoryTitle": "گوشت و مرغ",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "سوسیس کوکتل"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 40,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "fish",
+    "name": "ماهی",
+    "nameEn": "Fish",
+    "category": "FISH",
+    "categoryTitle": "ماهی و دریایی",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ماهی تازه",
+      "ماهی سفید"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "trout",
+    "name": "قزل‌آلا",
+    "nameEn": "Trout",
+    "category": "FISH",
+    "categoryTitle": "ماهی و دریایی",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ماهی قزل آلا"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 350,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "salmon",
+    "name": "سالمون",
+    "nameEn": "Salmon",
+    "category": "FISH",
+    "categoryTitle": "ماهی و دریایی",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ماهی سالمون"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 250,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "shrimp",
+    "name": "میگو",
+    "nameEn": "Shrimp",
+    "category": "FISH",
+    "categoryTitle": "ماهی و دریایی",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "میگوی تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 12,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "canned-tuna",
+    "name": "تن ماهی",
+    "nameEn": "Canned tuna",
+    "category": "FISH",
+    "categoryTitle": "ماهی و دریایی",
+    "defaultUnit": "CAN",
+    "aliases": [
+      "تن ماهی کنسرو",
+      "کنسرو تن"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 180,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "fish-fillet",
+    "name": "فیله ماهی",
+    "nameEn": "Fish fillet",
+    "category": "FISH",
+    "categoryTitle": "ماهی و دریایی",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "فیله ماهی سفید"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "milk",
+    "name": "شیر",
+    "nameEn": "Milk",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "شیر پرچرب",
+      "شیر کم‌چرب"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "yogurt",
+    "name": "ماست",
+    "nameEn": "Yogurt",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ماست معمولی",
+      "ماست پرچرب"
+    ],
+    "cupWeightGrams": 245,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "greek-yogurt",
+    "name": "ماست چکیده",
+    "nameEn": "Greek yogurt",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ماست یونانی",
+      "ماست چکیده پرچرب"
+    ],
+    "cupWeightGrams": 245,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "doogh",
+    "name": "دوغ",
+    "nameEn": "Doogh",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "دوغ گازدار",
+      "دوغ سنتی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "butter",
+    "name": "کره",
+    "nameEn": "Butter",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کره حیوانی",
+      "کره پاستوریزه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cream",
+    "name": "خامه",
+    "nameEn": "Cream",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "خامه صبحانه",
+      "خامه پرچرب"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "sour-cream",
+    "name": "خامه ترش",
+    "nameEn": "Sour cream",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "خامه ترشیده"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cheese",
+    "name": "پنیر",
+    "nameEn": "Cheese",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پنیر صبحانه",
+      "پنیر سفید"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "feta",
+    "name": "پنیر فتا",
+    "nameEn": "Feta cheese",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پنیر یونانی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "mozzarella",
+    "name": "پنیر موزارلا",
+    "nameEn": "Mozzarella",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پنیر پیتزا"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "parmesan",
+    "name": "پنیر پارمزان",
+    "nameEn": "Parmesan",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پنیر سخت"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "kashk",
+    "name": "کشک",
+    "nameEn": "Kashk",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کشک مایع",
+      "کشک سنتی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "lentils",
+    "name": "عدس",
+    "nameEn": "Lentils",
+    "category": "LEGUME",
+    "categoryTitle": "حبوبات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "عدس قهوه‌ای",
+      "عدس سبز"
+    ],
+    "cupWeightGrams": 190,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "chickpeas",
+    "name": "نخود",
+    "nameEn": "Chickpeas",
+    "category": "LEGUME",
+    "categoryTitle": "حبوبات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "نخود خشک"
+    ],
+    "cupWeightGrams": 200,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "white-beans",
+    "name": "لوبیا سفید",
+    "nameEn": "White beans",
+    "category": "LEGUME",
+    "categoryTitle": "حبوبات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "لوبیا چیتی سفید"
+    ],
+    "cupWeightGrams": 190,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "red-beans",
+    "name": "لوبیا قرمز",
+    "nameEn": "Red beans",
+    "category": "LEGUME",
+    "categoryTitle": "حبوبات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "لوبیا قرمز خشک"
+    ],
+    "cupWeightGrams": 190,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pinto-beans",
+    "name": "لوبیا چیتی",
+    "nameEn": "Pinto beans",
+    "category": "LEGUME",
+    "categoryTitle": "حبوبات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "لوبیا چیتی خشک"
+    ],
+    "cupWeightGrams": 190,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "split-peas",
+    "name": "لپه",
+    "nameEn": "Split peas",
+    "category": "LEGUME",
+    "categoryTitle": "حبوبات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "نخود لپه",
+      "لپه زرد"
+    ],
+    "cupWeightGrams": 200,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "mung-beans",
+    "name": "ماش",
+    "nameEn": "Mung beans",
+    "category": "LEGUME",
+    "categoryTitle": "حبوبات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ماش خشک"
+    ],
+    "cupWeightGrams": 190,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "black-eyed-peas",
+    "name": "لوبیا چشم‌بلبلی",
+    "nameEn": "Black-eyed peas",
+    "category": "LEGUME",
+    "categoryTitle": "حبوبات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "لوبیا چشم بلبلی"
+    ],
+    "cupWeightGrams": 180,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "fava-beans",
+    "name": "باقلا",
+    "nameEn": "Fava beans",
+    "category": "LEGUME",
+    "categoryTitle": "حبوبات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "باقالا",
+      "باقلا خشک"
+    ],
+    "cupWeightGrams": 180,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "soy-granules",
+    "name": "سویا",
+    "nameEn": "Soy granules",
+    "category": "LEGUME",
+    "categoryTitle": "حبوبات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پروتئین سویا",
+      "سویای خشک"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "tofu",
+    "name": "توفو",
+    "nameEn": "Tofu",
+    "category": "LEGUME",
+    "categoryTitle": "حبوبات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پنیر سویا"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "rice",
+    "name": "برنج",
+    "nameEn": "Rice",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "برنج سفید",
+      "برنج پخته‌نشده"
+    ],
+    "cupWeightGrams": 185,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "basmati-rice",
+    "name": "برنج باسماتی",
+    "nameEn": "Basmati rice",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "برنج ایرانی",
+      "برنج دانه‌بلند"
+    ],
+    "cupWeightGrams": 185,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "bulgur",
+    "name": "بلغور",
+    "nameEn": "Bulgur",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "بلغور گندم"
+    ],
+    "cupWeightGrams": 180,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "wheat-flour",
+    "name": "آرد گندم",
+    "nameEn": "Wheat flour",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "آرد سفید",
+      "آرد"
+    ],
+    "cupWeightGrams": 120,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "rice-flour",
+    "name": "آرد برنج",
+    "nameEn": "Rice flour",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "آرد برنجی"
+    ],
+    "cupWeightGrams": 140,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "semolina",
+    "name": "آرد سمولینا",
+    "nameEn": "Semolina",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "سمولینا"
+    ],
+    "cupWeightGrams": 160,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pasta",
+    "name": "ماکارونی",
+    "nameEn": "Pasta",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ماکارونی خشک",
+      "پاستا"
+    ],
+    "cupWeightGrams": 100,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "spaghetti",
+    "name": "اسپاگتی",
+    "nameEn": "Spaghetti",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "اسپاگتی خشک"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "noodles",
+    "name": "رشته",
+    "nameEn": "Noodles",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "رشته آشی",
+      "رشته پلویی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "vermicelli",
+    "name": "رشته آشی",
+    "nameEn": "Vermicelli",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "رشته ریز"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "bread",
+    "name": "نان",
+    "nameEn": "Bread",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "نان تازه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 90,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "lavash",
+    "name": "نان لواش",
+    "nameEn": "Lavash",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "لواش"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 60,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pita",
+    "name": "نان پیتا",
+    "nameEn": "Pita",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "نان عربی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 80,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "oats",
+    "name": "جو دوسر",
+    "nameEn": "Oats",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "بلغور جو"
+    ],
+    "cupWeightGrams": 90,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "barley",
+    "name": "جو",
+    "nameEn": "Barley",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "جو پرک"
+    ],
+    "cupWeightGrams": 180,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "quinoa",
+    "name": "کینوا",
+    "nameEn": "Quinoa",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کینوآ"
+    ],
+    "cupWeightGrams": 170,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "couscous",
+    "name": "کوسکوس",
+    "nameEn": "Couscous",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کسکس"
+    ],
+    "cupWeightGrams": 170,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cornstarch",
+    "name": "نشاسته ذرت",
+    "nameEn": "Cornstarch",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "نشاسته"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "breadcrumbs",
+    "name": "پودر سوخاری",
+    "nameEn": "Breadcrumbs",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "آرد سوخاری",
+      "سوخاری"
+    ],
+    "cupWeightGrams": 100,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "salt",
+    "name": "نمک",
+    "nameEn": "Salt",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "نمک غذایی"
+    ],
+    "cupWeightGrams": 288,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "black-pepper",
+    "name": "فلفل سیاه",
+    "nameEn": "Black pepper",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "فلفل"
+    ],
+    "cupWeightGrams": 230,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "turmeric",
+    "name": "زردچوبه",
+    "nameEn": "Turmeric",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "زرد چوبه"
+    ],
+    "cupWeightGrams": 150,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cinnamon",
+    "name": "دارچین",
+    "nameEn": "Cinnamon",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "دارچین آسیاب‌شده"
+    ],
+    "cupWeightGrams": 125,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cumin",
+    "name": "زیره",
+    "nameEn": "Cumin",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "زیره سبز",
+      "زیره سیاه"
+    ],
+    "cupWeightGrams": 105,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "dried-coriander",
+    "name": "گشنیز خشک",
+    "nameEn": "Coriander powder",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "پودر گشنیز"
+    ],
+    "cupWeightGrams": 90,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "sumac",
+    "name": "سماق",
+    "nameEn": "Sumac",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "سماق پودری"
+    ],
+    "cupWeightGrams": 115,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "saffron",
+    "name": "زعفران",
+    "nameEn": "Saffron",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "PINCH",
+    "aliases": [
+      "زعفران دم‌کرده",
+      "زعفران پودری"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cardamom",
+    "name": "هل",
+    "nameEn": "Cardamom",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "هل سبز"
+    ],
+    "cupWeightGrams": 90,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cloves",
+    "name": "میخک",
+    "nameEn": "Cloves",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "میخک خشک"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 0.2,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "bay-leaf",
+    "name": "برگ بو",
+    "nameEn": "Bay leaf",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "برگبو"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 0.2,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "paprika",
+    "name": "پاپریکا",
+    "nameEn": "Paprika",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "فلفل پاپریکا"
+    ],
+    "cupWeightGrams": 108,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "curry-powder",
+    "name": "پودر کاری",
+    "nameEn": "Curry powder",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "کاری"
+    ],
+    "cupWeightGrams": 100,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "red-pepper-flakes",
+    "name": "فلفل قرمز خشک",
+    "nameEn": "Red pepper flakes",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "پودر فلفل قرمز",
+      "فلفل قرمز"
+    ],
+    "cupWeightGrams": 85,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "dried-lime",
+    "name": "لیمو عمانی",
+    "nameEn": "Dried lime",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "لیمو خشک",
+      "لیمو عمانی خشک",
+      "لیمو عمانی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 18,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "advieh",
+    "name": "ادویه پلویی",
+    "nameEn": "Advieh",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "ادویه",
+      "ادویه کاری"
+    ],
+    "cupWeightGrams": 100,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "vanilla",
+    "name": "وانیل",
+    "nameEn": "Vanilla",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "وانیل مایع",
+      "شکر وانیلی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "baking-powder",
+    "name": "بیکینگ پودر",
+    "nameEn": "Baking powder",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "بکینگ پودر"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "baking-soda",
+    "name": "جوش شیرین",
+    "nameEn": "Baking soda",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "بی‌کربنات سدیم"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "yeast",
+    "name": "خمیرمایه",
+    "nameEn": "Yeast",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "مایه خمیر"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "tomato-sauce",
+    "name": "سس گوجه‌فرنگی",
+    "nameEn": "Tomato sauce",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "سس گوجه"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "soy-sauce",
+    "name": "سس سویا",
+    "nameEn": "Soy sauce",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "سویاس"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "mayonnaise",
+    "name": "مایونز",
+    "nameEn": "Mayonnaise",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "سس مایونز"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "mustard",
+    "name": "خردل",
+    "nameEn": "Mustard",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "سس خردل"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "ketchup",
+    "name": "کچاپ",
+    "nameEn": "Ketchup",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "سس کچاپ"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pomegranate-paste",
+    "name": "رب انار",
+    "nameEn": "Pomegranate paste",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "رب انار ترش",
+      "رب انار ملس"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "verjuice",
+    "name": "آبغوره",
+    "nameEn": "Verjuice",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "آب غوره"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "vinegar",
+    "name": "سرکه",
+    "nameEn": "Vinegar",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "سرکه سفید",
+      "سرکه انگور"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "balsamic-vinegar",
+    "name": "سرکه بالزامیک",
+    "nameEn": "Balsamic vinegar",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "بالزامیک"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "honey",
+    "name": "عسل",
+    "nameEn": "Honey",
+    "category": "SWEETENER",
+    "categoryTitle": "شیرین‌کننده",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "عسل طبیعی"
+    ],
+    "cupWeightGrams": 340,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "sugar",
+    "name": "شکر",
+    "nameEn": "Sugar",
+    "category": "SWEETENER",
+    "categoryTitle": "شیرین‌کننده",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "شکر سفید"
+    ],
+    "cupWeightGrams": 200,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "brown-sugar",
+    "name": "شکر قهوه‌ای",
+    "nameEn": "Brown sugar",
+    "category": "SWEETENER",
+    "categoryTitle": "شیرین‌کننده",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "شکر سرخ"
+    ],
+    "cupWeightGrams": 220,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "powdered-sugar",
+    "name": "شکر پودر",
+    "nameEn": "Powdered sugar",
+    "category": "SWEETENER",
+    "categoryTitle": "شیرین‌کننده",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پودر قند",
+      "شکر قنادی"
+    ],
+    "cupWeightGrams": 120,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "condensed-milk",
+    "name": "شیر تغلیظ‌شده",
+    "nameEn": "Condensed milk",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "شیر عسلی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "chocolate",
+    "name": "شکلات",
+    "nameEn": "Chocolate",
+    "category": "SWEETENER",
+    "categoryTitle": "شیرین‌کننده",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "شکلات تلخ",
+      "شکلات تخته‌ای"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 10,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cocoa",
+    "name": "پودر کاکائو",
+    "nameEn": "Cocoa powder",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کاکائو"
+    ],
+    "cupWeightGrams": 85,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "rose-water",
+    "name": "گلاب",
+    "nameEn": "Rose water",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "گل آب"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "orange-blossom-water",
+    "name": "عرق بهارنارنج",
+    "nameEn": "Orange blossom water",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "بهارنارنج"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "grape-molasses",
+    "name": "شیره انگور",
+    "nameEn": "Grape molasses",
+    "category": "SWEETENER",
+    "categoryTitle": "شیرین‌کننده",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "شیره"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "date-syrup",
+    "name": "شیره خرما",
+    "nameEn": "Date syrup",
+    "category": "SWEETENER",
+    "categoryTitle": "شیرین‌کننده",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "شیره خرمایی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "olive-oil",
+    "name": "روغن زیتون",
+    "nameEn": "Olive oil",
+    "category": "OIL",
+    "categoryTitle": "روغن",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "روغن زیتون فرابکر"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "vegetable-oil",
+    "name": "روغن مایع",
+    "nameEn": "Vegetable oil",
+    "category": "OIL",
+    "categoryTitle": "روغن",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "روغن سرخ‌کردنی",
+      "روغن آفتابگردان"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "sesame-oil",
+    "name": "روغن کنجد",
+    "nameEn": "Sesame oil",
+    "category": "OIL",
+    "categoryTitle": "روغن",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "روغن کنجد بودار"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "ghee",
+    "name": "روغن حیوانی",
+    "nameEn": "Ghee",
+    "category": "OIL",
+    "categoryTitle": "روغن",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "روغن کرمانشاهی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "sesame",
+    "name": "کنجد",
+    "nameEn": "Sesame",
+    "category": "NUT",
+    "categoryTitle": "خشکبار",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "کنجد بوداده"
+    ],
+    "cupWeightGrams": 145,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "walnut",
+    "name": "گردو",
+    "nameEn": "Walnut",
+    "category": "NUT",
+    "categoryTitle": "خشکبار",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گردوی مغز"
+    ],
+    "cupWeightGrams": 120,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "almond",
+    "name": "بادام",
+    "nameEn": "Almond",
+    "category": "NUT",
+    "categoryTitle": "خشکبار",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "بادام درختی",
+      "بادام پوست‌کنده"
+    ],
+    "cupWeightGrams": 145,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pistachio",
+    "name": "پسته",
+    "nameEn": "Pistachio",
+    "category": "NUT",
+    "categoryTitle": "خشکبار",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پسته مغز"
+    ],
+    "cupWeightGrams": 125,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "hazelnut",
+    "name": "فندق",
+    "nameEn": "Hazelnut",
+    "category": "NUT",
+    "categoryTitle": "خشکبار",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "فندق مغز"
+    ],
+    "cupWeightGrams": 135,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "peanut",
+    "name": "بادام‌زمینی",
+    "nameEn": "Peanut",
+    "category": "NUT",
+    "categoryTitle": "خشکبار",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "بادام زمینی"
+    ],
+    "cupWeightGrams": 145,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pine-nut",
+    "name": "چلغوز",
+    "nameEn": "Pine nut",
+    "category": "NUT",
+    "categoryTitle": "خشکبار",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "دانه کاج"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "coconut",
+    "name": "نارگیل",
+    "nameEn": "Coconut",
+    "category": "NUT",
+    "categoryTitle": "خشکبار",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پودر نارگیل",
+      "نارگیل رنده‌شده"
+    ],
+    "cupWeightGrams": 80,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "tahini",
+    "name": "ارده",
+    "nameEn": "Tahini",
+    "category": "NUT",
+    "categoryTitle": "خشکبار",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "کره کنجد"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "peanut-butter",
+    "name": "کره بادام‌زمینی",
+    "nameEn": "Peanut butter",
+    "category": "NUT",
+    "categoryTitle": "خشکبار",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "کره بادام زمینی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "gelatin",
+    "name": "ژلاتین",
+    "nameEn": "Gelatin",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "ژلاتین پودری"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "frozen-peas",
+    "name": "نخود فرنگی منجمد",
+    "nameEn": "Frozen peas",
+    "category": "FROZEN",
+    "categoryTitle": "منجمد",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "نخود سبز منجمد"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "frozen-spinach",
+    "name": "اسفناج منجمد",
+    "nameEn": "Frozen spinach",
+    "category": "FROZEN",
+    "categoryTitle": "منجمد",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "اسفناج فریزری"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "frozen-green-beans",
+    "name": "لوبیا سبز منجمد",
+    "nameEn": "Frozen green beans",
+    "category": "FROZEN",
+    "categoryTitle": "منجمد",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "لوبیا سبز فریزری"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "ice-cream",
+    "name": "بستنی",
+    "nameEn": "Ice cream",
+    "category": "FROZEN",
+    "categoryTitle": "منجمد",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "بستنی وانیلی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "tea",
+    "name": "چای",
+    "nameEn": "Tea",
+    "category": "BEVERAGE",
+    "categoryTitle": "نوشیدنی",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "چای سیاه",
+      "چای خشک"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "coffee",
+    "name": "قهوه",
+    "nameEn": "Coffee",
+    "category": "BEVERAGE",
+    "categoryTitle": "نوشیدنی",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "قهوه آسیاب‌شده"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "water",
+    "name": "آب",
+    "nameEn": "Water",
+    "category": "OTHER",
+    "categoryTitle": "سایر",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "آب سرد",
+      "آب گرم"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "eggs",
+    "name": "تخم‌مرغ",
+    "nameEn": "Eggs",
+    "category": "OTHER",
+    "categoryTitle": "سایر",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "تخم مرغ",
+      "تخم‌ مرغ"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 55,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "ice",
+    "name": "یخ",
+    "nameEn": "Ice",
+    "category": "OTHER",
+    "categoryTitle": "سایر",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "یخ خردشده"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "angelica",
+    "name": "گلپر",
+    "nameEn": "Angelica",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گلپر خشک"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "dried-mint",
+    "name": "نعنا خشک",
+    "nameEn": "Dried mint",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "نعناع خشک"
+    ],
+    "cupWeightGrams": 50,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "dried-dill",
+    "name": "شوید خشک",
+    "nameEn": "Dried dill",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "شوید خشک‌شده"
+    ],
+    "cupWeightGrams": 50,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "sour-grape-juice",
+    "name": "آب انگور ترش",
+    "nameEn": "Sour grape juice",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "آبغوره انگور"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "banana-leaf",
+    "name": "برگ موز",
+    "nameEn": "Banana leaf",
+    "category": "OTHER",
+    "categoryTitle": "سایر",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "برگ banana"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "active-dry-yeast",
+    "name": "خمیرمایه فوری",
+    "nameEn": "Instant yeast",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "مخمر فوری"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "cream-cheese",
+    "name": "پنیر خامه‌ای",
+    "nameEn": "Cream cheese",
+    "category": "DAIRY",
+    "categoryTitle": "لبنیات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "پنیر کریمی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "puff-pastry",
+    "name": "خمیر هزارلا",
+    "nameEn": "Puff pastry",
+    "category": "FROZEN",
+    "categoryTitle": "منجمد",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "خمیر یوفکا"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "phyllo",
+    "name": "خمیر فیلو",
+    "nameEn": "Phyllo dough",
+    "category": "FROZEN",
+    "categoryTitle": "منجمد",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "خمیر باقلوا"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "rice-noodles",
+    "name": "رشته برنجی",
+    "nameEn": "Rice noodles",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "نودل برنجی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "coconut-milk",
+    "name": "شیر نارگیل",
+    "nameEn": "Coconut milk",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "شیر نارگیل کنسروی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "fish-sauce",
+    "name": "سس ماهی",
+    "nameEn": "Fish sauce",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "نام پلا"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "miso",
+    "name": "میسو",
+    "nameEn": "Miso",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "خمیر میسو"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "nori",
+    "name": "نوری",
+    "nameEn": "Nori",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "جلبک دریایی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 3,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "wasabi",
+    "name": "واسابی",
+    "nameEn": "Wasabi",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "TEASPOON",
+    "aliases": [
+      "خمیر واسابی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "sushi-rice",
+    "name": "برنج سوشی",
+    "nameEn": "Sushi rice",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "برنج ژاپنی"
+    ],
+    "cupWeightGrams": 180,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "tortilla",
+    "name": "تورتیلا",
+    "nameEn": "Tortilla",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "نان مکزیکی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 40,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "lasagna-sheets",
+    "name": "ورقه لازانیا",
+    "nameEn": "Lasagna sheets",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "لازانیا"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 15,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pizza-dough",
+    "name": "خمیر پیتزا",
+    "nameEn": "Pizza dough",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "خمیر نان پیتزا"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "burger-bun",
+    "name": "نان برگر",
+    "nameEn": "Burger bun",
+    "category": "GRAIN",
+    "categoryTitle": "غلات",
+    "defaultUnit": "PIECE",
+    "aliases": [
+      "نان همبرگر"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": 60,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "pickle",
+    "name": "ترشی",
+    "nameEn": "Pickle",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "TABLESPOON",
+    "aliases": [
+      "ترشی مخلوط"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "olive-oil-spray",
+    "name": "اسپری روغن زیتون",
+    "nameEn": "Olive oil spray",
+    "category": "OIL",
+    "categoryTitle": "روغن",
+    "defaultUnit": "MILLILITER",
+    "aliases": [
+      "اسپری روغن"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "food-coloring",
+    "name": "رنگ خوراکی",
+    "nameEn": "Food coloring",
+    "category": "DRY_GOODS",
+    "categoryTitle": "مواد خشک",
+    "defaultUnit": "PINCH",
+    "aliases": [
+      "رنگ غذا"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "saffron-thread",
+    "name": "زعفران رشته‌ای",
+    "nameEn": "Saffron threads",
+    "category": "SPICE",
+    "categoryTitle": "ادویه",
+    "defaultUnit": "PINCH",
+    "aliases": [
+      "زعفران رشته"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "dried-rose",
+    "name": "گل محمدی",
+    "nameEn": "Dried rose petals",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گل محمدی خشک"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  },
+  {
+    "id": "elderflower",
+    "name": "آقطی",
+    "nameEn": "Elderflower",
+    "category": "HERB",
+    "categoryTitle": "سبزیجات",
+    "defaultUnit": "GRAM",
+    "aliases": [
+      "گل آقطی"
+    ],
+    "cupWeightGrams": null,
+    "pieceWeightGrams": null,
+    "referencePricePerKg": null
+  }
+]

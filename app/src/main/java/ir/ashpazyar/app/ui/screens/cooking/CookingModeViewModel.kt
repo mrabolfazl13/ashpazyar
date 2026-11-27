@@ -1,0 +1,80 @@
+package ir.ashpazyar.app.ui.screens.cooking
+
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
+import ir.ashpazyar.app.data.repository.RecipeRepository
+import ir.ashpazyar.app.data.repository.TimerRepository
+import ir.ashpazyar.app.domain.model.Recipe
+import ir.ashpazyar.app.domain.model.RecipeStep
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+data class CookingUiState(
+    val loading: Boolean = true,
+    val recipe: Recipe? = null,
+    val step: RecipeStep? = null,
+    val stepIndex: Int = 0,
+    val totalSteps: Int = 0,
+    val isLast: Boolean = false
+)
+
+@HiltViewModel
+class CookingModeViewModel @Inject constructor(
+    savedStateHandle: SavedStateHandle,
+    recipeRepository: RecipeRepository,
+    private val timerRepository: TimerRepository
+) : ViewModel() {
+    private val recipeId: String = savedStateHandle.get<String>("recipeId").orEmpty()
+    private val stepIndex = MutableStateFlow(0)
+    private val _messages = MutableSharedFlow<String>()
+    val messages = _messages.asSharedFlow()
+
+    val uiState: StateFlow<CookingUiState> = combine(
+        recipeRepository.observeRecipe(recipeId),
+        stepIndex
+    ) { recipe, index ->
+        val steps = recipe?.steps.orEmpty()
+        val safeIndex = index.coerceIn(0, (steps.size - 1).coerceAtLeast(0))
+        CookingUiState(
+            loading = false,
+            recipe = recipe,
+            step = steps.getOrNull(safeIndex),
+            stepIndex = safeIndex,
+            totalSteps = steps.size,
+            isLast = steps.isNotEmpty() && safeIndex == steps.lastIndex
+        )
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), CookingUiState())
+
+    fun next() {
+        val state = uiState.value
+        if (state.stepIndex < state.totalSteps - 1) stepIndex.value = state.stepIndex + 1
+    }
+
+    fun previous() {
+        val state = uiState.value
+        if (state.stepIndex > 0) stepIndex.value = state.stepIndex - 1
+    }
+
+    fun startStepTimer() {
+        val state = uiState.value
+        val step = state.step ?: return
+        val seconds = step.timerSeconds ?: return
+        viewModelScope.launch {
+            timerRepository.startTimer(
+                recipeId = state.recipe?.id,
+                label = if (step.title.isBlank()) "مرحله " + (state.stepIndex + 1) else step.title,
+                seconds = seconds
+            )
+            _messages.emit("تایمر شروع شد؛ پایان آن را به شما خبر می‌دهیم")
+        }
+    }
+}

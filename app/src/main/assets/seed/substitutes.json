@@ -1,0 +1,312 @@
+{
+  "substitutes": [
+    {
+      "ingredientId": "yogurt",
+      "substituteIngredientId": "greek-yogurt",
+      "ratio": 1,
+      "note": "ماست چکیده غلیظ‌تر است؛ کمی شیر یا آب اضافه کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "greek-yogurt",
+      "substituteIngredientId": "yogurt",
+      "ratio": 1,
+      "note": "ماست معمولی رقیق‌تر است؛ در صورت نیاز آبکش کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "butter",
+      "substituteIngredientId": "ghee",
+      "ratio": 1,
+      "note": "روغن حیوانی عطر قوی‌تری دارد؛ حرارت را کمی کم کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "ghee",
+      "substituteIngredientId": "butter",
+      "ratio": 1,
+      "note": "کره رطوبت دارد؛ ممکن است زمان پخت کمی بیشتر شود.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "vegetable-oil",
+      "substituteIngredientId": "olive-oil",
+      "ratio": 1,
+      "note": "روغن زیتون طعم می‌دهد؛ برای سرخ‌کردن ملایم مناسب‌تر است.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "olive-oil",
+      "substituteIngredientId": "vegetable-oil",
+      "ratio": 1,
+      "note": "روغن مایع طعم خنثی‌تری دارد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "sugar",
+      "substituteIngredientId": "brown-sugar",
+      "ratio": 1,
+      "note": "شکر قهوه‌ای رطوبت و رنگ کاراملی می‌دهد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "brown-sugar",
+      "substituteIngredientId": "sugar",
+      "ratio": 1,
+      "note": "شکر سفید شیرینی خنثی‌تری دارد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "wheat-flour",
+      "substituteIngredientId": "rice-flour",
+      "ratio": 0.8,
+      "note": "آرد برنج گلوتن ندارد؛ برای چسبندگی به پیونددهنده نیاز است.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "rice-flour",
+      "substituteIngredientId": "wheat-flour",
+      "ratio": 1,
+      "note": "آرد گندم گلوتن دارد؛ بافت ممکن است سنگین‌تر شود.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "lemon",
+      "substituteIngredientId": "lime",
+      "ratio": 1,
+      "note": "لیموترش ترش‌تر و معطرتر است؛ مقدار را کم شروع کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "lime",
+      "substituteIngredientId": "lemon",
+      "ratio": 1,
+      "note": "لیموی معمولی ترشی ملایم‌تری دارد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "onion",
+      "substituteIngredientId": "red-onion",
+      "ratio": 1,
+      "note": "پیاز قرمز کمی شیرین‌تر و رنگین‌تر است.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "red-onion",
+      "substituteIngredientId": "onion",
+      "ratio": 1,
+      "note": "پیاز سفید طعم ملایم‌تری دارد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "rice",
+      "substituteIngredientId": "basmati-rice",
+      "ratio": 1,
+      "note": "باسماتی دانه‌بلند و عطر بیشتری دارد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "basmati-rice",
+      "substituteIngredientId": "rice",
+      "ratio": 1,
+      "note": "برنج معمولی ممکن است آب بیشتری جذب کند.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "noodles",
+      "substituteIngredientId": "vermicelli",
+      "ratio": 1,
+      "note": "رشته آشی نازک‌تر است؛ زمان پخت را کم کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "vermicelli",
+      "substituteIngredientId": "noodles",
+      "ratio": 1,
+      "note": "رشته ضخیم‌تر زمان پخت بیشتری می‌خواهد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "bread",
+      "substituteIngredientId": "lavash",
+      "ratio": 1,
+      "note": "لواش نازک‌تر است؛ در فر زودتر خشک می‌شود.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "lavash",
+      "substituteIngredientId": "bread",
+      "ratio": 1,
+      "note": "نان ضخیم‌تر ممکن است رطوبت بیشتری داشته باشد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "black-pepper",
+      "substituteIngredientId": "red-pepper-flakes",
+      "ratio": 1,
+      "note": "فلفل قرمز تندتر است؛ مقدار را کم اضافه کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "red-pepper-flakes",
+      "substituteIngredientId": "black-pepper",
+      "ratio": 1,
+      "note": "فلفل سیاه تندی ملایم‌تری دارد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "saffron",
+      "substituteIngredientId": "saffron-thread",
+      "ratio": 1,
+      "note": "زعفران رشته‌ای را ابتدا در آب گرم دم کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "saffron-thread",
+      "substituteIngredientId": "saffron",
+      "ratio": 1,
+      "note": "زعفران پودری سریع‌تر رنگ می‌دهد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "vinegar",
+      "substituteIngredientId": "balsamic-vinegar",
+      "ratio": 1,
+      "note": "سرکه بالزامیک شیرینی و رنگ تیره‌تری دارد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "balsamic-vinegar",
+      "substituteIngredientId": "vinegar",
+      "ratio": 1,
+      "note": "سرکه ساده تیزتر است؛ مقدار را کم کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "cocoa",
+      "substituteIngredientId": "chocolate",
+      "ratio": 2,
+      "note": "شکلات شکر دارد؛ شکر دستور را کم کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "chocolate",
+      "substituteIngredientId": "cocoa",
+      "ratio": 0.5,
+      "note": "پودر کاکائو تلخ‌تر است؛ شکر و چربی اضافه کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "baking-powder",
+      "substituteIngredientId": "baking-soda",
+      "ratio": 0.25,
+      "note": "جوش شیرین به اسید نیاز دارد؛ ماست یا آبلیمو اضافه کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "active-dry-yeast",
+      "substituteIngredientId": "yeast",
+      "ratio": 1,
+      "note": "نوع خمیرمایه را با دستور تطبیق دهید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "yeast",
+      "substituteIngredientId": "active-dry-yeast",
+      "ratio": 1,
+      "note": "خمیرمایه فوری را می‌توان مستقیم به آرد افزود.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "sour-cream",
+      "substituteIngredientId": "greek-yogurt",
+      "ratio": 1,
+      "note": "ماست چکیده جایگزین سبک‌تری است.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "cream",
+      "substituteIngredientId": "coconut-milk",
+      "ratio": 1,
+      "note": "شیر نارگیل طعم و عطر نارگیل می‌دهد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "feta",
+      "substituteIngredientId": "cheese",
+      "ratio": 1,
+      "note": "پنیر معمولی شوری کمتری دارد؛ نمک را تنظیم کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "bulgur",
+      "substituteIngredientId": "rice",
+      "ratio": 1,
+      "note": "برنج زمان پخت بیشتری دارد و بافت متفاوتی می‌دهد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "walnut",
+      "substituteIngredientId": "almond",
+      "ratio": 1,
+      "note": "بادام بافت سخت‌تر و طعم ملایم‌تری دارد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "almond",
+      "substituteIngredientId": "walnut",
+      "ratio": 1,
+      "note": "گردو چرب‌تر و تلخ‌تر است.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "parmesan",
+      "substituteIngredientId": "mozzarella",
+      "ratio": 1,
+      "note": "موزارلا کشدارتر و کم‌نمک‌تر است.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "mozzarella",
+      "substituteIngredientId": "parmesan",
+      "ratio": 1,
+      "note": "پارمزان نمکی و خشک‌تر است؛ مقدار را کم کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "oats",
+      "substituteIngredientId": "barley",
+      "ratio": 1,
+      "note": "جو دانه‌ای‌تر است؛ زمان پخت بیشتری لازم دارد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "cornstarch",
+      "substituteIngredientId": "wheat-flour",
+      "ratio": 2,
+      "note": "آرد گندم غلیظ‌کننده ضعیف‌تری است؛ حرارت بدهید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "tomato-sauce",
+      "substituteIngredientId": "tomato-paste",
+      "ratio": 0.4,
+      "note": "رب غلیظ است؛ با آب رقیق کنید.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "grape-molasses",
+      "substituteIngredientId": "date-syrup",
+      "ratio": 1,
+      "note": "شیره خرما شیرینی ملایم‌تری دارد.",
+      "contextTag": ""
+    },
+    {
+      "ingredientId": "coconut-milk",
+      "substituteIngredientId": "cream",
+      "ratio": 1,
+      "note": "خامه چربی بیشتری دارد؛ در سس‌های شیرین مناسب است.",
+      "contextTag": ""
+    }
+  ]
+}
