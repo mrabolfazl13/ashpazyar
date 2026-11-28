@@ -37,7 +37,7 @@ class SeedLoader @Inject constructor(
         val categories = readAsset<List<SeedCategory>>("seed/categories.json")
         val tips = readAsset<List<SeedTip>>("seed/tips.json")
         val recipeFile = readAsset<SeedRecipeFile>("seed/recipes.json")
-        val catalogIngredients = readGzipAsset<List<SeedIngredient>>("seed/catalog_ingredients.json.gz")
+        val catalogIngredients = readGzipAsset<List<SeedIngredient>>("seed/catalog_ingredients.json.gzip")
         val substituteFile = readOptionalAsset<SeedSubstituteFile>("seed/substitutes.json")
 
         val allIngredients = ingredients + catalogIngredients
@@ -155,7 +155,7 @@ class SeedLoader @Inject constructor(
                 }
             }
 
-            GZIPInputStream(context.assets.open("seed/catalog_recipes.jsonl.gz")).bufferedReader().use { reader ->
+            GZIPInputStream(context.assets.open("seed/catalog_recipes.jsonl.gzip")).bufferedReader().use { reader ->
                 while (true) {
                     val line = reader.readLine() ?: break
                     if (line.isBlank()) continue

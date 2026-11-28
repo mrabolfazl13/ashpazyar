@@ -38,7 +38,7 @@ def main() -> None:
     categories = {item["id"] for item in load_json(ASSETS / "categories.json")}
     manifest = load_json(ASSETS / "catalog_manifest.json")
 
-    with gzip.open(ASSETS / "catalog_ingredients.json.gz", "rt", encoding="utf-8") as handle:
+    with gzip.open(ASSETS / "catalog_ingredients.json.gzip", "rt", encoding="utf-8") as handle:
         catalog_ingredients = json.load(handle)
 
     if len(editorial_recipes) != 2000:
@@ -54,7 +54,7 @@ def main() -> None:
     if catalog_ingredient_ids & editorial_ingredient_ids:
         fail("catalog ingredient id collides with editorial seed")
 
-    recipes = list(gzip_lines(ASSETS / "catalog_recipes.jsonl.gz"))
+    recipes = list(gzip_lines(ASSETS / "catalog_recipes.jsonl.gzip"))
     if len(recipes) != 5790:
         fail(f"catalog recipe count is {len(recipes)}, expected 5790")
     if len({item["id"] for item in recipes}) != len(recipes):
@@ -101,8 +101,8 @@ def main() -> None:
     if manifest.get("total_recipes_after_seed") != 7790:
         fail("manifest total is not 7790")
 
-    recipes_raw = (ASSETS / "catalog_recipes.jsonl.gz").read_bytes()
-    ingredients_raw = (ASSETS / "catalog_ingredients.json.gz").read_bytes()
+    recipes_raw = (ASSETS / "catalog_recipes.jsonl.gzip").read_bytes()
+    ingredients_raw = (ASSETS / "catalog_ingredients.json.gzip").read_bytes()
     if hashlib.sha256(recipes_raw).hexdigest() != manifest.get("catalog_recipes_sha256"):
         fail("catalog recipes gzip hash mismatch")
     if hashlib.sha256(ingredients_raw).hexdigest() != manifest.get("catalog_ingredients_sha256"):

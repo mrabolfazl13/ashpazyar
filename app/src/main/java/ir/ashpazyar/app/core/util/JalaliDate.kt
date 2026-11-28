@@ -118,6 +118,7 @@ object ClockFormat {
     }
 
     fun duration(minutes: Int): String {
+        if (minutes <= 0) return "زمان نامشخص"
         return if (minutes >= 60) {
             val h = minutes / 60
             val m = minutes % 60

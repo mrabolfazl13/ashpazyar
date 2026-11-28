@@ -22,8 +22,8 @@ ASSETS = ROOT / "app" / "src" / "main" / "assets" / "seed"
 SEED_RECIPES = ASSETS / "recipes.json"
 SEED_INGREDIENTS = ASSETS / "ingredients.json"
 SEED_CATEGORIES = ASSETS / "categories.json"
-CATALOG_RECIPES = ASSETS / "catalog_recipes.jsonl.gz"
-CATALOG_INGREDIENTS = ASSETS / "catalog_ingredients.json.gz"
+CATALOG_RECIPES = ASSETS / "catalog_recipes.jsonl.gzip"
+CATALOG_INGREDIENTS = ASSETS / "catalog_ingredients.json.gzip"
 CATALOG_MANIFEST = ASSETS / "catalog_manifest.json"
 
 UNIT_MAP = {

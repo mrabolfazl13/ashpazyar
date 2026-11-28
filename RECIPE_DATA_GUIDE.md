@@ -8,7 +8,7 @@
 
 - نسخه داده: `seed_version = 4`؛ نسخه Room: `2`
 - ۲٬۰۰۰ دستور نمونه با مراحل: ۱۵۰ دستور پایه دست‌نویس و ۱٬۸۵۰ نسخه تولیدشده با قواعد آشپزی
-- ۵٬۷۹۰ رکورد کاتالوگ `Persian_Cooking` در `catalog_recipes.jsonl.gz`؛ مواد در `catalog_ingredients.json.gz`
+- ۵٬۷۹۰ رکورد کاتالوگ `Persian_Cooking` در `catalog_recipes.jsonl.gzip`؛ مواد در `catalog_ingredients.json.gzip`
 - مجموع: ۷٬۷۹۰ دستور؛ ۲٬۸۲۹ ماده کاتالوگ (به‌علاوه ۲۲۴ ماده نمونه)، ۱۵ دسته، ۲۴ نکته و ۴۴ قاعده جایگزینی
 - کاتالوگ: شناسه‌های `rcp-*`/`ing-*`، بدون مرحله، بدون زمان/تغذیه، `validationStatus = REVIEW_REQUIRED`
 - منبع پایه در `tools/base-recipes.json` ثابت است تا تولید دوباره، دیتاست را روی خودش بازتولید نکند.
