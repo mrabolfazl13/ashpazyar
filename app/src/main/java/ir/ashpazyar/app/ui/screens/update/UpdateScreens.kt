@@ -31,7 +31,7 @@ fun UpdateOverlay(
         UpdatePhase.AVAILABLE -> OptionalUpdateDialog(state, onDismiss, onOpenBazaar, onCloseMessage)
         UpdatePhase.CHECKING -> if (state.manual) CheckingDialog()
         UpdatePhase.UP_TO_DATE -> if (state.manual) InfoDialog(
-            title = "قاشق به‌روز است",
+            title = "چاشیکا به‌روز است",
             message = "نسخه ${PersianText.faDigits(state.currentVersion)} آخرین نسخه منتشرشده در کانال ${channelLabel()} است.",
             onDismiss = onCloseMessage
         )
@@ -72,7 +72,7 @@ private fun ForcedUpdateScreen(
         Text("به‌روزرسانی الزامی", style = MaterialTheme.typography.displaySmall, color = palette.ink, textAlign = TextAlign.Center)
         Spacer(Modifier.height(8.dp))
         Text(
-            "برای ادامه استفاده از قاشق، نسخه تازه را از بازار نصب کنید.",
+            "برای ادامه استفاده از چاشیکا، نسخه تازه را از بازار نصب کنید.",
             style = MaterialTheme.typography.bodyLarge,
             color = palette.muted,
             textAlign = TextAlign.Center
@@ -102,7 +102,7 @@ private fun ForcedUpdateScreen(
         )
         Spacer(Modifier.height(10.dp))
         Text(
-            "دانلود و نصب فقط در برنامه بازار انجام می‌شود. پس از نصب، قاشق را دوباره باز کنید.",
+            "دانلود و نصب فقط در برنامه بازار انجام می‌شود. پس از نصب، چاشیکا را دوباره باز کنید.",
             style = MaterialTheme.typography.labelSmall,
             color = palette.muted,
             textAlign = TextAlign.Center
@@ -126,7 +126,7 @@ private fun OptionalUpdateDialog(
     AlertDialog(
         onDismissRequest = onDismiss,
         icon = { Icon(Icons.Rounded.SystemUpdate, null, tint = palette.terracotta) },
-        title = { Text("نسخه تازه قاشق آماده است") },
+        title = { Text("نسخه تازه چاشیکا آماده است") },
         text = {
             Column {
                 Text(

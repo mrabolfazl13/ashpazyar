@@ -153,7 +153,7 @@ class BackupRepository @Inject constructor(
             throw BackupException("ساختار فایل پشتیبان معتبر نیست")
         }
         if (envelope.format != "ashpazyar-backup" || envelope.version !in 1..1) {
-            throw BackupException("این فایل پشتیبان با نسخه فعلی قاشق سازگار نیست")
+            throw BackupException("این فایل پشتیبان با نسخه فعلی چاشیکا سازگار نیست")
         }
         val ingredients = database.ingredientDao().getAll().associateBy { it.id }
         val allRecipeIds = database.recipeDao().getAllWithDetails()

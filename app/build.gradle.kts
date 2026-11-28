@@ -34,8 +34,8 @@ android {
         applicationId = "ir.ashpazyar.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 6
-        versionName = "1.3.0"
+        versionCode = 7
+        versionName = "1.3.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "UPDATE_MANIFEST_BASE_URL", "\"$updateManifestBaseUrl\"")
         buildConfigField("String", "UPDATE_PRODUCT_ID", "\"ashpazyar\"")

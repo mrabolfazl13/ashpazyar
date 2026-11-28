@@ -31,9 +31,9 @@ class PrimaryButtonTest {
     fun secondaryLabelIsDisplayed() {
         compose.setContent {
             AshpazyarTheme {
-                Text("قاشق")
+                Text("چاشیکا")
             }
         }
-        compose.onNodeWithText("قاشق").assertIsDisplayed()
+        compose.onNodeWithText("چاشیکا").assertIsDisplayed()
     }
 }

@@ -24,7 +24,7 @@ import ir.ashpazyar.app.ui.theme.AshpaTheme
 fun AboutScreen(onBack: () -> Unit) {
     val palette = AshpaTheme.palette
     Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState())) {
-        AshpaTopBar(title = "درباره قاشق", onBack = onBack)
+        AshpaTopBar(title = "درباره چاشیکا", onBack = onBack)
         Column(Modifier.padding(horizontal = 20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
             Spacer(Modifier.height(8.dp))
             Box(
@@ -34,7 +34,7 @@ fun AboutScreen(onBack: () -> Unit) {
                 Icon(Icons.Rounded.Restaurant, null, tint = Color(0xFFE6B88C), modifier = Modifier.size(44.dp))
             }
             Spacer(Modifier.height(12.dp))
-            Text("قاشق", style = MaterialTheme.typography.displaySmall, color = palette.ink)
+            Text("چاشیکا", style = MaterialTheme.typography.displaySmall, color = palette.ink)
             Text("همراه روزمره آشپزخانه ایرانی", style = MaterialTheme.typography.bodyMedium, color = palette.muted)
             Spacer(Modifier.height(5.dp))
             Text("نسخه ${PersianText.faDigits(BuildConfig.VERSION_NAME)}", style = MaterialTheme.typography.labelMedium, color = palette.terracotta)
@@ -42,7 +42,7 @@ fun AboutScreen(onBack: () -> Unit) {
             AshpaCard(Modifier.fillMaxWidth(), corner = 22.dp) {
                 Column(Modifier.padding(16.dp)) {
                     Text(
-                        "قاشق برای این ساخته شده که تصمیم‌های روزمره آشپزی ساده‌تر شوند: چه بپزیم، چه داریم، چه بخریم و چطور کمتر دور بریزیم.",
+                        "چاشیکا برای این ساخته شده که تصمیم‌های روزمره آشپزی ساده‌تر شوند: چه بپزیم، چه داریم، چه بخریم و چطور کمتر دور بریزیم.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = palette.ink
                     )
@@ -52,7 +52,7 @@ fun AboutScreen(onBack: () -> Unit) {
             ValueRow(Icons.Rounded.WifiOff, "محتوای آفلاین", "همه دستورها، برنامه غذایی، انبار و خرید روی دستگاه کار می‌کنند. فقط بررسی اختیاری نسخه یک مانیفست از GitHub می‌گیرد و هیچ داده شخصی ارسال نمی‌شود.")
             ValueRow(Icons.Rounded.PersonOff, "بدون حساب کاربری", "برای شروع، ثبت‌نام یا شماره تلفن لازم نیست.")
             ValueRow(Icons.Rounded.Block, "بدون تبلیغ و ردیابی", "هیچ تبلیغ، ابزار تحلیلی یا فروشگاه درون‌برنامه‌ای وجود ندارد.")
-            ValueRow(Icons.Rounded.Storefront, "به‌روزرسانی فقط از بازار", "دانلود و نصب فقط در برنامه بازار انجام می‌شود؛ قاشق خودش APK دانلود یا نصب نمی‌کند.")
+            ValueRow(Icons.Rounded.Storefront, "به‌روزرسانی فقط از بازار", "دانلود و نصب فقط در برنامه بازار انجام می‌شود؛ چاشیکا خودش APK دانلود یا نصب نمی‌کند.")
             ValueRow(Icons.Rounded.Lock, "داده‌ها روی دستگاه شما", "انبار، برنامه غذایی و خرید فقط در حافظه همین دستگاه ذخیره می‌شوند.")
             Spacer(Modifier.height(4.dp))
             AshpaCard(Modifier.fillMaxWidth(), corner = 20.dp) {
@@ -86,7 +86,7 @@ fun AboutScreen(onBack: () -> Unit) {
             }
             Spacer(Modifier.height(14.dp))
             InlineNotice(
-                "قاشق جایگزین توصیه‌های پزشکی یا تغذیه تخصصی نیست. برای رژیم‌های درمانی با متخصص مشورت کنید.",
+                "چاشیکا جایگزین توصیه‌های پزشکی یا تغذیه تخصصی نیست. برای رژیم‌های درمانی با متخصص مشورت کنید.",
                 tone = "warm"
             )
             Spacer(Modifier.height(30.dp))

@@ -227,7 +227,7 @@ fun RecipeEditorScreen(
                 )
                 Spacer(Modifier.height(10.dp))
                 Text(
-                    "این دستور فقط روی دستگاه شما ذخیره می‌شود و در فهرست عمومی قاشق قرار نمی‌گیرد.",
+                    "این دستور فقط روی دستگاه شما ذخیره می‌شود و در فهرست عمومی چاشیکا قرار نمی‌گیرد.",
                     style = MaterialTheme.typography.labelSmall,
                     color = palette.muted
                 )

@@ -84,7 +84,7 @@ fun HomeScreen(
                     }
                     Spacer(Modifier.width(10.dp))
                     Column(modifier = Modifier.weight(1f)) {
-                        Text("قاشق", style = MaterialTheme.typography.titleLarge, color = palette.ink)
+                        Text("چاشیکا", style = MaterialTheme.typography.titleLarge, color = palette.ink)
                         Text("همراه روزهای آشپزی شما", style = MaterialTheme.typography.bodySmall, color = palette.muted)
                     }
                     AshpaIconButton(onClick = onOpenTimers) {
@@ -233,7 +233,7 @@ fun HomeScreen(
                                 Column(Modifier.padding(11.dp)) {
                                     Text(recipe.title, style = MaterialTheme.typography.titleSmall, color = palette.ink, maxLines = 1, overflow = TextOverflow.Ellipsis)
                                     Spacer(Modifier.height(3.dp))
-                                    Text(recommendation.reasons.firstOrNull() ?: "پیشنهاد قاشق", style = MaterialTheme.typography.bodySmall, color = palette.muted, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                                    Text(recommendation.reasons.firstOrNull() ?: "پیشنهاد چاشیکا", style = MaterialTheme.typography.bodySmall, color = palette.muted, maxLines = 1, overflow = TextOverflow.Ellipsis)
                                 }
                             }
                         }
@@ -359,7 +359,7 @@ private fun FeaturedRecommendation(recommendation: Recommendation, isFavorite: B
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    "پیشنهاد قاشق",
+                    "پیشنهاد چاشیکا",
                     style = MaterialTheme.typography.labelSmall,
                     color = Color(0xFFFFE6CA),
                     modifier = Modifier

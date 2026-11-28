@@ -24,7 +24,7 @@ class UpdateOverlayTest {
         releaseChannel = "stable",
         downloadUrl = "https://cafebazaar.ir/app/ir.ashpazyar.app",
         sha256 = "a".repeat(64),
-        releaseNotes = "تازه‌های قاشق",
+        releaseNotes = "تازه‌های چاشیکا",
         publishedAt = "2026-11-28T10:00:00Z",
         versionCode = 6
     )
@@ -47,7 +47,7 @@ class UpdateOverlayTest {
                 )
             }
         }
-        composeRule.onNodeWithText("نسخه تازه قاشق آماده است").assertIsDisplayed()
+        composeRule.onNodeWithText("نسخه تازه چاشیکا آماده است").assertIsDisplayed()
         composeRule.onNodeWithText("بعداً").assertIsDisplayed()
         composeRule.onNodeWithText("رفتن به بازار").assertIsDisplayed()
     }

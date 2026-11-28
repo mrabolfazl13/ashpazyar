@@ -47,7 +47,7 @@ fun PreferencesScreen(
         Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(androidx.compose.foundation.rememberScrollState())) {
             AshpaTopBar(title = "سلیقه و رژیم", onBack = onBack)
             Column(Modifier.padding(horizontal = 20.dp)) {
-                Text("قاشق را بشناسید", style = MaterialTheme.typography.displaySmall, color = palette.ink)
+                Text("چاشیکا را بشناسید", style = MaterialTheme.typography.displaySmall, color = palette.ink)
                 Text(
                     "این تنظیمات روی پیشنهادها، برنامه‌ساز و فهرست خرید اثر می‌گذارد. هر زمان قابل تغییر است.",
                     style = MaterialTheme.typography.bodyMedium,
