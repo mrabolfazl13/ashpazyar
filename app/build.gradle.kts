@@ -23,6 +23,9 @@ val releaseKeyPassword = System.getenv("RELEASE_KEY_PASSWORD") ?: keystoreProper
 val hasReleaseSigning = !releaseStoreFile.isNullOrBlank() && File(releaseStoreFile).exists() &&
     !releaseStorePassword.isNullOrBlank() && !releaseKeyAlias.isNullOrBlank() && !releaseKeyPassword.isNullOrBlank()
 
+val updateManifestBaseUrl = (System.getenv("UPDATE_MANIFEST_BASE_URL") ?: "https://mrabolfazl13.github.io/ashpazyar").trimEnd('/')
+val updateChannel = System.getenv("UPDATE_CHANNEL") ?: "stable"
+
 android {
     namespace = "ir.ashpazyar.app"
     compileSdk = 35
@@ -31,9 +34,14 @@ android {
         applicationId = "ir.ashpazyar.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 5
-        versionName = "1.2.2"
+        versionCode = 6
+        versionName = "1.3.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "UPDATE_MANIFEST_BASE_URL", "\"$updateManifestBaseUrl\"")
+        buildConfigField("String", "UPDATE_PRODUCT_ID", "\"ashpazyar\"")
+        buildConfigField("String", "UPDATE_PLATFORM", "\"android\"")
+        buildConfigField("String", "UPDATE_CHANNEL", "\"$updateChannel\"")
+        buildConfigField("boolean", "UPDATE_ENABLED", "true")
         resourceConfigurations += listOf("fa", "en")
         vectorDrawables.useSupportLibrary = true
     }

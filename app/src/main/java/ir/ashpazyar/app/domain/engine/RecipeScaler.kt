@@ -27,7 +27,7 @@ object RecipeScaler {
                 source = ingredient,
                 amount = rounded,
                 unit = ingredient.unit,
-                amountLabel = UnitConverter.pretty(rounded, ingredient.unit, profile)
+                amountLabel = if (rounded <= 0.0) "به میزان لازم" else UnitConverter.pretty(rounded, ingredient.unit, profile)
             )
         }
     }

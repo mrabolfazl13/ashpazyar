@@ -28,7 +28,7 @@ import ir.ashpazyar.app.data.local.entity.*
         CookingTipEntity::class,
         AppMetaEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = true
 )
 abstract class AshpazyarDatabase : RoomDatabase() {

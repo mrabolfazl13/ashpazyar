@@ -4,6 +4,7 @@ import androidx.room.withTransaction
 import ir.ashpazyar.app.core.util.PersianText
 import ir.ashpazyar.app.data.local.AshpazyarDatabase
 import ir.ashpazyar.app.data.local.entity.*
+import ir.ashpazyar.app.data.toDetailString
 import ir.ashpazyar.app.data.toDomain
 import ir.ashpazyar.app.data.toListParts
 import ir.ashpazyar.app.data.toStoredList
@@ -194,7 +195,21 @@ class RecipeRepository @Inject constructor(
             searchText = PersianText.normalize(source.title + " " + source.description),
             isUserCreated = true,
             imageUri = source.imageUri,
-            editorialOrder = 5000
+            editorialOrder = 5000,
+            region = source.region,
+            history = source.history,
+            resultDescription = source.resultDescription,
+            restMinutes = source.restMinutes,
+            equipment = source.equipment.toDetailString(),
+            ovenTemperatureC = source.ovenTemperatureC,
+            prepGuide = source.prepGuide.toDetailString(),
+            servingGuide = source.servingGuide.toDetailString(),
+            storageGuide = source.storageGuide,
+            troubleshooting = source.troubleshooting.toDetailString(),
+            sourceName = source.sourceName,
+            sourceUrl = source.sourceUrl,
+            license = source.license,
+            validationStatus = source.validationStatus.name
         )
         database.withTransaction {
             recipeDao.insertRecipe(copy)
@@ -207,7 +222,15 @@ class RecipeRepository @Inject constructor(
             recipeDao.insertSteps(source.steps.mapIndexed { index, step ->
                 RecipeStepEntity(
                     recipeId = newId, stepNumber = index + 1, title = step.title,
-                    instruction = step.instruction, timerSeconds = step.timerSeconds
+                    instruction = step.instruction, timerSeconds = step.timerSeconds,
+                    ingredientRefs = step.ingredientRefs.toDetailString(),
+                    equipment = step.equipment.toDetailString(),
+                    temperatureC = step.temperatureC,
+                    heatLevel = step.heatLevel,
+                    successIndicators = step.successIndicators.toDetailString(),
+                    commonMistakes = step.commonMistakes.toDetailString(),
+                    recoveryInstructions = step.recoveryInstructions,
+                    safetyNotes = step.safetyNotes.toDetailString()
                 )
             })
             database.userRecipeDao().upsert(UserRecipeEntity(recipeId = newId))

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-28T00:00:00Z",
+  "products": [
+    {
+      "id": "sanadyar",
+      "display_name": "سندیار",
+      "platforms": [
+        "windows"
+      ],
+      "channels": [
+        "stable",
+        "beta"
+      ]
+    },
+    {
+      "id": "khodroyar",
+      "display_name": "خودرویار",
+      "platforms": [
+        "windows"
+      ],
+      "channels": [
+        "stable",
+        "beta"
+      ]
+    },
+    {
+      "id": "ashpazyar",
+      "display_name": "قاشق",
+      "platforms": [
+        "android"
+      ],
+      "channels": [
+        "stable",
+        "beta"
+      ],
+      "package_name": "ir.ashpazyar.app"
+    }
+  ]
+}

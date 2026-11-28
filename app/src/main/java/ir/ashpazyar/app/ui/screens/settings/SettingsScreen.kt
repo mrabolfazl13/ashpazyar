@@ -20,6 +20,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import ir.ashpazyar.app.BuildConfig
 import ir.ashpazyar.app.core.util.PersianText
 import ir.ashpazyar.app.ui.components.*
 import ir.ashpazyar.app.ui.theme.AshpaTheme
@@ -36,6 +37,7 @@ fun SettingsScreen(
     onOpenUserRecipes: () -> Unit,
     onOpenCost: () -> Unit,
     onOpenLeftovers: () -> Unit,
+    onCheckUpdate: () -> Unit,
     viewModel: SettingsViewModel = hiltViewModel()
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
@@ -150,6 +152,8 @@ fun SettingsScreen(
                         SettingsLink("مبدل واحد", "گرم، پیمانه و قاشق", Icons.Rounded.SwapHoriz, onOpenConverter)
                         SettingsDivider()
                         SettingsLink("پشتیبان‌گیری و بازیابی", "فایل پشتیبان آفلاین بسازید", Icons.Rounded.Backup, onOpenBackup)
+                        SettingsDivider()
+                        SettingsLink("به‌روزرسانی قاشق", "بررسی نسخه و رفتن به بازار", Icons.Rounded.SystemUpdate, onCheckUpdate)
                     }
                 }
                 Spacer(Modifier.height(12.dp))
@@ -162,7 +166,7 @@ fun SettingsScreen(
                 }
                 Spacer(Modifier.height(16.dp))
                 Text(
-                    "قاشق ۱.۲.۲ · بدون اینترنت، بدون حساب، بدون تبلیغ",
+                    "قاشق ${PersianText.faDigits(BuildConfig.VERSION_NAME)} · محتوای آفلاین، بدون حساب، بدون تبلیغ",
                     style = MaterialTheme.typography.labelSmall,
                     color = palette.muted,
                     modifier = Modifier.padding(bottom = 26.dp)

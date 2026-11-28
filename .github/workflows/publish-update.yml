@@ -1,0 +1,159 @@
+name: Publish signed update manifest
+
+on:
+  workflow_dispatch:
+    inputs:
+      product:
+        description: "محصول"
+        required: true
+        type: choice
+        options: [ashpazyar, sanadyar, khodroyar]
+      platform:
+        description: "پلتفرم"
+        required: true
+        type: choice
+        options: [android, windows]
+      channel:
+        description: "کانال انتشار"
+        required: true
+        default: stable
+        type: choice
+        options: [stable, beta, dev]
+      version:
+        description: "نسخه Semantic Versioning، مثلاً 1.3.0"
+        required: true
+        type: string
+      version_code:
+        description: "versionCode اندروید (برای ویندوز خالی بگذارید)"
+        required: false
+        default: ""
+        type: string
+      sha256:
+        description: "SHA-256 فایل تحویلی؛ ۶۴ رقم هگز"
+        required: true
+        type: string
+      download_url:
+        description: "برای ویندوز الزامی؛ اندروید فقط صفحه رسمی بازار"
+        required: false
+        default: ""
+        type: string
+      release_notes:
+        description: "تغییرات قابل نمایش به کاربر"
+        required: true
+        type: string
+      policy:
+        description: "سیاست به‌روزرسانی"
+        required: true
+        default: optional
+        type: choice
+        options: [optional, minimum_version, forced]
+      minimum_version:
+        description: "حداقل نسخه پشتیبانی‌شده (برای minimum_version الزامی)"
+        required: false
+        default: ""
+        type: string
+      force_update:
+        description: "فقط برای forced؛ به‌طور پیش‌فرض خاموش است"
+        required: true
+        default: false
+        type: boolean
+      published_at:
+        description: "زمان ISO-8601؛ خالی يعني اکنون"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-update-manifest
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Sign and publish manifest
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate product registry
+        run: python tools/update_manager.py validate-config
+
+      - name: Prepare signing key
+        env:
+          UPDATE_SIGNING_PRIVATE_KEY_PEM: ${{ secrets.UPDATE_SIGNING_PRIVATE_KEY_PEM }}
+        run: |
+          set -euo pipefail
+          if [ -z "${UPDATE_SIGNING_PRIVATE_KEY_PEM:-}" ]; then
+            echo "::error::GitHub Secret UPDATE_SIGNING_PRIVATE_KEY_PEM is missing."
+            exit 1
+          fi
+          umask 077
+          printf '%s' "$UPDATE_SIGNING_PRIVATE_KEY_PEM" > "$RUNNER_TEMP/update_signing_key.pem"
+          openssl pkey -in "$RUNNER_TEMP/update_signing_key.pem" -noout
+          echo "### Update signing" >> "$GITHUB_STEP_SUMMARY"
+          echo "✅ Private key loaded and validated. Public key is embedded in the app." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Create and sign manifest
+        env:
+          PRODUCT: ${{ inputs.product }}
+          PLATFORM: ${{ inputs.platform }}
+          CHANNEL: ${{ inputs.channel }}
+          VERSION: ${{ inputs.version }}
+          VERSION_CODE: ${{ inputs.version_code }}
+          SHA256: ${{ inputs.sha256 }}
+          DOWNLOAD_URL: ${{ inputs.download_url }}
+          NOTES: ${{ inputs.release_notes }}
+          POLICY: ${{ inputs.policy }}
+          MINIMUM_VERSION: ${{ inputs.minimum_version }}
+          FORCE_UPDATE: ${{ inputs.force_update }}
+          PUBLISHED_AT: ${{ inputs.published_at }}
+        run: |
+          set -euo pipefail
+          trap 'rm -f "$RUNNER_TEMP/update_signing_key.pem"' EXIT
+          create_args=(
+            --product "$PRODUCT"
+            --platform "$PLATFORM"
+            --channel "$CHANNEL"
+            --version "$VERSION"
+            --sha256 "$SHA256"
+            --notes "$NOTES"
+            --policy "$POLICY"
+            --out "$RUNNER_TEMP/payload.json"
+          )
+          if [ -n "$VERSION_CODE" ]; then create_args+=(--version-code "$VERSION_CODE"); fi
+          if [ -n "$DOWNLOAD_URL" ]; then create_args+=(--download-url "$DOWNLOAD_URL"); fi
+          if [ -n "$MINIMUM_VERSION" ]; then create_args+=(--minimum-version "$MINIMUM_VERSION"); fi
+          if [ -n "$PUBLISHED_AT" ]; then create_args+=(--published-at "$PUBLISHED_AT"); fi
+          if [ "$FORCE_UPDATE" = "true" ]; then create_args+=(--force-update); fi
+          python tools/update_manager.py create "${create_args[@]}"
+          python tools/update_manager.py sign \
+            --payload "$RUNNER_TEMP/payload.json" \
+            --key "$RUNNER_TEMP/update_signing_key.pem" \
+            --out "$RUNNER_TEMP/manifest.json" \
+            --public-key app/src/main/res/raw/update_public_key.pem
+          python tools/update_manager.py verify \
+            --manifest "$RUNNER_TEMP/manifest.json" \
+            --public-key app/src/main/res/raw/update_public_key.pem
+          target="updates/$PRODUCT/$PLATFORM/$CHANNEL.json"
+          mkdir -p "$(dirname "$target")"
+          cp "$RUNNER_TEMP/manifest.json" "$target"
+          echo "Manifest written to $target"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./updates
+          destination_dir: .
+          keep_files: true
+          commit_message: "update: ${{ inputs.product }} ${{ inputs.platform }} ${{ inputs.channel }} ${{ inputs.version }}"

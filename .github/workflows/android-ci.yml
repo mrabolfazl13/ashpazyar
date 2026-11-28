@@ -33,6 +33,12 @@ jobs:
       - name: Validate recipe dataset
         run: node tools/validate-recipes.js
 
+      - name: Validate bundled full catalog
+        run: python tools/validate_full_catalog.py
+
+      - name: Validate update product registry
+        run: python tools/update_manager.py validate-config
+
       - name: Audit recipe provenance and educational completeness
         run: node tools/audit-recipes.js
 

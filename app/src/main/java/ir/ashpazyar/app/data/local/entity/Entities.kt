@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.Relation
 
@@ -37,6 +38,20 @@ data class RecipeEntity(
     val isUserCreated: Boolean = false,
     val imageUri: String? = null,
     val editorialOrder: Int = 1000,
+    val region: String? = null,
+    val history: String? = null,
+    val resultDescription: String? = null,
+    @ColumnInfo(defaultValue = "0") val restMinutes: Int = 0,
+    @ColumnInfo(defaultValue = "") val equipment: String = "",
+    val ovenTemperatureC: Int? = null,
+    @ColumnInfo(defaultValue = "") val prepGuide: String = "",
+    @ColumnInfo(defaultValue = "") val servingGuide: String = "",
+    val storageGuide: String? = null,
+    @ColumnInfo(defaultValue = "") val troubleshooting: String = "",
+    val sourceName: String? = null,
+    val sourceUrl: String? = null,
+    val license: String? = null,
+    @ColumnInfo(defaultValue = "REVIEW_REQUIRED") val validationStatus: String = "REVIEW_REQUIRED",
     val createdAt: Long = System.currentTimeMillis(),
     val updatedAt: Long = System.currentTimeMillis()
 )
@@ -82,7 +97,15 @@ data class RecipeStepEntity(
     val stepNumber: Int,
     val title: String,
     val instruction: String,
-    val timerSeconds: Int? = null
+    val timerSeconds: Int? = null,
+    @ColumnInfo(defaultValue = "") val ingredientRefs: String = "",
+    @ColumnInfo(defaultValue = "") val equipment: String = "",
+    val temperatureC: Int? = null,
+    val heatLevel: String? = null,
+    @ColumnInfo(defaultValue = "") val successIndicators: String = "",
+    @ColumnInfo(defaultValue = "") val commonMistakes: String = "",
+    val recoveryInstructions: String? = null,
+    @ColumnInfo(defaultValue = "") val safetyNotes: String = ""
 )
 
 @Entity(tableName = "ingredients", indices = [Index("nameNormalized"), Index("category")])

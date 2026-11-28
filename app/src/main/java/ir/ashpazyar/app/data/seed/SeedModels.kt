@@ -29,7 +29,21 @@ data class SeedRecipe(
     val allergens: List<String> = emptyList(),
     val ingredients: List<SeedRecipeIngredient> = emptyList(),
     val steps: List<SeedStep> = emptyList(),
-    val tips: List<String> = emptyList()
+    val tips: List<String> = emptyList(),
+    val region: String? = null,
+    val history: String? = null,
+    val resultDescription: String? = null,
+    val restMinutes: Int = 0,
+    val equipment: List<String> = emptyList(),
+    val ovenTemperatureC: Int? = null,
+    val prepGuide: List<String> = emptyList(),
+    val servingGuide: List<String> = emptyList(),
+    val storageGuide: String? = null,
+    val troubleshooting: List<String> = emptyList(),
+    val sourceName: String? = null,
+    val sourceUrl: String? = null,
+    val license: String? = null,
+    val validationStatus: String = "REVIEW_REQUIRED"
 )
 
 @Serializable
@@ -45,7 +59,15 @@ data class SeedRecipeIngredient(
 data class SeedStep(
     val title: String = "",
     val instruction: String,
-    val timerSeconds: Int? = null
+    val timerSeconds: Int? = null,
+    val ingredientRefs: List<String> = emptyList(),
+    val equipment: List<String> = emptyList(),
+    val temperatureC: Int? = null,
+    val heatLevel: String? = null,
+    val successIndicators: List<String> = emptyList(),
+    val commonMistakes: List<String> = emptyList(),
+    val recoveryInstructions: String? = null,
+    val safetyNotes: List<String> = emptyList()
 )
 
 @Serializable

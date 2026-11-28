@@ -15,6 +15,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import ir.ashpazyar.app.BuildConfig
+import ir.ashpazyar.app.core.util.PersianText
 import ir.ashpazyar.app.ui.components.*
 import ir.ashpazyar.app.ui.theme.AshpaTheme
 
@@ -35,7 +37,7 @@ fun AboutScreen(onBack: () -> Unit) {
             Text("قاشق", style = MaterialTheme.typography.displaySmall, color = palette.ink)
             Text("همراه روزمره آشپزخانه ایرانی", style = MaterialTheme.typography.bodyMedium, color = palette.muted)
             Spacer(Modifier.height(5.dp))
-            Text("نسخه ۱.۲.۲", style = MaterialTheme.typography.labelMedium, color = palette.terracotta)
+            Text("نسخه ${PersianText.faDigits(BuildConfig.VERSION_NAME)}", style = MaterialTheme.typography.labelMedium, color = palette.terracotta)
             Spacer(Modifier.height(18.dp))
             AshpaCard(Modifier.fillMaxWidth(), corner = 22.dp) {
                 Column(Modifier.padding(16.dp)) {
@@ -47,9 +49,10 @@ fun AboutScreen(onBack: () -> Unit) {
                 }
             }
             Spacer(Modifier.height(14.dp))
-            ValueRow(Icons.Rounded.WifiOff, "کاملاً آفلاین", "هیچ داده‌ای از دستگاه شما خارج نمی‌شود و برنامه به اینترنت نیاز ندارد.")
+            ValueRow(Icons.Rounded.WifiOff, "محتوای آفلاین", "همه دستورها، برنامه غذایی، انبار و خرید روی دستگاه کار می‌کنند. فقط بررسی اختیاری نسخه یک مانیفست از GitHub می‌گیرد و هیچ داده شخصی ارسال نمی‌شود.")
             ValueRow(Icons.Rounded.PersonOff, "بدون حساب کاربری", "برای شروع، ثبت‌نام یا شماره تلفن لازم نیست.")
             ValueRow(Icons.Rounded.Block, "بدون تبلیغ و ردیابی", "هیچ تبلیغ، ابزار تحلیلی یا فروشگاه درون‌برنامه‌ای وجود ندارد.")
+            ValueRow(Icons.Rounded.Storefront, "به‌روزرسانی فقط از بازار", "دانلود و نصب فقط در برنامه بازار انجام می‌شود؛ قاشق خودش APK دانلود یا نصب نمی‌کند.")
             ValueRow(Icons.Rounded.Lock, "داده‌ها روی دستگاه شما", "انبار، برنامه غذایی و خرید فقط در حافظه همین دستگاه ذخیره می‌شوند.")
             Spacer(Modifier.height(4.dp))
             AshpaCard(Modifier.fillMaxWidth(), corner = 20.dp) {

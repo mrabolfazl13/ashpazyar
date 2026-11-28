@@ -195,6 +195,54 @@ fun RecipeDetailScreen(
                 item {
                     Column(Modifier.padding(horizontal = 20.dp)) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
+                            ValidationPill(recipe.validationStatus)
+                            Spacer(Modifier.weight(1f))
+                            if (recipe.sourceName != null) {
+                                Text(
+                                    text = recipe.sourceName,
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = palette.muted
+                                )
+                            }
+                        }
+                        if (recipe.validationStatus != ValidationStatus.VERIFIED) {
+                            Spacer(Modifier.height(8.dp))
+                            InlineNotice(
+                                "این دستور هنوز آموزش کامل و منبع تأییدشده ندارد؛ برای پخت، بخش‌های موجود را با احتیاط بخوانید.",
+                                tone = "warm"
+                            )
+                        }
+                        val facts = buildList {
+                            recipe.region?.takeIf { it.isNotBlank() }?.let { add("منطقه" to it) }
+                            if (recipe.restMinutes > 0) add("زمان استراحت" to (PersianText.faDigits(recipe.restMinutes.toString()) + " دقیقه"))
+                            if (recipe.ovenTemperatureC != null) add("دمای فر" to (PersianText.faDigits(recipe.ovenTemperatureC.toString()) + " درجه سانتی‌گراد"))
+                            if (recipe.equipment.isNotEmpty()) add("تجهیزات" to recipe.equipment.joinToString("، "))
+                        }
+                        if (facts.isNotEmpty()) {
+                            Spacer(Modifier.height(10.dp))
+                            AshpaCard(modifier = Modifier.fillMaxWidth()) {
+                                Column(Modifier.padding(horizontal = 15.dp, vertical = 9.dp)) {
+                                    facts.forEach { (label, value) -> TutorialFactRow(label, value) }
+                                }
+                            }
+                        }
+                        if (!recipe.history.isNullOrBlank()) {
+                            Spacer(Modifier.height(14.dp))
+                            TutorialParagraph("معرفی و پیشینه", recipe.history!!)
+                        }
+                        if (!recipe.resultDescription.isNullOrBlank()) {
+                            Spacer(Modifier.height(12.dp))
+                            TutorialParagraph("نتیجه مورد انتظار", recipe.resultDescription!!, tone = palette.terracotta)
+                        }
+                        if (recipe.prepGuide.isNotEmpty()) {
+                            Spacer(Modifier.height(14.dp))
+                            TutorialBulletSection("آماده‌سازی پیش از پخت", recipe.prepGuide)
+                        }
+                    }
+                }
+                item {
+                    Column(Modifier.padding(horizontal = 20.dp)) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
                             SectionHeader(
                                 title = "مواد لازم",
                                 caption = if (state.match?.fullyAvailable == true) "همه مواد اصلی موجود است" else "برای " + PersianText.faDigits(state.servings.toString()) + " نفر",
@@ -279,10 +327,18 @@ fun RecipeDetailScreen(
                     Spacer(Modifier.height(26.dp))
                     SectionHeader(
                         title = "مراحل پخت",
-                        caption = "گام‌به‌گام، بدون عجله",
+                        caption = if (recipe.steps.isEmpty()) "در منبع ثبت نشده" else "گام‌به‌گام، بدون عجله",
                         modifier = Modifier.padding(horizontal = 20.dp)
                     )
                     Spacer(Modifier.height(10.dp))
+                }
+                if (recipe.steps.isEmpty()) {
+                    item {
+                        InlineNotice(
+                            text = "مراحل پخت این دستور در منبع ورودی ثبت نشده است. فقط نام، دسته‌بندی و مواد اولیه در دسترس است؛ بنابراین حالت پخت برای آن فعال نیست.",
+                            modifier = Modifier.padding(horizontal = 20.dp)
+                        )
+                    }
                 }
                 itemsIndexed(recipe.steps, key = { _, step -> step.number }) { index, step ->
                     Row(
@@ -316,6 +372,43 @@ fun RecipeDetailScreen(
                                         color = palette.terracotta
                                     )
                                 }
+                            }
+                            if (step.ingredientRefs.isNotEmpty()) {
+                                Spacer(Modifier.height(5.dp))
+                                Text(
+                                    "مواد این مرحله: " + step.ingredientRefs.joinToString("، "),
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = palette.muted
+                                )
+                            }
+                            val stepFacts = buildList {
+                                if (step.temperatureC != null) add(PersianText.faDigits(step.temperatureC.toString()) + " درجه")
+                                if (!step.heatLevel.isNullOrBlank()) add("حرارت " + step.heatLevel)
+                                if (step.equipment.isNotEmpty()) add(step.equipment.joinToString("، "))
+                            }
+                            if (stepFacts.isNotEmpty()) {
+                                Spacer(Modifier.height(5.dp))
+                                Text(
+                                    stepFacts.joinToString(" · "),
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = palette.forest
+                                )
+                            }
+                            if (step.successIndicators.isNotEmpty()) {
+                                Spacer(Modifier.height(9.dp))
+                                TutorialBulletSection("نشانه موفقیت", step.successIndicators)
+                            }
+                            if (step.commonMistakes.isNotEmpty()) {
+                                Spacer(Modifier.height(9.dp))
+                                TutorialBulletSection("اشتباه رایج", step.commonMistakes, icon = Icons.Rounded.Warning, tone = palette.terracotta)
+                            }
+                            if (!step.recoveryInstructions.isNullOrBlank()) {
+                                Spacer(Modifier.height(9.dp))
+                                TutorialParagraph("اقدام اصلاحی", step.recoveryInstructions!!, tone = palette.terracotta)
+                            }
+                            if (step.safetyNotes.isNotEmpty()) {
+                                Spacer(Modifier.height(9.dp))
+                                TutorialBulletSection("ایمنی", step.safetyNotes, icon = Icons.Rounded.Info, tone = palette.warning)
                             }
                         }
                     }
@@ -358,10 +451,12 @@ fun RecipeDetailScreen(
                     AshpaIconButton(onClick = { showPlanSheet = true }, filled = true) {
                         Icon(Icons.Rounded.CalendarMonth, "افزودن به برنامه", tint = palette.peach)
                     }
+                    val hasSteps = recipe.steps.isNotEmpty()
                     PrimaryButton(
-                        text = "شروع پخت",
+                        text = if (hasSteps) "شروع پخت" else "مراحل ثبت نشده",
                         onClick = { onStartCooking(recipe.id) },
                         icon = Icons.Rounded.PlayArrow,
+                        enabled = hasSteps,
                         modifier = Modifier.weight(1f)
                     )
                 }

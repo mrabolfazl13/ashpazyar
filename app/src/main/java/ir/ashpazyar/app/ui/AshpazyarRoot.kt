@@ -52,6 +52,9 @@ import ir.ashpazyar.app.ui.screens.smart.SmartKitchenScreen
 import ir.ashpazyar.app.ui.screens.timers.TimersScreen
 import ir.ashpazyar.app.ui.screens.tips.TipDetailScreen
 import ir.ashpazyar.app.ui.screens.tips.TipsScreen
+import ir.ashpazyar.app.ui.screens.update.UpdateOverlay
+import ir.ashpazyar.app.ui.screens.update.UpdatePhase
+import ir.ashpazyar.app.ui.screens.update.UpdateViewModel
 import ir.ashpazyar.app.ui.screens.userrecipes.UserRecipesScreen
 import ir.ashpazyar.app.ui.theme.AshpaTheme
 import ir.ashpazyar.app.ui.theme.AshpazyarTheme
@@ -108,7 +111,19 @@ private fun StartupGate(error: String?, onRetry: () -> Unit) {
 }
 
 @Composable
-private fun MainNavigation() {
+private fun MainNavigation(updateViewModel: UpdateViewModel = hiltViewModel()) {
+    val updateState by updateViewModel.state.collectAsStateWithLifecycle()
+    if (updateState.phase == UpdatePhase.FORCED) {
+        UpdateOverlay(
+            state = updateState,
+            onRetry = { updateViewModel.check(manual = true) },
+            onDismiss = {},
+            onOpenBazaar = updateViewModel::openBazaar,
+            onCloseMessage = updateViewModel::closeMessage
+        )
+        return
+    }
+
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = backStackEntry?.destination?.route
@@ -258,7 +273,8 @@ private fun MainNavigation() {
                     onOpenAbout = { navigate(Routes.ABOUT) },
                     onOpenUserRecipes = { navigate(Routes.USER_RECIPES) },
                     onOpenCost = { navigate(Routes.COST) },
-                    onOpenLeftovers = { navigate(Routes.LEFTOVERS) }
+                    onOpenLeftovers = { navigate(Routes.LEFTOVERS) },
+                    onCheckUpdate = { updateViewModel.check(manual = true) }
                 )
             }
             composable(Routes.BACKUP) {
@@ -310,4 +326,12 @@ private fun MainNavigation() {
             }
         }
     }
+
+    UpdateOverlay(
+        state = updateState,
+        onRetry = { updateViewModel.check(manual = true) },
+        onDismiss = updateViewModel::dismissOptional,
+        onOpenBazaar = updateViewModel::openBazaar,
+        onCloseMessage = updateViewModel::closeMessage
+    )
 }

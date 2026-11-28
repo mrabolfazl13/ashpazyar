@@ -6,11 +6,17 @@ import ir.ashpazyar.app.domain.model.*
 
 private const val LIST_SEPARATOR = "|"
 private const val TIP_SEPARATOR = "\u001F"
+private const val DETAIL_SEPARATOR = "\u001E"
 
 fun String.toListParts(): List<String> =
     if (isBlank()) emptyList() else split(LIST_SEPARATOR).map { it.trim() }.filter { it.isNotEmpty() }
 
 fun List<String>.toStoredList(): String = joinToString(LIST_SEPARATOR)
+
+fun String.toDetailList(): List<String> =
+    if (isBlank()) emptyList() else split(DETAIL_SEPARATOR).map { it.trim() }.filter { it.isNotEmpty() }
+
+fun List<String>.toDetailString(): String = joinToString(DETAIL_SEPARATOR) { it.replace(DETAIL_SEPARATOR, " ") }
 
 fun RecipeWithDetails.toDomain(ingredientsById: Map<String, Ingredient>): Recipe {
     return Recipe(
@@ -35,6 +41,20 @@ fun RecipeWithDetails.toDomain(ingredientsById: Map<String, Ingredient>): Recipe
         isFamilyFriendly = recipe.isFamilyFriendly,
         allergens = recipe.allergens.toListParts(),
         tips = if (recipe.tips.isBlank()) emptyList() else recipe.tips.split(TIP_SEPARATOR).filter { it.isNotBlank() },
+        region = recipe.region,
+        history = recipe.history,
+        resultDescription = recipe.resultDescription,
+        restMinutes = recipe.restMinutes,
+        equipment = recipe.equipment.toDetailList(),
+        ovenTemperatureC = recipe.ovenTemperatureC,
+        prepGuide = recipe.prepGuide.toDetailList(),
+        servingGuide = recipe.servingGuide.toDetailList(),
+        storageGuide = recipe.storageGuide,
+        troubleshooting = recipe.troubleshooting.toDetailList(),
+        sourceName = recipe.sourceName,
+        sourceUrl = recipe.sourceUrl,
+        license = recipe.license,
+        validationStatus = ValidationStatus.from(recipe.validationStatus),
         ingredients = orderedIngredients().map {
             RecipeIngredient(
                 ingredientId = it.ingredientId,
@@ -46,7 +66,20 @@ fun RecipeWithDetails.toDomain(ingredientsById: Map<String, Ingredient>): Recipe
             )
         },
         steps = orderedSteps().map {
-            RecipeStep(it.stepNumber, it.title, it.instruction, it.timerSeconds)
+            RecipeStep(
+                number = it.stepNumber,
+                title = it.title,
+                instruction = it.instruction,
+                timerSeconds = it.timerSeconds,
+                ingredientRefs = it.ingredientRefs.toDetailList(),
+                equipment = it.equipment.toDetailList(),
+                temperatureC = it.temperatureC,
+                heatLevel = it.heatLevel,
+                successIndicators = it.successIndicators.toDetailList(),
+                commonMistakes = it.commonMistakes.toDetailList(),
+                recoveryInstructions = it.recoveryInstructions,
+                safetyNotes = it.safetyNotes.toDetailList()
+            )
         },
         isUserCreated = recipe.isUserCreated,
         imageUri = recipe.imageUri,

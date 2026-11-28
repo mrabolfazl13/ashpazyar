@@ -413,7 +413,8 @@ fun RecipeCard(
                 }
                 Spacer(Modifier.height(8.dp))
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    recipe.tags.take(2).forEach { TagChip(it) }
+                    recipe.tags.take(if (recipe.steps.isEmpty()) 1 else 2).forEach { TagChip(it) }
+                    if (recipe.steps.isEmpty()) TagChip("بدون مراحل")
                     if (matchPercent != null) {
                         Text(
                             text = PersianText.faDigits(matchPercent.toString()) + "٪ مواد",

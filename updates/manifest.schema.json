@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mrabolfazl13.github.io/ashpazyar/manifest.schema.json",
+  "title": "AshpazYar signed update manifest payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "product_id",
+    "platform",
+    "latest_version",
+    "force_update",
+    "update_policy",
+    "release_channel",
+    "download_url",
+    "sha256",
+    "release_notes",
+    "published_at"
+  ],
+  "properties": {
+    "product_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+$"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "android",
+        "windows"
+      ]
+    },
+    "latest_version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "minimum_supported_version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "force_update": {
+      "type": "boolean"
+    },
+    "update_policy": {
+      "type": "string",
+      "enum": [
+        "optional",
+        "minimum_version",
+        "forced"
+      ]
+    },
+    "release_channel": {
+      "type": "string",
+      "enum": [
+        "stable",
+        "beta",
+        "dev"
+      ]
+    },
+    "download_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{64}$"
+    },
+    "release_notes": {
+      "type": "string",
+      "maxLength": 10000
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version_code": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2100000000
+    },
+    "apk_size": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "platform": {
+            "const": "android"
+          }
+        },
+        "required": [
+          "platform"
+        ]
+      },
+      "then": {
+        "required": [
+          "version_code"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "update_policy": {
+            "const": "minimum_version"
+          }
+        },
+        "required": [
+          "update_policy"
+        ]
+      },
+      "then": {
+        "required": [
+          "minimum_supported_version"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "update_policy": {
+            "const": "forced"
+          }
+        },
+        "required": [
+          "update_policy"
+        ]
+      },
+      "then": {
+        "properties": {
+          "force_update": {
+            "const": true
+          }
+        }
+      }
+    }
+  ]
+}

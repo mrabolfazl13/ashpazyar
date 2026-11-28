@@ -77,11 +77,28 @@ data class RecipeIngredient(
     val optional: Boolean = false
 )
 
+enum class ValidationStatus(val label: String) {
+    VERIFIED("تأییدشده"),
+    REVIEW_REQUIRED("نیازمند بازبینی"),
+    REJECTED("ردشده");
+    companion object {
+        fun from(value: String?) = entries.firstOrNull { it.name == value } ?: REVIEW_REQUIRED
+    }
+}
+
 data class RecipeStep(
     val number: Int,
     val title: String,
     val instruction: String,
-    val timerSeconds: Int? = null
+    val timerSeconds: Int? = null,
+    val ingredientRefs: List<String> = emptyList(),
+    val equipment: List<String> = emptyList(),
+    val temperatureC: Int? = null,
+    val heatLevel: String? = null,
+    val successIndicators: List<String> = emptyList(),
+    val commonMistakes: List<String> = emptyList(),
+    val recoveryInstructions: String? = null,
+    val safetyNotes: List<String> = emptyList()
 )
 
 data class Recipe(
@@ -110,9 +127,23 @@ data class Recipe(
     val steps: List<RecipeStep>,
     val isUserCreated: Boolean = false,
     val imageUri: String? = null,
-    val editorialOrder: Int = 1000
+    val editorialOrder: Int = 1000,
+    val region: String? = null,
+    val history: String? = null,
+    val resultDescription: String? = null,
+    val restMinutes: Int = 0,
+    val equipment: List<String> = emptyList(),
+    val ovenTemperatureC: Int? = null,
+    val prepGuide: List<String> = emptyList(),
+    val servingGuide: List<String> = emptyList(),
+    val storageGuide: String? = null,
+    val troubleshooting: List<String> = emptyList(),
+    val sourceName: String? = null,
+    val sourceUrl: String? = null,
+    val license: String? = null,
+    val validationStatus: ValidationStatus = ValidationStatus.REVIEW_REQUIRED
 ) {
-    val totalMinutes: Int get() = prepMinutes + cookMinutes
+    val totalMinutes: Int get() = prepMinutes + cookMinutes + restMinutes
     val isQuick: Boolean get() = totalMinutes <= 30
     val isEconomical: Boolean get() = budgetLevel == BudgetLevel.BUDGET || tags.any { it.contains("اقتصادی") }
     val matchesCount: Int get() = categoryIds.size
