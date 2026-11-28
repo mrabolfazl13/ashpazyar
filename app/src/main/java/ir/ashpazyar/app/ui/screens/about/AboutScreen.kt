@@ -78,7 +78,7 @@ fun AboutScreen(onBack: () -> Unit) {
                     Text("مجوزها", style = MaterialTheme.typography.titleSmall, color = palette.ink)
                     Spacer(Modifier.height(5.dp))
                     Text(
-                        "کتابخانه‌های متن‌باز استفاده‌شده تحت مجوز Apache 2.0 هستند. محتوای دستورها و نکته‌ها برای این برنامه تهیه شده است.",
+                        "کتابخانه‌های متن‌باز استفاده‌شده تحت مجوز Apache 2.0 هستند. کاتالوگ ۵٬۷۹۰ رکوردی از دیتاست Persian_Cooking در Hugging Face با مجوز MIT گرفته شده و بدون مرحله پخت است. محتوای نمونه و نکته‌ها برای این برنامه تهیه شده‌اند. متن مجوز در Third-Party Notices پروژه قرار دارد.",
                         style = MaterialTheme.typography.labelSmall,
                         color = palette.muted
                     )

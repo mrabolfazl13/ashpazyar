@@ -299,8 +299,8 @@ def main() -> None:
                 "storageGuide": None,
                 "troubleshooting": [],
                 "sourceName": "Persian_Cooking (train.csv)",
-                "sourceUrl": None,
-                "license": "نامشخص — بازنشر تجاری تأییدنشده",
+                "sourceUrl": "https://huggingface.co/datasets/dadashzadeh/Persian_Cooking",
+                "license": "MIT",
                 "validationStatus": "REVIEW_REQUIRED",
             }
             recipe_lines.append(json.dumps(seed, ensure_ascii=False, separators=(",", ":")))
@@ -339,7 +339,8 @@ def main() -> None:
 
     manifest = {
         "format": 1,
-        "source": "Persian_Cooking train.csv (processed ashpazyar_dataset)",
+        "source": "Persian_Cooking train.csv via Hugging Face (dadashzadeh/Persian_Cooking)",
+        "source_url": "https://huggingface.co/datasets/dadashzadeh/Persian_Cooking",
         "source_rows": source_rows,
         "editorial_recipes": len(editorial),
         "catalog_recipes": len(recipe_lines),
@@ -348,7 +349,9 @@ def main() -> None:
         "non_food_records_not_loaded": {"articles": 1, "tutorials": 28, "decorations": 23},
         "validation_status": "REVIEW_REQUIRED",
         "instructions_available": False,
-        "license": "UNKNOWN",
+        "license": "MIT",
+        "license_url": "https://huggingface.co/datasets/dadashzadeh/Persian_Cooking",
+        "source_sha256": sha256((ROOT / "train.csv").read_bytes()) if (ROOT / "train.csv").exists() else None,
         "catalog_recipes_sha256": sha256(CATALOG_RECIPES.read_bytes()),
         "catalog_recipes_raw_sha256": sha256(recipes_raw),
         "catalog_ingredients_sha256": sha256(CATALOG_INGREDIENTS.read_bytes()),

@@ -16,7 +16,7 @@
 - `source_records`: ۶٬۶۶۰ ردیف ورودی با وضعیت `RECIPE_PRIMARY`، `EXACT_DUPLICATE`، `NON_FOOD` یا `REJECTED` و شناسه مرجع.
 - `recipe_duplicates`: ۱۰۰ جفت مشابه اسمی برای بازبینی؛ ادغام خودکار نشده‌اند.
 - `recipe_nutrition` و `recipe_media`: آماده، بدون داده ساختگی.
-- `sources` و `licenses`: منبع و مجوز `UNKNOWN` با استفاده تجاری/بازنشر صفر.
+- `sources` و `licenses`: منبع Persian_Cooking در Hugging Face و مجوز `MIT` با انتساب ثبت‌شده.
 
 ## کلیدها و یکپارچگی
 - `recipes.id` متنی و پایدار؛ `slug` یکتا.

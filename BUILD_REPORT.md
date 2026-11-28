@@ -68,9 +68,9 @@ gh run download 46112048750 -D dist/run46112048750
 - کاتالوگ `Persian_Cooking` شامل ۵٬۷۹۰ رکورد بدون مرحله پخت است.
 - مجموع ۷٬۷۹۰ دستور؛ `seed_version = "4"`؛ نسخه Room = ۲ با مهاجرت صریح ۱→۲.
 - دارایی‌های کاتالوگ:
-  - `app/src/main/assets/seed/catalog_recipes.jsonl.gzip` — ۹۵۵٬۲۵۴ بایت
+  - `app/src/main/assets/seed/catalog_recipes.jsonl.gzip` — ۹۵۷٬۴۸۵ بایت
   - `app/src/main/assets/seed/catalog_ingredients.json.gzip` — ۶۶٬۷۸۵ بایت
-  - `app/src/main/assets/seed/catalog_manifest.json` — ۸۵۹ بایت
+  - `app/src/main/assets/seed/catalog_manifest.json` — ۱٬۱۲۱ بایت
 - نام پسوند `.gzip` عمدی است: AAPT فایل‌های `.gz` را خودکار باز می‌کند و پسوند را حذف می‌کند؛ استفاده از `.gzip` از این رفتار جلوگیری می‌کند.
 - وجود هر سه دارایی کاتالوگ در `ashpazyar-release.apk` با `jar tf` بررسی شد.
 - در `ashpazyar-release.aab` نیز دارایی‌ها در `base/assets/seed/` قرار دارند.
@@ -79,6 +79,6 @@ gh run download 46112048750 -D dist/run46112048750
 
 - این گزارش فقط موفقیت ساخت و تست خودکار است. **هیچ آپلود یا تأییدی در Google Play یا بازار انجام نشده است.**
 - آزمون دستگاه فیزیکی، RTL با فونت بزرگ، حالت تاریک، Seed روی دستگاه ضعیف و تایمر پس از بستن اپ انجام نشده و QA انسانی می‌خواهد.
-- منبع و مجوز بازنشر تجاری `train.csv` نامشخص است؛ ۰ رکورد تأییدشده انسانی وجود دارد.
+- منبع `Persian_Cooking` با مجوز MIT و انتساب ثبت‌شده است؛ با این حال ۰ رکورد تأییدشده انسانی و هیچ مرحله پخت برای ۵٬۷۹۰ رکورد کاتالوگ وجود ندارد.
 - مانیفست به‌روزرسانی هنوز در GitHub Pages منتشر نشده است؛ انتشار فقط پس از وجود خروجی واقعی همان نسخه مجاز است.
 - دانلود و نصب فقط از بازار است؛ در اپ هیچ دانلودر یا نصب‌کننده APK وجود ندارد.

@@ -1,6 +1,7 @@
 {
   "format": 1,
-  "source": "Persian_Cooking train.csv (processed ashpazyar_dataset)",
+  "source": "Persian_Cooking train.csv via Hugging Face (dadashzadeh/Persian_Cooking)",
+  "source_url": "https://huggingface.co/datasets/dadashzadeh/Persian_Cooking",
   "source_rows": 5790,
   "editorial_recipes": 2000,
   "catalog_recipes": 5790,
@@ -13,9 +14,11 @@
   },
   "validation_status": "REVIEW_REQUIRED",
   "instructions_available": false,
-  "license": "UNKNOWN",
-  "catalog_recipes_sha256": "1723c7d9847771bbdc0eae3e8ff367dc081d97840a548f647f12ca12bd10494b",
-  "catalog_recipes_raw_sha256": "de76aa64de467c844164951196fef1e3a2ed57e9d6707735d9ca08c5eeefcde2",
+  "license": "MIT",
+  "license_url": "https://huggingface.co/datasets/dadashzadeh/Persian_Cooking",
+  "source_sha256": "c9d5cafc28259266e3fd9c0cdc3ee36e612c237cbaabe0c0b0e21643cbcfe3bc",
+  "catalog_recipes_sha256": "de0d07ed67ffd7586dadde57cf0ebca97bd7154b582b5067444612cce1c6ae40",
+  "catalog_recipes_raw_sha256": "7a477a066ba9e088d8c07ef51dc8c3a5a9f5fc32cdd9362f73e1dc4cf039fed5",
   "catalog_ingredients_sha256": "0358e4420e2508af814ce6f3a77de97a15d754d9ba3bef2b44e3ea7e23ff4d33",
   "catalog_ingredients_raw_sha256": "4a887e29544e36bdbd0dcd0e48be3c6766c1b8ebc6aea7e956960a0fe2bd4e86"
 }

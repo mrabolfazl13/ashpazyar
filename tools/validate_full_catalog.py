@@ -73,6 +73,10 @@ def main() -> None:
             fail(f"{recipe_id} is not REVIEW_REQUIRED")
         if recipe.get("sourceName") != "Persian_Cooking (train.csv)":
             fail(f"{recipe_id} has an unexpected source")
+        if recipe.get("sourceUrl") != "https://huggingface.co/datasets/dadashzadeh/Persian_Cooking":
+            fail(f"{recipe_id} has an unexpected source URL")
+        if recipe.get("license") != "MIT":
+            fail(f"{recipe_id} has an unexpected license")
         if not recipe.get("ingredients"):
             fail(f"{recipe_id} has no ingredients")
         for category_id in recipe.get("categoryIds", []):
@@ -94,6 +98,8 @@ def main() -> None:
     if unused_ingredients:
         fail(f"unused catalog ingredients: {sorted(unused_ingredients)[:5]}")
 
+    if manifest.get("license") != "MIT":
+        fail("manifest license is not MIT")
     if manifest.get("catalog_recipes") != len(recipes):
         fail("manifest recipe count does not match")
     if manifest.get("catalog_ingredients") != len(catalog_ingredients):
