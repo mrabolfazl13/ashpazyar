@@ -28,7 +28,7 @@
     },
     {
       "id": "ashpazyar",
-      "display_name": "قاشق",
+      "display_name": "چاشیکا",
       "platforms": [
         "android"
       ],
@@ -36,7 +36,7 @@
         "stable",
         "beta"
       ],
-      "package_name": "ir.ashpazyar.app"
+      "package_name": "ir.chashika.app"
     }
   ]
 }

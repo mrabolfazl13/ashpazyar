@@ -22,7 +22,7 @@
 - `ashpazyar-debug.apk`
 - `ashpazyar-release.apk`
 - `ashpazyar-release.aab`
-- `ghashogh-bazaar.bin` (جداگانه، فقط برای آپلود در بازار)
+- `chashika-bazaar.bin` (جداگانه، فقط برای آپلود در بازار)
 
 برای امضای Release، این Secretها را در مخزن تنظیم کنید:
 
@@ -38,7 +38,7 @@
 ## نصب و به‌روزرسانی
 نسخه عمومی فقط از **برنامه بازار** نصب یا به‌روزرسانی می‌شود. چاشیکا هیچ APK را دانلود یا نصب نمی‌کند و مجوز `REQUEST_INSTALL_PACKAGES` ندارد.
 
-صفحه محصول در بازار: `https://cafebazaar.ir/app/ir.ashpazyar.app`
+صفحه محصول در بازار: `https://cafebazaar.ir/app/ir.chashika.app`
 
 خروجی‌های Actions برای بازبینی و انتشار در فروشگاه‌اند، نه مسیر دانلود کاربر نهایی.
 

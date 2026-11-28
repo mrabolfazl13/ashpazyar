@@ -29,7 +29,7 @@
 
 | فایل | حجم (بایت) | SHA-256 |
 |---|---:|---|
-| `ghashogh-bazaar.bin` | 211,586 | `96C980E514D88498DE32434D0BE8658192E969BEF389EC7B7425FD584612F195` |
+| `chashika-bazaar.bin` | 211,586 | `96C980E514D88498DE32434D0BE8658192E969BEF389EC7B7425FD584612F195` |
 
 دریافت مجدد:
 
@@ -53,7 +53,7 @@ gh run download 46112048750 -D dist/run46112048750
 
 ## پیکربندی بیلد
 
-- `applicationId`: `ir.ashpazyar.app`
+- `applicationId`: `ir.chashika.app`
 - نام نمایشی: **قاشق**
 - نسخه: `1.3.0` (versionCode 6)
 - `minSdk`: 26

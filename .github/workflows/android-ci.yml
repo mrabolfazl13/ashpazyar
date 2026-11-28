@@ -144,13 +144,13 @@ jobs:
             --key-pass "env:RELEASE_KEY_PASSWORD"
           BAZAAR_BIN=$(find dist/bazaar-tmp -type f -name "*.bin" | head -n 1)
           test -n "$BAZAAR_BIN"
-          cp "$BAZAAR_BIN" dist/ghashogh-bazaar.bin
+          cp "$BAZAAR_BIN" dist/chashika-bazaar.bin
           rm -rf dist/bazaar-tmp
-          test -s dist/ghashogh-bazaar.bin
-          sha256sum dist/ghashogh-bazaar.bin > dist/ghashogh-bazaar.bin.sha256
+          test -s dist/chashika-bazaar.bin
+          sha256sum dist/chashika-bazaar.bin > dist/chashika-bazaar.bin.sha256
           echo "### Cafe Bazaar bundle" >> "$GITHUB_STEP_SUMMARY"
-          echo "- ghashogh-bazaar.bin — $(stat -c%s dist/ghashogh-bazaar.bin) bytes" >> "$GITHUB_STEP_SUMMARY"
-          cat dist/ghashogh-bazaar.bin.sha256 >> "$GITHUB_STEP_SUMMARY"
+          echo "- chashika-bazaar.bin — $(stat -c%s dist/chashika-bazaar.bin) bytes" >> "$GITHUB_STEP_SUMMARY"
+          cat dist/chashika-bazaar.bin.sha256 >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload APK and AAB artifacts
         uses: actions/upload-artifact@v4
@@ -167,10 +167,10 @@ jobs:
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
-          name: ghashogh-bazaar-${{ github.run_number }}
+          name: chashika-bazaar-${{ github.run_number }}
           path: |
-            dist/ghashogh-bazaar.bin
-            dist/ghashogh-bazaar.bin.sha256
+            dist/chashika-bazaar.bin
+            dist/chashika-bazaar.bin.sha256
           if-no-files-found: error
           retention-days: 30
 

@@ -31,11 +31,11 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "ir.ashpazyar.app"
+        applicationId = "ir.chashika.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 7
-        versionName = "1.3.1"
+        versionCode = 8
+        versionName = "1.3.2"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "UPDATE_MANIFEST_BASE_URL", "\"$updateManifestBaseUrl\"")
         buildConfigField("String", "UPDATE_PRODUCT_ID", "\"ashpazyar\"")

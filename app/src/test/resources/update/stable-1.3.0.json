@@ -6,11 +6,11 @@
     "force_update": false,
     "update_policy": "optional",
     "release_channel": "stable",
-    "download_url": "https://cafebazaar.ir/app/ir.ashpazyar.app",
+    "download_url": "https://cafebazaar.ir/app/ir.chashika.app",
     "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     "release_notes": "نسخه آزمایشی امضا",
     "published_at": "2026-11-28T04:59:20Z",
     "version_code": 6
   },
-  "manifest_signature": "AVyxSu/BBtOiRfSzzz9/r7Wu+RGj3hXa6g6upCgcpsllEux+fxQ0jskHSDIrq8F0kp+d6EaE8DKhdEIcglTmvWzT81XKyvGNaP5NNWawHsaYG7YFCctVvwoo3sehsoHffdrDu/05vKTAbNx8gZH6vpF5z5ciqWrmmMI70CMtIkWNa8WEBWZ3nb0HRswYGIl1Lp9kb0WUW8aVxuZy376TJI7tV4i+cHsAIOJO3aVMHRGXm2ab3KQ52+2/PpuFjcr0UbHmovnnVUl+Rc5LJcsnwAYkXqPM4p4qY5U6mbVCCD/1dHRyYr3T/iCPrrrN4k8JbQ3dE0c6AW+HxBxNyHu9HBrR54txJruOJfF9y93yN4MPqQiXkfEtRfEwo721Km4YH1KTHYrLHQFFkBCpYjroi6OTHA854ceMpwN1Bi31jLHyrMkKTXETLQG9Y+yj4v8Za6wUjqWsFPkgIsD21Mjg7oUQWhXURlI8rtPPgRiZgvSjg+58DuPLhH00pniotFSI"
+  "manifest_signature": "spKsxb2oz33lygpc5wEEeBfgLiHGQ/LtZRvGvrpQk8lGRMbpRG55gxjUkgapZMMd0ujt25CbutJU/qJMH2LujqZdznpNXrcCerkSMdPwXTzorAEdb2IJN7WGUTBjYMP/oVjhMKWfOHm0mFzoOLJrbau1RFD9Scz1QDagI+IRacWDetZtdLygQudExfc2IPTTnLQeF8b0LW/Mel+NBfVkvTMQSc+4GdfZYe15OmJg3bu+2KF3DX7rnzdmn1MqirP3DveAUepdwO79k7VphB+GjCh9m0U6/GuOFYCqyugJHJ85Gs69XTX54tjtFbxUdSQFKBibcENQpkHMA8btdLf7RXxj+t2gooy3gwggukeMiqwAc0rffGIiHQeSLcJ2y7RyLXOPJgnVJdHcvU3zqid03Jn1VvjkJz/Im+A4xOLWOaXtL6XS7llJS35kOFoVrtKx20tKylQdIx+Lmhjmkjk9zoip1n5cTXYjLzcdOA9KLB2Cq1DCsdhUn01ag2yGO+PR"
 }

@@ -22,7 +22,7 @@ class UpdateOverlayTest {
         forceUpdate = false,
         updatePolicy = "optional",
         releaseChannel = "stable",
-        downloadUrl = "https://cafebazaar.ir/app/ir.ashpazyar.app",
+        downloadUrl = "https://cafebazaar.ir/app/ir.chashika.app",
         sha256 = "a".repeat(64),
         releaseNotes = "تازه‌های چاشیکا",
         publishedAt = "2026-11-28T10:00:00Z",

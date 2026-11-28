@@ -26,7 +26,7 @@ class UpdateManifestVerifierTest {
             put("force_update", false)
             put("update_policy", "optional")
             put("release_channel", "stable")
-            put("download_url", "https://cafebazaar.ir/app/ir.ashpazyar.app")
+            put("download_url", "https://cafebazaar.ir/app/ir.chashika.app")
             put("sha256", "a".repeat(64))
             put("release_notes", "بهبود تجربه آشپزخانه")
             put("published_at", "2026-11-28T10:00:00Z")
@@ -60,7 +60,7 @@ class UpdateManifestVerifierTest {
             expectedProduct = "ashpazyar",
             expectedPlatform = "android",
             expectedChannel = "stable",
-            appPackage = "ir.ashpazyar.app"
+            appPackage = "ir.chashika.app"
         )
         assertEquals("1.3.0", manifest.latestVersion)
         assertEquals(6L, manifest.versionCode)
@@ -71,7 +71,7 @@ class UpdateManifestVerifierTest {
         val signedManifest = signed(payload())
         val tampered = signedManifest.replace("بهبود تجربه آشپزخانه", "متن دست‌کاری‌شده")
         assertThrows(UpdateManifestException::class.java) {
-            verifier.verify(tampered, "ashpazyar", "android", "stable", "ir.ashpazyar.app")
+            verifier.verify(tampered, "ashpazyar", "android", "stable", "ir.chashika.app")
         }
     }
 
@@ -79,10 +79,10 @@ class UpdateManifestVerifierTest {
     fun rejectsWrongProductOrChannel() {
         val raw = signed(payload())
         assertThrows(UpdateManifestException::class.java) {
-            verifier.verify(raw, "sanadyar", "android", "stable", "ir.ashpazyar.app")
+            verifier.verify(raw, "sanadyar", "android", "stable", "ir.chashika.app")
         }
         assertThrows(UpdateManifestException::class.java) {
-            verifier.verify(raw, "ashpazyar", "android", "beta", "ir.ashpazyar.app")
+            verifier.verify(raw, "ashpazyar", "android", "beta", "ir.chashika.app")
         }
     }
 
@@ -90,7 +90,7 @@ class UpdateManifestVerifierTest {
     fun rejectsNonBazaarAndroidDownload() {
         val raw = signed(payload(mapOf("download_url" to "https://github.com/example/app.apk")))
         assertThrows(UpdateManifestException::class.java) {
-            verifier.verify(raw, "ashpazyar", "android", "stable", "ir.ashpazyar.app")
+            verifier.verify(raw, "ashpazyar", "android", "stable", "ir.chashika.app")
         }
     }
 
@@ -98,7 +98,7 @@ class UpdateManifestVerifierTest {
     fun rejectsMissingVersionCodeForAndroid() {
         val raw = signed(payload(mapOf("version_code" to null)))
         assertThrows(UpdateManifestException::class.java) {
-            verifier.verify(raw, "ashpazyar", "android", "stable", "ir.ashpazyar.app")
+            verifier.verify(raw, "ashpazyar", "android", "stable", "ir.chashika.app")
         }
     }
 
@@ -121,7 +121,7 @@ class UpdateManifestVerifierTest {
             expectedProduct = "ashpazyar",
             expectedPlatform = "android",
             expectedChannel = "stable",
-            appPackage = "ir.ashpazyar.app"
+            appPackage = "ir.chashika.app"
         )
         assertEquals("1.3.0", manifest.latestVersion)
     }

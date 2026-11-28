@@ -5,7 +5,7 @@
 ## قواعد قطعی
 
 - **دانلود و نصب اندروید فقط از برنامه بازار انجام می‌شود.** برنامه هیچ APKای دانلود یا نصب نمی‌کند، `REQUEST_INSTALL_PACKAGES` ندارد و FileProvider برای نصب ندارد.
-- مانیفست اندروید فقط وقتی پذیرفته می‌شود که `download_url` دقیقاً صفحه رسمی همین برنامه در بازار باشد: `https://cafebazaar.ir/app/ir.ashpazyar.app` یا `bazaar://details?id=ir.ashpazyar.app`.
+- مانیفست اندروید فقط وقتی پذیرفته می‌شود که `download_url` دقیقاً صفحه رسمی همین برنامه در بازار باشد: `https://cafebazaar.ir/app/ir.chashika.app` یا `bazaar://details?id=ir.chashika.app`.
 - برنامه ابتدا مانیفست را با کلید عمومی داخل APK اعتبارسنجی می‌کند؛ سپس کاربر را با دیپ‌لینک به بازار می‌فرستد. نصب و بررسی امضای بسته توسط بازار و اندروید انجام می‌شود.
 - `sha256` برای حسابرسی فایل تحویلی است. برنامه اندروید آن را برای نصب مستقیم استفاده نمی‌کند، چون فایلی دریافت نمی‌کند.
 - هیچ به‌روزرسانی‌ای فقط به دلیل وجود نسخه جدید اجباری نمی‌شود. `force_update` باید صریحاً `true` باشد و سیاست نیز اجازه بدهد.
@@ -53,7 +53,7 @@ Workflow فایل‌های داخل `updates/` را به ریشه شاخه `gh-p
     "force_update": false,
     "update_policy": "optional",
     "release_channel": "stable",
-    "download_url": "https://cafebazaar.ir/app/ir.ashpazyar.app",
+    "download_url": "https://cafebazaar.ir/app/ir.chashika.app",
     "sha256": "<64 hex>",
     "release_notes": "تغییرات این نسخه",
     "published_at": "2026-11-28T10:00:00Z",
