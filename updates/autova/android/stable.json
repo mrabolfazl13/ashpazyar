@@ -1,0 +1,17 @@
+{
+  "payload": {
+    "download_url": "https://cafebazaar.ir/app/ir.autova",
+    "force_update": false,
+    "latest_version": "0.1.0",
+    "minimum_supported_version": "0.1.0",
+    "platform": "android",
+    "product_id": "autova",
+    "published_at": "2026-11-28T06:16:16Z",
+    "release_channel": "stable",
+    "release_notes": "نسخه پایه اتووا؛ ثبت سرویس، سوخت، هزینه و مدارک خودرو.",
+    "sha256": "c084d7fb6f374da79698494b5d95c9ef0315f3556ba919169eade62021f551cd",
+    "update_policy": "optional",
+    "version_code": 1
+  },
+  "manifest_signature": "dpff5m5zmluZ6o3+hBV05gHiOyhil6R31L6roqDFd4HRj5ep2Dx6j4mo+2sDVmF+3xnpwmM9fhMXKHF+ei8eNYR8Tfse2ziG+Rfiymdhd89u/AZfemiuGy8+VZ2oJmvFN4UYgw7u8y5j6002LR3gkULVXgkOyz6b1911nc15vbEsOG+J9qJXtaHLFB8LYVzl1oEjdc0sNg5QYetSRBhcLcSBlDchRA+cL+SvUgmeRzQOsU87CpQIj218K9VtvPnY/T9Al2Pgr0YAmpxkgyJUh6zfWLZBB66eS6DHt+6Uxjk2uWQcAu8sa02TAACjTBMt9oVaK6tkgCdbdl60VV/fEirdiZi4g5TP63+KTwC5UO/jFE2dhOAf56U7yYZXNqHmOC3dDOkUU0wiMpXqBGEPoRzSrYmJKO5z6JBUUxCX4lm4mzvtnXmsqkjlgA+mA5X7n3puscGeAXFy9NkkPw9k+t0iQvjy3K80AKUCYiay5PE71j6oSS6GpgnwCKZxaoCi"
+}

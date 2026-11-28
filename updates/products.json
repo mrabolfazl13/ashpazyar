@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-28T00:00:00Z",
+  "updated_at": "2026-11-28T06:10:00Z",
   "products": [
     {
       "id": "sanadyar",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "id": "khodroyar",
+      "id": "autova",
       "display_name": "اتووا",
       "platforms": [
         "windows",
@@ -24,7 +24,7 @@
         "stable",
         "beta"
       ],
-      "package_name": "ir.khodroyar"
+      "package_name": "ir.autova"
     },
     {
       "id": "ashpazyar",
