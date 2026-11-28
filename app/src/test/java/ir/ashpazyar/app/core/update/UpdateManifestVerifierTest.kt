@@ -1,5 +1,6 @@
 package ir.ashpazyar.app.core.update
 
+import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
@@ -16,22 +17,26 @@ class UpdateManifestVerifierTest {
     private val keyPair = KeyPairGenerator.getInstance("RSA").apply { initialize(2048) }.generateKeyPair()
     private val verifier = UpdateManifestVerifier(keyPair.public)
 
-    private fun payload(overrides: Map<String, Any?> = emptyMap()) = buildJsonObject {
-        put("product_id", "ashpazyar")
-        put("platform", "android")
-        put("latest_version", "1.3.0")
-        put("minimum_supported_version", "1.2.0")
-        put("force_update", false)
-        put("update_policy", "optional")
-        put("release_channel", "stable")
-        put("download_url", "https://cafebazaar.ir/app/ir.ashpazyar.app")
-        put("sha256", "a".repeat(64))
-        put("release_notes", "بهبود تجربه آشپزخانه")
-        put("published_at", "2026-11-28T10:00:00Z")
-        put("version_code", 6)
-        overrides.forEach { (key, value) ->
-            if (value == null) remove(key) else put(key, value.toString())
+    private fun payload(overrides: Map<String, Any?> = emptyMap()): JsonObject {
+        val builder = buildJsonObject {
+            put("product_id", "ashpazyar")
+            put("platform", "android")
+            put("latest_version", "1.3.0")
+            put("minimum_supported_version", "1.2.0")
+            put("force_update", false)
+            put("update_policy", "optional")
+            put("release_channel", "stable")
+            put("download_url", "https://cafebazaar.ir/app/ir.ashpazyar.app")
+            put("sha256", "a".repeat(64))
+            put("release_notes", "بهبود تجربه آشپزخانه")
+            put("published_at", "2026-11-28T10:00:00Z")
+            put("version_code", 6)
         }
+        val fields = builder.toMutableMap()
+        overrides.forEach { (key, value) ->
+            if (value == null) fields.remove(key) else fields[key] = JsonPrimitive(value.toString())
+        }
+        return JsonObject(fields)
     }
 
     private fun signed(payload: kotlinx.serialization.json.JsonObject): String {
