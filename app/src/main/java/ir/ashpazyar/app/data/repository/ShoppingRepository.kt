@@ -175,7 +175,7 @@ class ShoppingRepository @Inject constructor(
 
     fun shareText(items: List<ShoppingItem>): String {
         return buildString {
-            appendLine("🛒 فهرست خرید آشپزیار")
+            appendLine("🛒 فهرست خرید قاشق")
             appendLine()
             items.groupBy { it.category }.forEach { (category, rows) ->
                 appendLine("• " + category)
@@ -185,7 +185,7 @@ class ShoppingRepository @Inject constructor(
                 }
             }
             appendLine()
-            appendLine("ساخته‌شده با آشپزیار")
+            appendLine("ساخته‌شده با قاشق")
         }
     }
 }

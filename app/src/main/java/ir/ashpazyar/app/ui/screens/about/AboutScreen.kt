@@ -22,7 +22,7 @@ import ir.ashpazyar.app.ui.theme.AshpaTheme
 fun AboutScreen(onBack: () -> Unit) {
     val palette = AshpaTheme.palette
     Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState())) {
-        AshpaTopBar(title = "درباره آشپزیار", onBack = onBack)
+        AshpaTopBar(title = "درباره قاشق", onBack = onBack)
         Column(Modifier.padding(horizontal = 20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
             Spacer(Modifier.height(8.dp))
             Box(
@@ -32,15 +32,15 @@ fun AboutScreen(onBack: () -> Unit) {
                 Icon(Icons.Rounded.Restaurant, null, tint = Color(0xFFE6B88C), modifier = Modifier.size(44.dp))
             }
             Spacer(Modifier.height(12.dp))
-            Text("آشپزیار", style = MaterialTheme.typography.displaySmall, color = palette.ink)
+            Text("قاشق", style = MaterialTheme.typography.displaySmall, color = palette.ink)
             Text("همراه روزمره آشپزخانه ایرانی", style = MaterialTheme.typography.bodyMedium, color = palette.muted)
             Spacer(Modifier.height(5.dp))
-            Text("نسخه ۱.۰.۰", style = MaterialTheme.typography.labelMedium, color = palette.terracotta)
+            Text("نسخه ۱.۲.۲", style = MaterialTheme.typography.labelMedium, color = palette.terracotta)
             Spacer(Modifier.height(18.dp))
             AshpaCard(Modifier.fillMaxWidth(), corner = 22.dp) {
                 Column(Modifier.padding(16.dp)) {
                     Text(
-                        "آشپزیار برای این ساخته شده که تصمیم‌های روزمره آشپزی ساده‌تر شوند: چه بپزیم، چه داریم، چه بخریم و چطور کمتر دور بریزیم.",
+                        "قاشق برای این ساخته شده که تصمیم‌های روزمره آشپزی ساده‌تر شوند: چه بپزیم، چه داریم، چه بخریم و چطور کمتر دور بریزیم.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = palette.ink
                     )
@@ -83,7 +83,7 @@ fun AboutScreen(onBack: () -> Unit) {
             }
             Spacer(Modifier.height(14.dp))
             InlineNotice(
-                "آشپزیار جایگزین توصیه‌های پزشکی یا تغذیه تخصصی نیست. برای رژیم‌های درمانی با متخصص مشورت کنید.",
+                "قاشق جایگزین توصیه‌های پزشکی یا تغذیه تخصصی نیست. برای رژیم‌های درمانی با متخصص مشورت کنید.",
                 tone = "warm"
             )
             Spacer(Modifier.height(30.dp))

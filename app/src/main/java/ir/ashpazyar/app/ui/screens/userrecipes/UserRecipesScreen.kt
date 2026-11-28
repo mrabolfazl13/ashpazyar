@@ -45,7 +45,7 @@ fun UserRecipesScreen(
             Text("آشپزخانه شخصی شما", style = MaterialTheme.typography.displaySmall, color = palette.ink)
             Spacer(Modifier.height(5.dp))
             Text(
-                "دستورهایی که خودتان نوشته یا از دستورهای آشپزیار کپی کرده‌اید.",
+                "دستورهایی که خودتان نوشته یا از دستورهای قاشق کپی کرده‌اید.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = palette.muted
             )

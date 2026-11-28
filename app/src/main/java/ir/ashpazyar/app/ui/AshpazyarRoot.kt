@@ -92,7 +92,7 @@ private fun StartupGate(error: String?, onRetry: () -> Unit) {
                 Icon(Icons.Rounded.Restaurant, null, tint = Color(0xFFE6B88C), modifier = Modifier.size(50.dp))
             }
             Spacer(Modifier.height(18.dp))
-            Text("آشپزیار", style = MaterialTheme.typography.displaySmall, color = palette.ink)
+            Text("قاشق", style = MaterialTheme.typography.displaySmall, color = palette.ink)
             Spacer(Modifier.height(7.dp))
             Text("آشپزخانه‌تان را آماده می‌کنیم…", style = MaterialTheme.typography.bodyMedium, color = palette.muted)
             Spacer(Modifier.height(20.dp))

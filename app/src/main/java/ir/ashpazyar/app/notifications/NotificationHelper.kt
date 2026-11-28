@@ -44,7 +44,7 @@ object NotificationHelper {
         notify(
             context, CHANNEL_TIMERS, TIMER_NOTIFICATION_BASE + (id % 1000).toInt(),
             "تایمر «" + label + "» تمام شد",
-            "غذای شما آماده بررسی است. آشپزیار کنار شماست.",
+            "غذای شما آماده بررسی است. قاشق کنار شماست.",
             highPriority = true
         )
     }

@@ -39,7 +39,7 @@ fun OnboardingScreen(
     val pages = listOf(
         OnboardPage(
             "آشپزخانه‌تان را بشناسید",
-            "مواد موجود، تاریخ انقضا و مقدارشان را ثبت کنید. آشپزیار می‌گوید با همین‌ها چه می‌شود پخت.",
+            "مواد موجود، تاریخ انقضا و مقدارشان را ثبت کنید. قاشق می‌گوید با همین‌ها چه می‌شود پخت.",
             Icons.Rounded.Kitchen,
             palette.terracotta
         ),
@@ -67,7 +67,7 @@ fun OnboardingScreen(
 
     Column(Modifier.fillMaxSize().background(palette.background).statusBarsPadding().navigationBarsPadding()) {
         Row(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text("آشپزیار", style = MaterialTheme.typography.titleMedium, color = palette.forest)
+            Text("قاشق", style = MaterialTheme.typography.titleMedium, color = palette.forest)
             Spacer(Modifier.weight(1f))
             TextButton(onClick = {
                 viewModel.complete()

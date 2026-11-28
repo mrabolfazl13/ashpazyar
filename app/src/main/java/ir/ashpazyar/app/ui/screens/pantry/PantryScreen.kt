@@ -57,7 +57,7 @@ fun PantryScreen(
                     Column(Modifier.padding(horizontal = 20.dp)) {
                         Text("چه داریم؟", style = MaterialTheme.typography.displaySmall, color = palette.ink)
                         Text(
-                            "موجودی را دقیق نگه دارید تا آشپزیار دقیق‌تر پیشنهاد بدهد.",
+                            "موجودی را دقیق نگه دارید تا قاشق دقیق‌تر پیشنهاد بدهد.",
                             style = MaterialTheme.typography.bodyMedium,
                             color = palette.muted
                         )

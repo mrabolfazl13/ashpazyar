@@ -66,7 +66,7 @@ class RecommendationEngine @Inject constructor(
                     reasons += when {
                         recipe.isQuick -> "انتخابی سریع برای یک روز شلوغ"
                         recipe.isEconomical -> "طعم خوب با هزینه متعادل"
-                        else -> "پیشنهاد منتخب آشپزیار"
+                        else -> "پیشنهاد منتخب قاشق"
                     }
                 }
                 Recommendation(recipe, score.coerceIn(0, 100), reasons.take(3), match)
@@ -98,7 +98,7 @@ class RecommendationEngine @Inject constructor(
             match != null && match.missingCount <= 2 -> "فقط " + match.missingCount + " ماده کم دارد"
             recipe.isQuick -> "در کمتر از ۳۰ دقیقه آماده می‌شود"
             recipe.isEconomical -> "انتخاب اقتصادی برای وعده امروز"
-            else -> "پیشنهاد آشپزیار برای تنوع سفره"
+            else -> "پیشنهاد قاشق برای تنوع سفره"
         }
     }
 

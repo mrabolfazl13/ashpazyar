@@ -80,11 +80,11 @@ fun HomeScreen(
                         modifier = Modifier.size(42.dp).clip(RoundedCornerShape(14.dp)).background(palette.forest),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("آ", style = MaterialTheme.typography.headlineMedium, color = palette.peach)
+                        Text("ق", style = MaterialTheme.typography.headlineMedium, color = palette.peach)
                     }
                     Spacer(Modifier.width(10.dp))
                     Column(modifier = Modifier.weight(1f)) {
-                        Text("آشپزیار", style = MaterialTheme.typography.titleLarge, color = palette.ink)
+                        Text("قاشق", style = MaterialTheme.typography.titleLarge, color = palette.ink)
                         Text("همراه روزهای آشپزی شما", style = MaterialTheme.typography.bodySmall, color = palette.muted)
                     }
                     AshpaIconButton(onClick = onOpenTimers) {
@@ -233,7 +233,7 @@ fun HomeScreen(
                                 Column(Modifier.padding(11.dp)) {
                                     Text(recipe.title, style = MaterialTheme.typography.titleSmall, color = palette.ink, maxLines = 1, overflow = TextOverflow.Ellipsis)
                                     Spacer(Modifier.height(3.dp))
-                                    Text(recommendation.reasons.firstOrNull() ?: "پیشنهاد آشپزیار", style = MaterialTheme.typography.bodySmall, color = palette.muted, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                                    Text(recommendation.reasons.firstOrNull() ?: "پیشنهاد قاشق", style = MaterialTheme.typography.bodySmall, color = palette.muted, maxLines = 1, overflow = TextOverflow.Ellipsis)
                                 }
                             }
                         }
@@ -359,7 +359,7 @@ private fun FeaturedRecommendation(recommendation: Recommendation, isFavorite: B
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    "پیشنهاد آشپزیار",
+                    "پیشنهاد قاشق",
                     style = MaterialTheme.typography.labelSmall,
                     color = Color(0xFFFFE6CA),
                     modifier = Modifier

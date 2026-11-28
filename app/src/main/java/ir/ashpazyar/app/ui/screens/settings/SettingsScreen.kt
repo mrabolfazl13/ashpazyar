@@ -58,7 +58,7 @@ fun SettingsScreen(
             AshpaTopBar(title = "تنظیمات", onBack = onBack)
             Column(Modifier.padding(horizontal = 20.dp)) {
                 Text("آشپزخانه، به سلیقه شما", style = MaterialTheme.typography.displaySmall, color = palette.ink)
-                Text("ظاهر، یادآوری‌ها و ابزارهای شخصی آشپزیار", style = MaterialTheme.typography.bodyMedium, color = palette.muted)
+                Text("ظاهر، یادآوری‌ها و ابزارهای شخصی قاشق", style = MaterialTheme.typography.bodyMedium, color = palette.muted)
                 Spacer(Modifier.height(16.dp))
                 AshpaCard(Modifier.fillMaxWidth(), corner = 22.dp) {
                     Column(Modifier.padding(15.dp)) {
@@ -155,14 +155,14 @@ fun SettingsScreen(
                 Spacer(Modifier.height(12.dp))
                 AshpaCard(Modifier.fillMaxWidth(), corner = 22.dp) {
                     Column {
-                        SettingsLink("درباره آشپزیار", "نسخه، حریم خصوصی و مجوزها", Icons.Rounded.Info, onOpenAbout)
+                        SettingsLink("درباره قاشق", "نسخه، حریم خصوصی و مجوزها", Icons.Rounded.Info, onOpenAbout)
                         SettingsDivider()
                         SettingsLink("راهنمای شروع", "دوباره معرفی اولیه را ببینید", Icons.Rounded.Explore, { showReset = true })
                     }
                 }
                 Spacer(Modifier.height(16.dp))
                 Text(
-                    "آشپزیار ۱.۰.۰ · بدون اینترنت، بدون حساب، بدون تبلیغ",
+                    "قاشق ۱.۲.۲ · بدون اینترنت، بدون حساب، بدون تبلیغ",
                     style = MaterialTheme.typography.labelSmall,
                     color = palette.muted,
                     modifier = Modifier.padding(bottom = 26.dp)

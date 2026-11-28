@@ -1,7 +1,7 @@
-# معماری آشپزیار
+# معماری قاشق
 
 ## نمای کلی
-آشپزیار یک اپلیکیشن Native اندروید با Kotlin و Jetpack Compose است. معماری آن Clean Architecture سبک + MVVM است و در یک ماژول Gradle (`:app`) با مرزبندی package پیاده شده است.
+قاشق یک اپلیکیشن Native اندروید با Kotlin و Jetpack Compose است. معماری آن Clean Architecture سبک + MVVM است و در یک ماژول Gradle (`:app`) با مرزبندی package پیاده شده است.
 
 ```
 UI (Compose + ViewModel)

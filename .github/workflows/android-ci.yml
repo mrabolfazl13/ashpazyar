@@ -115,11 +115,52 @@ jobs:
           echo "### Build artifacts" >> "$GITHUB_STEP_SUMMARY"
           ls -lh dist | tail -n +2 | awk '{print "- `"$9"` — "$5}' >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Generate Cafe Bazaar signed binary
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        run: |
+          set -euo pipefail
+          if [ -z "${RELEASE_KEYSTORE_PATH:-}" ] || [ -z "${RELEASE_STORE_PASSWORD:-}" ] || [ -z "${RELEASE_KEY_ALIAS:-}" ] || [ -z "${RELEASE_KEY_PASSWORD:-}" ]; then
+            echo "::error::Release signing secrets are required to generate the Cafe Bazaar .bin."
+            exit 1
+          fi
+          JAR="$RUNNER_TEMP/bundlesigner-0.1.14.jar"
+          curl -fL --retry 3 -o "$JAR" "https://github.com/cafebazaar/bundle-signer/releases/download/v0.1.14/bundlesigner-0.1.14.jar"
+          echo "aef2c387f678558e3a4baddab9730fbdca64ef28a0e2e0245491e1088b4968f5  $JAR" | sha256sum -c -
+          mkdir -p dist
+          java -jar "$JAR" genbin -v \
+            --bundle dist/ashpazyar-release.aab \
+            --bin dist/ghashogh-bazaar.bin \
+            --v2-signing-enabled true \
+            --v3-signing-enabled false \
+            --ks "$RELEASE_KEYSTORE_PATH" \
+            --ks-key-alias "$RELEASE_KEY_ALIAS" \
+            --ks-pass "env:RELEASE_STORE_PASSWORD" \
+            --key-pass "env:RELEASE_KEY_PASSWORD"
+          test -s dist/ghashogh-bazaar.bin
+          sha256sum dist/ghashogh-bazaar.bin > dist/ghashogh-bazaar.bin.sha256
+          echo "### Cafe Bazaar bundle" >> "$GITHUB_STEP_SUMMARY"
+          echo "- ghashogh-bazaar.bin — $(stat -c%s dist/ghashogh-bazaar.bin) bytes" >> "$GITHUB_STEP_SUMMARY"
+          cat dist/ghashogh-bazaar.bin.sha256 >> "$GITHUB_STEP_SUMMARY"
+
       - name: Upload APK and AAB artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ashpazyar-build-${{ github.run_number }}
-          path: dist/*
+          path: |
+            dist/ashpazyar-debug.apk
+            dist/ashpazyar-release.apk
+            dist/ashpazyar-release.aab
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload Cafe Bazaar signed binary
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ghashogh-bazaar-${{ github.run_number }}
+          path: |
+            dist/ghashogh-bazaar.bin
+            dist/ghashogh-bazaar.bin.sha256
           if-no-files-found: error
           retention-days: 30
 
