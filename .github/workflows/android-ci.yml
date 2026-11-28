@@ -126,16 +126,20 @@ jobs:
           JAR="$RUNNER_TEMP/bundlesigner-0.1.14.jar"
           curl -fL --retry 3 -o "$JAR" "https://github.com/cafebazaar/bundle-signer/releases/download/v0.1.14/bundlesigner-0.1.14.jar"
           echo "aef2c387f678558e3a4baddab9730fbdca64ef28a0e2e0245491e1088b4968f5  $JAR" | sha256sum -c -
-          mkdir -p dist
+          mkdir -p dist/bazaar-tmp
           java -jar "$JAR" genbin -v \
             --bundle dist/ashpazyar-release.aab \
-            --bin dist/ghashogh-bazaar.bin \
+            --bin dist/bazaar-tmp \
             --v2-signing-enabled true \
             --v3-signing-enabled false \
             --ks "$RELEASE_KEYSTORE_PATH" \
             --ks-key-alias "$RELEASE_KEY_ALIAS" \
             --ks-pass "env:RELEASE_STORE_PASSWORD" \
             --key-pass "env:RELEASE_KEY_PASSWORD"
+          BAZAAR_BIN=$(find dist/bazaar-tmp -type f -name "*.bin" | head -n 1)
+          test -n "$BAZAAR_BIN"
+          cp "$BAZAAR_BIN" dist/ghashogh-bazaar.bin
+          rm -rf dist/bazaar-tmp
           test -s dist/ghashogh-bazaar.bin
           sha256sum dist/ghashogh-bazaar.bin > dist/ghashogh-bazaar.bin.sha256
           echo "### Cafe Bazaar bundle" >> "$GITHUB_STEP_SUMMARY"
