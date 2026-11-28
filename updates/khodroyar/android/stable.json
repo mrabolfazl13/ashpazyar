@@ -6,12 +6,12 @@
     "minimum_supported_version": "0.1.0",
     "platform": "android",
     "product_id": "khodroyar",
-    "published_at": "2026-11-28T05:45:00Z",
+    "published_at": "2026-11-28T05:54:10Z",
     "release_channel": "stable",
     "release_notes": "نسخه پایه اتووا؛ ثبت سرویس، سوخت، هزینه و مدارک خودرو.",
-    "sha256": "637ff19ccaa5bb7297c93c02b747c290d65b059f7861eb190d313f1d6db71cb9",
+    "sha256": "46f9b2df516a22c742a4a026a3970b8b89bacc8548102a4c0e64a78d0bda6454",
     "update_policy": "optional",
     "version_code": 1
   },
-  "manifest_signature": "Apn39HI9uwmFNc+HO2IsIi8X+7zamc5pK1IzjXddnrXnmq24YkMkkPDJPchNf5CJdK62uEqZXE0LvGXTJ0vJ1edcvjlGaPCUlA8Q9+N9Cu+EqL55ESBm2C82EjLlHXay22bqc4ZoXVt4M8NclG0EDzcrJTqyX91TM+vg0dCGS0ZQPCo9K/2+7a/UKWbm2t21OrCpa3/ePpUasEihSn/0SV7CtJdtIFK2zwwMtAKR54fW6tQIggoaHUa9yYTyv+XO5JPQ4oTRc0Zgsi1iCDCrvUxO12gU/rRcu8epwSZ+2M0xcPhg5DVTRNWYaPhrNjgJHi6qjOpWSlqwayRkq9jJg+6e53giiqcUhto/mgQrxUZOkM7zbfDoLdFK3BPJfJ9Yc1L4zczmJcf6Dwh1CUuuFmTjt90OdM/SgmYrS3ni+kvRD059BaPzGE/UpLMj9PluN5GYf0ktnNiVvD3i05goahMsbDhzs0mNTOezjUDLqZHkv2p81jfH86bOvLrbrcnC"
+  "manifest_signature": "AZrEfGqmikuRbKMcIKkstjQhmv5xH2wNGvOoWrlWYBsQ3G3JYeic3m1j+QQ1Th4pDOm0ETaUB6czTKB9/8igOVcTn11XlSTvfk5tssKI3gOf2x/IhF665HPE09bqebbMHKFSiRfbZDT+eyg33WfEyHEQ00zr2YlJ2DYlba+0Cv51PqUQyCpbFfvndCMQK/gdndAN5/guCbuoe1YbegiVVLQx6vlRK7yenbqJvOnuLLWYoYklPW3rTsxA3HE+6aHX2wuOariPMzH+rXnm0nqkbJMZMduhmVyWi+jGHgaEN/QPJZ+2xybTgxh6SgeanlKsLPaYga74kUnEMK//5zl+Uzlbs6U7ahW1aWQC+tZjnCFhOLPDQsd2sDD/K1FVd6SFfJxdEXpTxVb7Qv8jduQ+i2th/kMtHhqD66gKSkNz18N0RytCGGmsXajmvvKvWcY+U4yqu8CVvuLt6kRZh3MjrlaZLWilfPwP7fU4IPy2Pj5lQCX2LlC/6JfyL78mrwbD"
 }
