@@ -1,0 +1,17 @@
+{
+  "payload": {
+    "download_url": "https://cafebazaar.ir/app/ir.khodroyar",
+    "force_update": false,
+    "latest_version": "0.1.0",
+    "minimum_supported_version": "0.1.0",
+    "platform": "android",
+    "product_id": "khodroyar",
+    "published_at": "2026-01-01T00:00:00Z",
+    "release_channel": "stable",
+    "release_notes": "نسخه پایه اتووا؛ ثبت سرویس، سوخت، هزینه و مدارک خودرو.",
+    "sha256": "240208f6cd8bbc89288ef67e646f035b0e551e0ce21d6590e6670c2ecd3123d1",
+    "update_policy": "optional",
+    "version_code": 1
+  },
+  "manifest_signature": "NuukYalc/eZ4MGpmWzog/bwvC8seUV+tQfrM0secAsTKuXZE1ClW6RNHB+W7Kyo1N2UOo+NM3Y0DuzhKskFgm9GP2rarLDf1rUFGb5+CK1HXMbDI/ZYV6dnT4LE/qWa1u/l53WzcfDaFl2RNumKh2GypBY7XHnpSZepB3MkopmZMqQaBBxfA8LH34vBYXPKUnmMSSu/0XTlIuMSvBfKJjt0I70e29mFBitetWVWDpj0abAhxPscYsU62LxNnQsd5fP7VJjIktKzFFY6UYepL/yaD0G5U5VLasO93QJNPc6CDPKIYjpGfanWLEFyVxdednADxhg1VXtqdcmZqozTdsfw09uvw53YRUHux9P8LbF7OZ4wZFOuTCswizndAnYAOyoWlfqfCxvVsieFAKuRyugA48EF8UCu5kcRk+Zegu7UY8ZA1im/svHpLxlEDB/RdLiEPLKVD8+VSVCtl4oipfJGBRAyMQTOWjFwL8MvEtQVYC0yel6DGrNXKKDZJFlA7"
+}

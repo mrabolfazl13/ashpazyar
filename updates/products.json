@@ -15,14 +15,16 @@
     },
     {
       "id": "khodroyar",
-      "display_name": "خودرویار",
+      "display_name": "اتووا",
       "platforms": [
-        "windows"
+        "windows",
+        "android"
       ],
       "channels": [
         "stable",
         "beta"
-      ]
+      ],
+      "package_name": "ir.khodroyar"
     },
     {
       "id": "ashpazyar",
